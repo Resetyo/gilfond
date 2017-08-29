@@ -22,12 +22,12 @@ $bgrd: #f1f4f9;
   border: none;
   color: $t-color;
   font-family: 'Muller';
-  font-size: 12px;
+  font-size: 13px;
   display: inline-block;
   cursor: pointer;
   box-sizing: border-box;
   text-align: center;
-  line-height: 12px;
+  line-height: 13px;
   position: relative;
   background-color: $b-color;
   transition: opacity 0.2s;
@@ -66,7 +66,7 @@ $bgrd: #f1f4f9;
 
 html, body {
   height: 100%;
-  font: 14px/14px 'Roboto', sans-serif;
+  font: 15px/15px 'Roboto', sans-serif;
   box-sizing: border-box;
 }
 
@@ -107,8 +107,8 @@ a {
   }
   &__payment, &__made-uk {
     a, button {
-      @media (min-width: 961px) and (max-width: 1150px) {
-        font-size: 1vw;
+      @media (min-width: 960px) and (max-width: 1150px) {
+        font-size: 1.1vw;
         padding: 1.5vw;
       }
     }
@@ -120,11 +120,19 @@ a {
       margin-right: 15px;
       display: inline-block;
       vertical-align: middle;
+      img {
+        height: 23px;
+      }
     }
   }
   &__login {
     .btn-white {
       width: 184px;
+      @media (min-width: 960px) and (max-width: 1150px) {
+        font-size: 1.1vw;
+        padding: 1.5vw;
+        width: auto;
+      }
     }
   }
   &__profile {
@@ -138,7 +146,7 @@ a {
       margin-right: 30px;
       text-align: right;
       line-height: 2em;
-      @media (min-width: 961px) and (max-width: 1150px) {
+      @media (min-width: 960px) and (max-width: 1150px) {
         width: auto;
       }
     }
@@ -158,13 +166,15 @@ a {
   width: 100%;
   border-top: 1px solid $l_gray;
   background-color: #FFF;
-
   &__items {
     padding: 0 20px;
     margin: 0 auto;
     max-width: $width - 40px;
     font-weight: 500;
     font-size: 1.2em;
+    @media (min-width: 960px) and (max-width: 1150px) {
+      font-size: 1.7vw;
+    }
     display: flex;
     justify-content: space-between;
     a {
@@ -180,6 +190,10 @@ a {
     }
     &__search {
       align-self: center;
+      padding: 4px 0 0 !important;
+      margin-right: 10px;
+      text-align: left;
+      cursor: pointer;
       height: 34px;
       width: 182px;
       border: none;
@@ -188,29 +202,15 @@ a {
       text-indent: 60px;
       font-family: 'Muller';
       font-size: 1.1em;
+      // line-height: 2em;
       text-transform: uppercase;
-      &:focus {
-        background-image: none;
-        text-indent: 15px;
-        &::-webkit-input-placeholder {
-          color: transparent;
-        }
-        &:-moz-placeholder {
-          color: transparent;
-        }
-        &::-moz-placeholder {
-          color: transparent;
-        }
-        &:-ms-input-placeholder {
-          color: transparent;
-        }
-      }
+      color: $t_gray;
     }
   }
   &.fxd {
     position:fixed;
     top: 0px;
-    z-index: 10;
+    z-index: 3;
     border: none;
   }
 }
@@ -331,6 +331,9 @@ a {
 
   &__promo {
     background: url(../images/man.png) $bgrd calc(50% + 200px) top no-repeat;
+    @media (min-width: 960px) and (max-width: 1150px) {
+      background-position: calc(50% + 250px) top;
+    }
     box-shadow: inset 0 8px 8px -6px rgba(0, 0, 0, 0.1);
     h1 {
       font-size: 1.6em;
@@ -647,14 +650,14 @@ a {
 }
 
 .footer {
-  background: url(../images/12.jpg) 130% 43px no-repeat;
+  background: url(../images/12.jpg) 130% 50px no-repeat;
   color: #757575;
   font-size: 1.5em;
   z-index: 1;
-  @media (min-width: 961px) and (max-width: 1150px) {
+  @media (min-width: 960px) and (max-width: 1150px) {
     font-size: 1.5vw;
     padding: 1.5vw;
-    background-position: 130% 1vw;
+    background-position: 130% 1.6vw;
   }
   flex: 0 0 auto;
   padding-top: 30px;
@@ -713,6 +716,21 @@ a {
       margin: 10px;
     }
   }
+}
+
+.search-block {
+  display: none;
+}
+
+.body-fade {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 4;
+  opacity: 0;
+  background-color: black;
 }
 
 @media (max-width: 960px) {
@@ -946,8 +964,9 @@ a {
   }
 
   .footer {
-    background-position: -25% 115px;
-    background-size: 170%;
+    background-position: calc(100% + 300px) 120px;
+    background-size: 613px;
+
     .col_2, .col_3 {
       display: none;
     }
@@ -956,12 +975,13 @@ a {
       h4 {
         margin: 50px 0 35px;
       }
-      // margin-top: 23px;
     }
     .col_4 {
+      text-align: center;
       a, button {
         margin-top: 20px !important;
         width: 100%;
+        max-width: 350px;
       }
     }
     &__menu {
@@ -998,6 +1018,57 @@ a {
     &__news__item {
       height: 45vw;
       width: calc(50% - 7px);
+    }
+  }
+}
+
+@media (min-width: 961px) {
+  .search-block {
+    position: fixed;
+    z-index: 5;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background-color: white;
+    height: 150px;
+    text-align: right;
+    &-input {
+      float: left;
+      border: none;
+      border-left: 1px solid #333;
+      text-indent: 15px;
+      height: 46px;
+      font-size: 1.7em;
+      color: #333;
+      margin: 52px 0;
+      width: calc(100% - 286px);
+      &::-webkit-input-placeholder {
+        color: $c_black;
+        opacity: 1;
+      }
+      &:-moz-placeholder {
+        color: $c_black;
+        opacity: 1;
+      }
+      &::-moz-placeholder {
+        color: $c_black;
+        opacity: 1;
+      }
+      &:-ms-input-placeholder {
+        color: $c_black;
+        opacity: 1;
+      }
+    }
+    &-submit {
+      margin: 50px 25px 50px 0;
+      padding-left: 70px;
+      padding-right: 70px;
+    }
+    &-close {
+      vertical-align: middle;
+      border: none;
+      background: none;
+      cursor: pointer;
     }
   }
 }

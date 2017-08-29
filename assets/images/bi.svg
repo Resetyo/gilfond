@@ -1,12 +1,21 @@
 <svg width="28" height="29" viewBox="0 0 28 29" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<title>i</title>
+<title>Vector</title>
 <desc>Created using Figma</desc>
 <g id="Canvas" transform="translate(26999 -4253)">
+<rect x="-26999" y="4253" width="28" height="29" fill="#F1F5F9"/>
+<clipPath id="clip-0" clip-rule="evenodd">
+<path d="M -27944 0L -26024 0L -26024 4335L -27944 4335L -27944 0Z" fill="#FFFFFF"/>
+</clipPath>
+<g id="&#208;&#179;&#208;&#187;&#208;&#176;&#208;&#178;&#208;&#189;&#208;&#176;&#209;&#143; " clip-path="url(#clip-0)">
+<path d="M -27944 0L -26024 0L -26024 4335L -27944 4335L -27944 0Z" fill="#F1F5F9"/>
+<clipPath id="clip-1" clip-rule="evenodd">
+<path d="M -27960 3828L -26025 3828L -26025 4413L -27960 4413L -27960 3828Z" fill="#FFFFFF"/>
+</clipPath>
+<g id="footer_gride" clip-path="url(#clip-1)">
+<path d="M -27960 3828L -26025 3828L -26025 4413L -27960 4413L -27960 3828Z" fill="#FFFFFF"/>
+<g id="Group">
 <g id="i">
 <g id="Vector">
-<use xlink:href="#path0_fill" transform="translate(-26998.8 4253.91)" fill="#F6F6F9"/>
-<use xlink:href="#path0_fill" transform="translate(-26998.8 4253.91)" fill="#FFFFFF"/>
-<use xlink:href="#path0_fill" transform="translate(-26998.8 4253.91)" fill="#333333"/>
 <use xlink:href="#path0_fill" transform="translate(-26998.8 4253.91)" fill="#BDBDBD"/>
 </g>
 <g id="Vector">
@@ -17,6 +26,9 @@
 </g>
 <g id="Vector">
 <use xlink:href="#path3_fill" transform="translate(-26978.9 4257.09)" fill="#FFFFFF"/>
+</g>
+</g>
+</g>
 </g>
 </g>
 </g>

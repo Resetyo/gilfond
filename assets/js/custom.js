@@ -12,6 +12,23 @@ $(document).ready(function(){
                 $('#sum-with-comission').text((sum + comission_rub).toFixed(2));
             }
     }
+
+    //search block
+    var search_block = $('.search-block');
+    var search_close = $('.search-block-close');
+    if (search_block.length > 0) {
+        $('.nav-menu__items__search').click(function(){
+            search_block.slideDown();
+            $('body').append('<div class="body-fade"></div>');
+            $('.body-fade').fadeTo(200,0.5);
+        });
+        search_close.click(function(){
+            search_block.slideUp();
+            $('.body-fade').fadeOut(200, function(){
+                $(this).remove();
+            });
+        });
+    }
 });
 
 

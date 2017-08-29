@@ -1,19 +1,13 @@
 <svg width="22" height="22" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<title>swimming</title>
+<title>sport-24px-outline_user-swim</title>
 <desc>Created using Figma</desc>
 <g id="Canvas" transform="translate(26668 -30)">
-<g id="swimming">
 <g id="sport-24px-outline_user-swim">
 <g id="Vector">
-<use xlink:href="#path0_fill" transform="translate(-26668 30)" fill="#F6F6F9"/>
-<use xlink:href="#path0_fill" transform="translate(-26668 30)" fill="#FFFFFF"/>
-<use xlink:href="#path0_fill" transform="translate(-26668 30)" fill="#333333"/>
-<use xlink:href="#path0_fill" transform="translate(-26668 30)" fill="#BDBDBD"/>
 <use xlink:href="#path0_fill" transform="translate(-26668 30)" fill="#D8DCDE"/>
 </g>
 <g id="Vector">
 <use xlink:href="#path1_fill" transform="translate(-26660.7 35.0417)" fill="#FFFFFF"/>
-</g>
 </g>
 </g>
 </g>
