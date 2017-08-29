@@ -19,15 +19,19 @@
           <a href="#" class="btn-red">Оплатить ЖКУ</a>
         </div>
         <div class="main-menu__made-uk">
-          <a href="#" class="btn-red">Сделать &laquo;ЖилФонд&raquo; своей УК</a>
+          <button class="btn-red">написать в &laquo;ЖилФонд&raquo;</button>
         </div>
         <div class="main-menu__social">
           <a href="#"><img src="assets/images/i.svg" alt="Instagram"></a>
           <a href="#"><img src="assets/images/vk.svg" alt="vk"></a>
           <a href="#"><img src="assets/images/ok.svg" alt="ok"></a>
         </div>
-        <div class="main-menu__login">
-          <button class="btn-white">Личный кабинет</button>
+        <div class="main-menu__profile">
+          <a href="#">
+            <span class="profile__name">Дюков Валерий Иванович</span><br>
+            Ваша <span class="profile__status">задолженность</span> &ndash; 
+            <span class="profile__amount">4 746.45</span>&nbsp;Р
+          </a>
         </div>
       </div>
       <div class="nav-menu">
@@ -62,14 +66,31 @@
     
     <div class="content">
 
-      <div class="content__promo">
+      <div class="content__stat">
         <div class="content__wrapper">
+          <div class="content__stat__header">
+            <a href="#" class="btn-red">Передать показания счётчиков</a>
+            <div class="content__stat__header__text">
+              <span class="profile__status">Ваша задолженность</span> &ndash; 
+              <span class="profile__amount">4 746.45</span>&nbsp;РУБ
+            </div>
+          </div>
           <form action="" class="-visor-no-click">
-            <h1>Для передачи показаний<br>войдите в личный кабинет</h1>
-            <input name="bill_number" type="text" placeholder="Номер лицевого счета">
-            <input name="password" type="password" placeholder="Пароль">
-            <a href="#" target="_blank">Где найти номер лицевого счета и пароль?</a>
-            <button type="submit" class="btn-green">Войти</button>
+            <div class="content__stat__form-header">
+              В том числе за прошлые периоды - <span>55,55</span>&nbsp;РУБ
+            </div>
+            <div class="content__stat__form-body">
+              <div>Оплатить ЖКУ</div>
+              <div>
+                <input name="payment_sum" id="payment-sum" type="text" placeholder="Введите сумму" value="4846.45">
+              </div>
+              <div>Комиссия банка (<span id="bank-comission">1</span>%)</div>
+              <div><span id="bank-comission-rub">0</span> РУБ</div>
+              <div>Итого к оплате</div>
+              <div><span id="sum-with-comission">0</span> РУБ</div>
+              <div><a href="#">Адреса оплаты без комиссий</a></div>
+              <button type="submit" class="btn-green">Оплатить</button>
+            </div>
           </form>
         </div>
       </div>
@@ -83,7 +104,7 @@
             <h4>Советсткий</h4>
             <a href="tel:224-13-65">224-13-65</a>
           </div>
-          <div class="content__emergency__districts__item">
+          <div class="content__emergency__districts__item content__emergency_active">
             <h4>Ленинский</h4>
             <a href="tel:264-15-55">264-15-55</a>
             <a href="tel:264-25-55">264-25-55</a>
@@ -281,7 +302,7 @@
           </div>
         </div>
         <div class="col_4">
-          <a href="#" class="btn-red">Сделать &laquo;Жилфонд&raquo; своей УК</a>
+          <a href="#" class="btn-red">Написать в &laquo;Жилфонд&raquo;</a>
         </div>
       </div>
       <div class="footer__bottom">

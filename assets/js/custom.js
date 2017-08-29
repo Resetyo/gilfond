@@ -1,71 +1,16 @@
 $(document).ready(function(){
-    //modal complete
-    $(".modal form").submit(function(e){
-        $.ajax({
-            type: "POST",
-            url: '',
-            data: $(this).serialize(),
-            success: function(data) {
-                $(".modal-complete").show();
-            },
-            error: function(data) {
-                $(".modal-complete").show(); //only for demonstration, remove it
+    //payment calc
+    if ($('#payment-sum').length > 0) {
+        paymentCalc();
+        $('#payment-sum').keyup(paymentCalc);
+        function paymentCalc () {
+                var sum = parseFloat($('#payment-sum').val().replace(',','.'));
+                sum = sum > 0 ? sum : 0;
+                var comission = parseFloat($('#bank-comission').text()/100);
+                var comission_rub = (sum * comission);
+                $('#bank-comission-rub').text(comission_rub.toFixed(2));
+                $('#sum-with-comission').text((sum + comission_rub).toFixed(2));
             }
-        });
-        $('.modal form').hide();
-        setTimeout(function(){
-            $('.modal').modal('hide');
-        }, 2000);
-        e.preventDefault();
-    });
-
-    //block with plus
-    $('.content__unfolding__plus').on("click", function(e) {
-        var t = $(this);
-        if(t.hasClass('open')) {
-            t.removeClass('open').css({'transform': 'rotate(0deg)'});
-            t.parent().next("p").slideUp('100');
-        } else {
-            t.addClass('open').css({'transform': 'rotate(45deg)'});
-            t.parent().next("p").slideDown('100');
-        }
-    });
-
-    //label animation
-    $(".live-labels input").val('');
-    $('.live-labels').on("focus", "input", function(e) {
-        if( !$(this).hasClass('moved-label') ){
-            $(this).prev().addClass('moved-label');
-        }
-        if($(this).attr('id') == 'phone') {
-            $("#phone").attr('placeholder', "_ (___)___-__-__");
-        }
-    });
-    $('.live-labels').on("blur", "input", function(e) {
-        if( $(this).val() == '' ) {
-            $(this).prev().removeClass('moved-label');
-        }
-        if($(this).attr('id') == 'phone') {
-            $("#phone").attr('placeholder', "");
-        }
-    });
-
-    //reviews pagination
-    var list = $('.content__table').find('.reviews-carousel');
-    if(list.length > 10){
-        list.slice(10).hide();
-        var more_button = $('.content__reviews__more');
-        var i = 0;
-        more_button.css({'display': 'inline-block'}).click(function(){
-            i++;
-            list.slice(10*i, 10*(i+1)).show();
-            if(list.length <= 10*(i+1)){
-                more_button.hide();
-            }
-            if(list.length <= 10*(i+2)){
-                $('.content__reviews__more-count').text(list.length - 10*(i+1));
-            }
-        });
     }
 });
 
@@ -73,7 +18,7 @@ $(document).ready(function(){
 //media queries
 
 if (matchMedia) {
-  var mq = window.matchMedia("(min-width: 1024px)");
+  var mq = window.matchMedia("(min-width: 960px)");
   var mq1 = window.matchMedia("(min-width: 768px)");
   WidthChange(mq);
   WidthChange1(mq1);
