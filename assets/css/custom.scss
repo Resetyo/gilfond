@@ -18,15 +18,15 @@ $bgrd: #f1f4f9;
 @mixin btn($b-color,$t-color) {
   text-transform: uppercase;
   border-radius: 2px;
-  padding: 19px 25px;
+  padding: 19px 20px;
   border: none;
   color: $t-color;
   font-family: 'Muller';
-  font-size: 13px;
   display: inline-block;
   cursor: pointer;
   box-sizing: border-box;
   text-align: center;
+  font-size: 0.85rem;
   line-height: 13px;
   position: relative;
   background-color: $b-color;
@@ -49,7 +49,7 @@ $bgrd: #f1f4f9;
   width: 80px;
   text-transform: uppercase;
   font-weight: bold;
-  font-size: 0.8em;
+  font-size: 0.8rem;
   font-family: 'Muller';
   display: inline-block;
   text-align: center;
@@ -90,8 +90,8 @@ a {
   margin-bottom: 70px;
   .logo {
     & + p {
-      align-self: flex-end;
-      margin: 0 0 5px 3px;
+      align-self: center;
+      margin: 7px 0 0 3px;
       font-size: 14px;
       line-height: 1.1em;
       flex-grow: 0;
@@ -117,7 +117,12 @@ a {
     flex-grow: 1;
     text-align: center;
     & > a {
-      margin-right: 15px;
+      margin-left: 7px;
+      margin-right: 7px;
+      @media (min-width: 960px) and (max-width: 1150px) {
+        margin-left: 0.1vw;
+        margin-right: 0.1vw;
+      }
       display: inline-block;
       vertical-align: middle;
       img {
@@ -138,7 +143,7 @@ a {
   &__profile {
     & > a {
       display: inline-block;
-      width: 250px;
+      width: 240px;
       text-transform: uppercase;
       color: $t_gray;
       font-weight: bold;
@@ -146,8 +151,10 @@ a {
       margin-right: 30px;
       text-align: right;
       line-height: 2em;
+      overflow: hidden;
       @media (min-width: 960px) and (max-width: 1150px) {
-        width: auto;
+        width: 21vw;
+        font-size: 1.1vw;
       }
     }
     .profile__name {
@@ -155,6 +162,7 @@ a {
       text-transform: capitalize;
       font-size: 1.35em;
       font-weight: 500;
+      white-space: nowrap;
     }
   }
 }
@@ -212,6 +220,8 @@ a {
     top: 0px;
     z-index: 3;
     border: none;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+
   }
 }
 
@@ -245,6 +255,7 @@ a {
   }
 
   &__stat {
+    padding-bottom: 64px;
     box-sizing: border-box;
     background-color: $bgrd;
     box-shadow: inset 0 8px 8px -6px rgba(0, 0, 0, 0.1);
@@ -276,7 +287,6 @@ a {
       border-top: none;
       width: 100%;
       background-color: white;
-      margin-bottom: 64px;
       padding: 27px 45px 70px;
       display: inline-block;
       text-transform: uppercase;
@@ -327,6 +337,9 @@ a {
         }
       }
     }
+    &__footer {
+      display: none;
+    }
   }
 
   &__promo {
@@ -345,7 +358,7 @@ a {
       display: inline-block;
       background-color: white;
       margin: 64px 0;
-      padding: 36px 36px 36px 48px;
+      padding: 36px;
       z-index: 1;
       input {
         display: block;
@@ -354,7 +367,9 @@ a {
         width: 100%;
         height: 50px;
         margin-bottom: 20px;
-        text-indent: 15px;
+        padding: 0 15px;
+        box-sizing: border-box;
+        font-size: 1.2rem;
         &::-webkit-input-placeholder {
           color: $c_black;
           opacity: 1;
@@ -385,6 +400,7 @@ a {
 
   &__emergency {
     padding-top: 90px;
+    padding-bottom: 70px;
     h2 {
       margin-top: 0;
       text-align: center;
@@ -421,6 +437,7 @@ a {
           margin: 22px 0;
         }
         a {
+          color: black;
           display: block;
           vertical-align: middle;
           font-weight: bold;
@@ -543,9 +560,10 @@ a {
         padding-top: 56.25%;
         position: relative;
         cursor: pointer;
+        overflow: hidden;
         img {
           position: absolute;
-          top: 0;
+          top: 0px;
           left: 0;
           bottom: 0;
           right: 0;
@@ -583,7 +601,12 @@ a {
       overflow: hidden;
       position: relative;
       border-radius: 4px 0 0 4px;
-      margin-bottom: 16px;
+      margin-bottom: 30px;
+      &__image img {
+        transition: transform 1s;
+        transform: translateZ(0);
+
+      }
       img {
         object-fit: cover;
         width: 100%;
@@ -615,7 +638,7 @@ a {
     &__item {
       box-sizing: border-box;
       width: calc(33.3% - 21px);
-      margin-bottom: 16px;
+      margin-bottom: 30px;
       padding: 21px 24px;
       background-color: white;
       overflow: hidden;
@@ -644,6 +667,93 @@ a {
       }
       &__text {
         line-height: 1.3em;
+      }
+    }
+  }
+
+  &__my-home {
+    background-color: $bgrd;
+    padding: 35px 0;
+    &__header {
+      background: url('../images/home.svg') white 40px 50px no-repeat;
+      border: 1px solid $l_gray;
+      padding: 35px 40px 35px 115px;
+      margin-bottom: 18px;
+      h1 {
+        font-weight: 500;
+        font-size: 3em;
+      }
+      p {
+        width: 38%;
+        line-height: 1.5em;
+      }
+      select {
+        float: right;
+      }
+    }
+    &__accordion {
+      width: calc(66.6% - 8px);
+      display: inline-block;
+      box-shadow: border-box;
+      background-color: white;
+      box-shadow: 0 1px 9px rgba(0,0,0,0.1);
+      &__header {
+        padding: 0 45px 0 90px;
+        height: 90px;
+        box-sizing: border-box;
+        border: 1px solid $l_gray;
+        h3 {
+          line-height: 1.2em;
+          position: relative;
+          display: inline-block;
+          top: 50%;
+          transform: translateY(-50%);
+          margin: 0;
+          font-weight: normal;
+        }
+        a {
+          position: relative;
+          top: 50%;
+          transform: translateY(-50%);
+          float: right;
+          color: $c_green;
+          &:after {
+            content: url('../images/dropdown.svg');
+            margin-left: 5px;
+          }
+        }
+      }
+      &__body {
+        display: none;
+      }
+      &_1 .content__my-home__accordion__header {
+        background: url('../images/sovet.svg') 18px  center no-repeat;
+      }
+      &_2 .content__my-home__accordion__header {
+        background: url('../images/docs.svg') 18px  center no-repeat;
+      }
+      &_3 .content__my-home__accordion__header {
+        background: url('../images/tariff.svg') 18px  center no-repeat;
+      }
+      &_4 .content__my-home__accordion__header {
+        background: url('../images/articles.svg') 18px  center no-repeat;
+      }
+    }
+    &__house-debt {
+      width: calc(33.3% - 8px);
+      box-sizing: border-box;
+      float: right;
+      background-color: white;
+      border: 1px solid $l_gray;
+      padding: 40px 30px;
+      p {
+        &:before {
+          content: url('../images/warn.svg');
+          display: inline-block;
+        }
+      }
+      a, button {
+        width: 100%;
       }
     }
   }
@@ -700,7 +810,8 @@ a {
     background-color: white;
     font-size: 0.75em;
     .content__wrapper {
-      padding: 25px 0 55px;
+      padding-top: 25px;
+      padding-bottom: 55px;
       border-top: 2px solid #e3e3e3;
       text-align: center;
       a {
@@ -733,14 +844,14 @@ a {
   background-color: black;
 }
 
-@media (max-width: 960px) {
+@media (max-width: 960px) { //mobile & tablet
   .nav-menu, .main-menu {
     display: none;
   }
   .mobile-menu {
     display: block;
     position: fixed;
-    z-index: 3;
+    z-index: 4;
     text-align: center;
     background-color: white;
     width: 100%;
@@ -748,6 +859,17 @@ a {
     top: 0;
     padding: 0 10px;
     box-sizing: border-box;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    &:after {
+      background-color: white;
+      content: '';
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      position: absolute;
+      z-index: -1;
+    }
     input[type=checkbox] {
       display: none;
       &:checked {
@@ -755,8 +877,13 @@ a {
           background: url('../images/close.png') center center no-repeat;
         }
         ~ ul {
-          display: block;
-
+          top: 5%;
+          visibility: visible;
+          &:before {
+            // height: 1000px;
+            visibility: visible;
+            opacity: 0.5;
+          }
         }
       }
     }
@@ -771,24 +898,43 @@ a {
       margin-top: 10px;
     }
     ul {
-      display: none;
+      // height: auto;
+      // max-height: 0%;
+      box-sizing: border-box;
+      visibility: hidden;
       position: fixed;
+      z-index: -1;
       left: 0;
-      top: 37px;
-      padding: 0;
+      top: -70%;
+      padding: 20px 0;
       background-color: white;
       width: 100%;
       box-shadow: inset 0 8px 8px -6px rgba(0, 0, 0, 0.1);
       box-shadow: 0 8px 8px -6px rgba(0, 0, 0, 0.1);
+      transition: max-height 0.5s, top 0.5s, visibility 0.5s;
       & > li {
         list-style-type: none;
-        padding: 3px;
+        padding: 7px;
         a, button {
+          box-sizing: border-box;
           display: inline-block;
           padding: 15px;
           width: 100%;
           max-width: 300px;
         }
+      }
+      &:before {
+        content: '';
+        left: 0;
+        top: 100%;
+        position: absolute;
+        z-index: -1;
+        width: 100%;
+        height: 200vh;
+        opacity: 0;
+        background-color: black;
+        visibility: hidden;
+        transition: opacity 0.5s;
       }
     }
     h1 {
@@ -806,12 +952,14 @@ a {
     }
   }
 
-  .content {
+  .content { 
     &__wrapper {
       padding: 0 15px;
     }
 
     &__stat {
+      padding-bottom: 45px;
+
       & > div {
         max-width: 490px;
       }
@@ -822,10 +970,10 @@ a {
         margin-right: -15px;
         width: calc(100% + 30px);
         text-align: center;
-        line-height: 1.3em;
+        border-bottom: none;
+        line-height: 1.1em;
         & > a, & > button {
-          float: none;
-          width: 100%;
+          display: none;
         }
         .profile__status {
           display: block;
@@ -837,10 +985,9 @@ a {
       }
       form {
         padding: 30px 15px;
-        background: white;
+        background: #F9FBFD;
         margin-left: -15px;
         margin-right: -15px;
-        margin-bottom: 45px;
         width: calc(100% + 30px);
         input {
           width: 100%;
@@ -869,6 +1016,13 @@ a {
           }
         }
         button {
+          width: 100%;
+        }
+      }
+      &__footer {
+        padding-top: 36px;
+        display: block;
+        a, button {
           width: 100%;
         }
       }
@@ -903,6 +1057,9 @@ a {
     &__emergency {
       padding-top: 40px;
       padding-bottom: 30px;
+      & > hr {
+        width: 100%;
+      }
       h2 {
         font-size: 1.4em;
         line-height: 1em;
@@ -914,20 +1071,21 @@ a {
       &__districts {
         margin-top: 30px;
         &__item {
-          width: calc(50% - 7px);
-          padding: 5px 12px;
+          width: 100%;
+          padding: 5px 30px;
           font-size: 1em;
-          height: 160px;
+          height: 180px;
+          font-size: 1.7em;
+          line-height: 1em;
+          h4, a {
+            margin-bottom: 25px;
+          }
         }
-      }
-      &_active:before {
-        left: 70%;
       }
     }
 
     &__news {
       padding: 30px 0 20px;
-      border: none;
       h2 {
         line-height: 1em;
       }
@@ -959,7 +1117,22 @@ a {
     }
 
     &__chronicle {
-      display: none;
+      padding: 20px 0;
+      h2 {
+        text-align: center;
+        img {
+          float: none;
+        }
+        span {
+          box-sizing: border-box;
+          display: inline-block;
+          font-size: 0.7em;
+          line-height: 1.3em;
+        }
+      }
+      &__item {
+        width: 100%;
+      }
     }
   }
 
@@ -1004,13 +1177,14 @@ a {
       &__design {
         order: 2;
         text-align: left;
-        font-size: 0.95em;
+        font-size: 0.85em;
+        white-space: nowrap;
       }
     }
-  }
+  } 
 }
 
-@media (min-width: 600px) and (max-width: 960px) {
+@media (min-width: 600px) and (max-width: 960px) { //tablet
   .content {
     &__emergency__districts__item {
       width: calc(33.1% - 20px);
@@ -1019,10 +1193,10 @@ a {
       height: 45vw;
       width: calc(50% - 7px);
     }
-  }
+  } 
 }
 
-@media (min-width: 961px) {
+@media (min-width: 961px) { //desktop only
   .search-block {
     position: fixed;
     z-index: 5;
@@ -1033,10 +1207,12 @@ a {
     height: 150px;
     text-align: right;
     &-input {
+      outline: none;
       float: left;
       border: none;
       border-left: 1px solid #333;
-      text-indent: 15px;
+      padding: 0 15px;
+      box-sizing: border-box;
       height: 46px;
       font-size: 1.7em;
       color: #333;
@@ -1069,6 +1245,7 @@ a {
       border: none;
       background: none;
       cursor: pointer;
+      outline: none;
     }
   }
 }

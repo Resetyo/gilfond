@@ -15,8 +15,8 @@ $(document).ready(function(){
 
     //search block
     var search_block = $('.search-block');
-    var search_close = $('.search-block-close');
     if (search_block.length > 0) {
+        var search_close = $('.search-block-close');
         $('.nav-menu__items__search').click(function(){
             search_block.slideDown();
             $('body').append('<div class="body-fade"></div>');
@@ -28,6 +28,28 @@ $(document).ready(function(){
                 $(this).remove();
             });
         });
+    }
+
+    //news animation
+    var news = $('.content__news');
+    if (news.length > 0) {
+        var main = news.find('.content__news__main');
+        var imgs = news.find('.content__news__item__image img');
+        main.mouseenter(function(){
+            $(this).find('.content__news__main__image img')
+                .css({'transform': 'scale(1.1)'});
+        });
+        main.mouseleave(function(){
+            $(this).find('.content__news__main__image img')
+                .css({'transform': 'scale(1.0)'});
+        });
+        imgs.mouseover(function(){
+            $(this).css({'transform': 'scale(1.1)'});
+        });
+        imgs.mouseleave(function(){
+            $(this).css({'transform': 'scale(1.0)'});
+        });
+
     }
 });
 

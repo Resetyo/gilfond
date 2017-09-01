@@ -1,0 +1,248 @@
+<svg width="52" height="52" viewBox="0 0 52 52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>Component</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(58855 -2849)">
+<g id="Component">
+<g id="Rectangle 40">
+<use xlink:href="#path0_fill" transform="translate(-58855 2849)" fill="#FFFFFF"/>
+<mask id="mask0_outline_ins">
+<use xlink:href="#path0_fill" fill="white" transform="translate(-58855 2849)"/>
+</mask>
+<g mask="url(#mask0_outline_ins)">
+<use xlink:href="#path1_stroke_2x" transform="translate(-58855 2849)" fill="#D0D0D0"/>
+</g>
+</g>
+<g id="&#208;&#191;&#208;&#181;&#209;&#128;&#208;&#181;&#209;&#128;&#208;&#176;&#209;&#129;&#209;&#135;&#208;&#181;&#209;&#130; 2">
+<g id="Artboard Copy 11">
+<g id="Group 3 Copy 3">
+<g id="Group 2">
+<g id="Rectangle 3 Clipped">
+<g id="Rectangle 3">
+<clipPath id="clip-0" clip-rule="evenodd">
+<path d="M -58828.3 2861.38L -58813 2861.38L -58813 2884.83L -58828.3 2884.83L -58828.3 2861.38Z" fill="#FFFFFF"/>
+</clipPath>
+<g id="path 1" clip-path="url(#clip-0)">
+</g>
+</g>
+</g>
+<g id="Path 2">
+<g id="Vector">
+<use xlink:href="#path2_fill" transform="matrix(0.984932 -0.180533 0.184682 0.981427 -58824.8 2863.57)" fill="#008D21"/>
+</g>
+</g>
+<g id="Shape">
+<g id="Vector">
+<use xlink:href="#path3_fill" transform="matrix(0.984932 -0.180533 0.184682 0.981427 -58842 2864.25)" fill="#008D21"/>
+</g>
+</g>
+<g id="Shape">
+<g id="Vector">
+<use xlink:href="#path4_fill" transform="matrix(0.984932 -0.180533 0.184682 0.981427 -58839.4 2865.94)" fill="#008D21"/>
+</g>
+</g>
+</g>
+<g id="Rectangle 4 Copy 5 Clipped">
+<mask id="mask1_alpha" mask-type="alpha">
+<g id="mask1 alpha">
+<g id="mask 4">
+<g id="Vector">
+<g id="Vector">
+<use xlink:href="#path5_fill" transform="matrix(0.984932 -0.180533 0.184682 0.981427 -58832.3 2874.59)" fill="#FFFFFF"/>
+</g>
+</g>
+</g>
+</g>
+</mask>
+<g id="Rectangle 4 Copy 5" mask="url(#mask1_alpha)">
+<g id="path 3">
+<g id="Vector">
+<use xlink:href="#path5_fill" transform="matrix(0.984932 -0.180533 0.184682 0.981427 -58832.3 2874.59)" fill="#008D21"/>
+</g>
+</g>
+</g>
+</g>
+<g id="Rectangle 4 Copy 4 Clipped">
+<mask id="mask2_alpha" mask-type="alpha">
+<g id="mask2 alpha">
+<g id="mask 6">
+<g id="Vector">
+<g id="Vector">
+<use xlink:href="#path5_fill" transform="matrix(0.984932 -0.180533 0.184682 0.981427 -58831.7 2877.98)" fill="#FFFFFF"/>
+</g>
+</g>
+</g>
+</g>
+</mask>
+<g id="Rectangle 4 Copy 4" mask="url(#mask2_alpha)">
+<g id="path 5">
+<g id="Vector">
+<use xlink:href="#path5_fill" transform="matrix(0.984932 -0.180533 0.184682 0.981427 -58831.7 2877.98)" fill="#008D21"/>
+</g>
+</g>
+</g>
+</g>
+<g id="Rectangle 4 Copy 3 Clipped">
+<mask id="mask3_alpha" mask-type="alpha">
+<g id="mask3 alpha">
+<g id="mask 8">
+<g id="Vector">
+<g id="Vector">
+<use xlink:href="#path5_fill" transform="matrix(0.984932 -0.180533 0.184682 0.981427 -58831.1 2881.37)" fill="#FFFFFF"/>
+</g>
+</g>
+</g>
+</g>
+</mask>
+<g id="Rectangle 4 Copy 3" mask="url(#mask3_alpha)">
+<g id="path 7">
+<g id="Vector">
+<use xlink:href="#path5_fill" transform="matrix(0.984932 -0.180533 0.184682 0.981427 -58831.1 2881.37)" fill="#008D21"/>
+</g>
+</g>
+</g>
+</g>
+<g id="Rectangle 4 Copy 8 Clipped">
+<mask id="mask4_alpha" mask-type="alpha">
+<g id="mask4 alpha">
+<g id="mask 10">
+<g id="Vector">
+<g id="Vector">
+<use xlink:href="#path6_fill" transform="matrix(0.984932 -0.180533 0.184682 0.981427 -58828.3 2873.84)" fill="#FFFFFF"/>
+</g>
+</g>
+</g>
+</g>
+</mask>
+<g id="Rectangle 4 Copy 8" mask="url(#mask4_alpha)">
+<g id="path 9">
+<g id="Vector">
+<use xlink:href="#path7_fill" transform="matrix(0.984932 -0.180533 0.184682 0.981427 -58828.3 2873.84)" fill="#FFFFFF"/>
+</g>
+<g id="Vector">
+<use xlink:href="#path7_fill" transform="matrix(0.984932 -0.180533 0.184682 0.981427 -58828.3 2873.84)" fill="#008D21"/>
+</g>
+</g>
+</g>
+</g>
+<g id="Rectangle 4 Copy 9 Clipped">
+<mask id="mask5_alpha" mask-type="alpha">
+<g id="mask5 alpha">
+<g id="mask 12">
+<g id="Vector">
+<g id="Vector">
+<use xlink:href="#path6_fill" transform="matrix(0.984932 -0.180533 0.184682 0.981427 -58827.6 2877.23)" fill="#FFFFFF"/>
+</g>
+</g>
+</g>
+</g>
+</mask>
+<g id="Rectangle 4 Copy 9" mask="url(#mask5_alpha)">
+<g id="path 11">
+<g id="Vector">
+<use xlink:href="#path6_fill" transform="matrix(0.984932 -0.180533 0.184682 0.981427 -58827.6 2877.23)" fill="#008D21"/>
+</g>
+</g>
+</g>
+</g>
+<g id="Rectangle 4 Copy 10 Clipped">
+<mask id="mask6_alpha" mask-type="alpha">
+<g id="mask6 alpha">
+<g id="mask 14">
+<g id="Vector">
+<g id="Vector">
+<use xlink:href="#path6_fill" transform="matrix(0.984932 -0.180533 0.184682 0.981427 -58827 2880.63)" fill="#FFFFFF"/>
+</g>
+</g>
+</g>
+</g>
+</mask>
+<g id="Rectangle 4 Copy 10" mask="url(#mask6_alpha)">
+<g id="path 13">
+<g id="Vector">
+<use xlink:href="#path6_fill" transform="matrix(0.984932 -0.180533 0.184682 0.981427 -58827 2880.63)" fill="#008D21"/>
+</g>
+</g>
+</g>
+</g>
+<g id="Rectangle 4 Copy 13 Clipped">
+<mask id="mask7_alpha" mask-type="alpha">
+<g id="mask7 alpha">
+<g id="mask 16">
+<g id="Vector">
+<g id="Vector">
+<use xlink:href="#path6_fill" transform="matrix(0.984932 -0.180533 0.184682 0.981427 -58836.5 2875.34)" fill="#FFFFFF"/>
+</g>
+</g>
+</g>
+</g>
+</mask>
+<g id="Rectangle 4 Copy 13" mask="url(#mask7_alpha)">
+<g id="path 15">
+<g id="Vector">
+<g id="Vector">
+<use xlink:href="#path6_fill" transform="matrix(-0.984932 0.180533 0.184682 0.981427 -58833.2 2874.75)" fill="#008D21"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+<g id="Rectangle 4 Copy 12 Clipped">
+<mask id="mask8_alpha" mask-type="alpha">
+<g id="mask8 alpha">
+<g id="mask 18">
+<g id="Vector">
+<g id="Vector">
+<use xlink:href="#path6_fill" transform="matrix(0.984932 -0.180533 0.184682 0.981427 -58835.8 2878.73)" fill="#FFFFFF"/>
+</g>
+</g>
+</g>
+</g>
+</mask>
+<g id="Rectangle 4 Copy 12" mask="url(#mask8_alpha)">
+<g id="path 17">
+<g id="Vector">
+<g id="Vector">
+<use xlink:href="#path6_fill" transform="matrix(-0.984932 0.180533 0.184682 0.981427 -58832.6 2878.14)" fill="#008D21"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+<g id="Rectangle 4 Copy 11 Clipped">
+<mask id="mask9_alpha" mask-type="alpha">
+<g id="mask9 alpha">
+<g id="mask 20">
+<g id="Vector">
+<g id="Vector">
+<use xlink:href="#path6_fill" transform="matrix(0.984932 -0.180533 0.184682 0.981427 -58835.2 2882.13)" fill="#FFFFFF"/>
+</g>
+</g>
+</g>
+</g>
+</mask>
+<g id="Rectangle 4 Copy 11" mask="url(#mask9_alpha)">
+<g id="path 19">
+<g id="Vector">
+<g id="Vector">
+<use xlink:href="#path6_fill" transform="matrix(-0.984932 0.180533 0.184682 0.981427 -58831.9 2881.53)" fill="#008D21"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<path id="path0_fill" d="M 0 26C 0 11.6406 11.6406 0 26 0L 26 0C 40.3594 0 52 11.6406 52 26L 52 26C 52 40.3594 40.3594 52 26 52L 26 52C 11.6406 52 0 40.3594 0 26L 0 26Z"/>
+<path id="path1_stroke_2x" d="M 26 -1C 11.0883 -1 -1 11.0883 -1 26L 1 26C 1 12.1929 12.1929 1 26 1L 26 -1ZM 26 1C 39.8071 1 51 12.1929 51 26L 53 26C 53 11.0883 40.9117 -1 26 -1L 26 1ZM 51 26C 51 39.8071 39.8071 51 26 51L 26 53C 40.9117 53 53 40.9117 53 26L 51 26ZM 26 51C 12.1929 51 1 39.8071 1 26L -1 26C -1 40.9117 11.0883 53 26 53L 26 51Z"/>
+<path id="path2_fill" d="M 3.32179 0.53987L 3.82519 0.53987L 3.82519 0.0463669L 3.32794 0.0403396L 3.32179 0.53987ZM 3.32179 19.7593L 3.32179 20.2589L 3.82519 20.2589L 3.82519 19.7593L 3.32179 19.7593ZM 0.546313 19.7593L 0.042906 19.7604L 0.0439883 20.2589L 0.546313 20.2589L 0.546313 19.7593ZM 0.531791 13.0711L 1.0352 13.07L 0.531791 13.0711ZM 0.504506 0.505722L 0.510654 0.00619165L 9.92821e-09 -2.08102e-08L 0.00109845 0.506799L 0.504506 0.505722ZM 2.81838 0.53987L 2.81838 19.7593L 3.82519 19.7593L 3.82519 0.53987L 2.81838 0.53987ZM 3.32179 19.2597L 0.546313 19.2597L 0.546313 20.2589L 3.32179 20.2589L 3.32179 19.2597ZM 1.04972 19.7582L 1.0352 13.07L 0.0283837 13.0721L 0.042906 19.7604L 1.04972 19.7582ZM 1.0352 13.07L 1.00791 0.504646L 0.00109845 0.506799L 0.0283837 13.0721L 1.0352 13.07ZM 0.498357 1.00525L 3.31564 1.0394L 3.32794 0.0403396L 0.510654 0.00619165L 0.498357 1.00525Z"/>
+<path id="path3_fill" d="M 17.998 1.29851C 17.998 0.580374 17.4089 0 16.6894 0L 16.6894 0.999135C 16.8549 0.999135 16.9912 1.13416 16.9912 1.29851L 17.998 1.29851ZM 16.6894 0L 1.30865 0L 1.30865 0.999135L 16.6894 0.999135L 16.6894 0ZM 1.30865 0C 0.586517 0 0 0.579486 0 1.29851L 1.00682 1.29851C 1.00682 1.13251 1.14134 0.999135 1.30865 0.999135L 1.30865 0ZM 0 1.29851L 0 23.9206L 1.00682 23.9206L 1.00682 1.29851L 0 1.29851ZM 0 23.9206C 0 24.6388 0.589129 25.2192 1.30865 25.2192L 1.30865 24.22C 1.14318 24.22 1.00682 24.085 1.00682 23.9206L 0 23.9206ZM 1.30865 25.2192L 16.6894 25.2192L 16.6894 24.22L 1.30865 24.22L 1.30865 25.2192ZM 16.6894 25.2192C 17.4115 25.2192 17.998 24.6397 17.998 23.9206L 16.9912 23.9206C 16.9912 24.0866 16.8567 24.22 16.6894 24.22L 16.6894 25.2192ZM 17.998 23.9206L 17.998 1.29851L 16.9912 1.29851L 16.9912 23.9206L 17.998 23.9206Z"/>
+<path id="path4_fill" d="M 12.4661 7.11539C 13.1899 7.11539 13.7728 6.5299 13.7728 5.81621L 12.766 5.81621C 12.766 5.98227 12.6296 6.11625 12.4661 6.11625L 12.4661 7.11539ZM 13.7728 5.81621L 13.7728 1.29916L 12.766 1.29916L 12.766 5.81621L 13.7728 5.81621ZM 13.7728 1.29916C 13.7728 0.582292 13.1866 0 12.4661 0L 12.4661 0.999135C 12.6293 0.999135 12.766 1.13282 12.766 1.29916L 13.7728 1.29916ZM 12.4661 0L 1.30682 0L 1.30682 0.999135L 12.4661 0.999135L 12.4661 0ZM 1.30682 0C 0.582981 0 0 0.58552 0 1.29916L 1.00682 1.29916C 1.00682 1.13315 1.14324 0.999135 1.30682 0.999135L 1.30682 0ZM 0 1.29916L 0 5.81621L 1.00682 5.81621L 1.00682 1.29916L 0 1.29916ZM 0 5.81621C 0 6.53309 0.586241 7.11539 1.30682 7.11539L 1.30682 6.11625C 1.14357 6.11625 1.00682 5.98257 1.00682 5.81621L 0 5.81621ZM 1.30682 7.11539L 12.4661 7.11539L 12.4661 6.11625L 1.30682 6.11625L 1.30682 7.11539Z"/>
+<path id="path5_fill" d="M 2.66621 0L 0.610579 0C 0.273366 0 0 0.270761 0 0.604761L 0 1.85188C 0 2.18588 0.273366 2.45664 0.610579 2.45664L 2.66621 2.45664C 3.00343 2.45664 3.2768 2.18588 3.2768 1.85188L 3.2768 0.604761C 3.2768 0.270761 3.00343 0 2.66621 0Z"/>
+<path id="path6_fill" d="M 2.03665 0L 1.24014 0C 0.555229 0 0 0.549939 0 1.22832C 0 1.9067 0.555229 2.45664 1.24014 2.45664L 2.03665 2.45664C 2.72157 2.45664 3.2768 1.9067 3.2768 1.22832C 3.2768 0.549939 2.72157 0 2.03665 0Z"/>
+<path id="path7_fill" d="M 2.03665 0L 1.24014 0C 0.555229 0 0 0.549939 0 1.22832C 0 1.9067 0.555229 2.45664 1.24014 2.45664L 2.03665 2.45664C 2.72157 2.45664 3.2768 1.9067 3.2768 1.22832C 3.2768 0.549939 2.72157 0 2.03665 0Z"/>
+</defs>
+</svg>

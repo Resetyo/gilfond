@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>ЖилФонд</title>
+  <link rel="stylesheet" href="assets/css/lightbox.min.css">
   <link rel="stylesheet" href="assets/css/custom.css">
   <link rel="stylesheet" href="assets/css/normalize.css">
 </head>
@@ -50,7 +51,7 @@
         <label for="mobile-menu-button"></label>
         <ul>
           <li><a href="#" class="btn-red">Оплатить ЖКУ</a></li>
-          <li><a href="#" class="btn-red">Сделать &laquo;ЖилФонд&raquo; своей УК</a></li>
+          <li><button class="btn-red">написать в &laquo;ЖилФонд&raquo;</button></li>
           <li><a href="#">Мой Дом</a></li>
           <li><a href="#">О&nbsp;&laquo;Жилфонде&raquo;</a></li>
           <li><a href="#">Пресс-центр</a></li>
@@ -92,6 +93,9 @@
               <button type="submit" class="btn-green">Оплатить</button>
             </div>
           </form>
+          <div class="content__stat__footer">
+            <a href="#" class="btn-red">Передать показания счётчиков</a>
+          </div>
         </div>
       </div>
 
@@ -323,12 +327,15 @@
     </footer>
 
     <div class="search-block">
-      <input class="search-block-input" type="text" placeholder="Введите запрос">
-      <button class="btn-red btn-search-submit">Найти</button>
-      <button class="search-block-close"><img src="assets/images/cross.svg" alt="Закрыть" title="Закрыть"></button>
+      <div class="content__wrapper">
+        <input class="search-block-input" type="text" placeholder="Введите запрос">
+        <button class="btn-red search-block-submit">Найти</button>
+        <button class="search-block-close"><img src="assets/images/cross.svg" alt="Закрыть" title="Закрыть"></button>
+      </div>
     </div>
   </div>
   <script src="assets/js/jquery-3.2.1.min.js"></script>
+  <script src="assets/js/lightbox.min.js"></script>
   <script src="assets/js/custom.js"></script>
 </body>
 </html>
