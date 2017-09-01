@@ -223,7 +223,6 @@ a {
     box-shadow: inset 0 8px 8px -6px rgba(0, 0, 0, 0.1); }
     .content__stat__header {
       background-color: #f9fbfd;
-      background-image: linear-gradient(to right, transparent 2%, rgba(0, 0, 0, 0.1) 2%, rgba(0, 0, 0, 0.1) 16%, transparent 16%, transparent 18%, rgba(0, 0, 0, 0.1) 18%, rgba(0, 0, 0, 0.1) 32%, transparent 32%, transparent 34%, rgba(0, 0, 0, 0.1) 34%, rgba(0, 0, 0, 0.1) 48%, transparent 48%, transparent 50%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.1) 64%, transparent 64%);
       border: 1px solid #D8DCDE;
       box-sizing: border-box;
       margin-top: 80px;
@@ -641,17 +640,29 @@ a {
         background: url("../images/tariff.svg") 18px center no-repeat; }
       .content__my-home__accordion_4 .content__my-home__accordion__header {
         background: url("../images/articles.svg") 18px center no-repeat; }
-    .content__my-home__house-debt {
+    .content__my-home__debt {
       width: calc(33.3% - 8px);
       box-sizing: border-box;
       float: right;
       background-color: white;
       border: 1px solid #D8DCDE;
       padding: 40px 30px; }
-      .content__my-home__house-debt p:before {
-        content: url("../images/warn.svg");
-        display: inline-block; }
-      .content__my-home__house-debt a, .content__my-home__house-debt button {
+      .content__my-home__debt__text {
+        display: block;
+        font-size: 1.1em; }
+        .content__my-home__debt__text > span {
+          display: inline-block; }
+        .content__my-home__debt__text:before {
+          content: url("../images/warn.svg");
+          display: inline-block;
+          vertical-align: top;
+          margin-right: 10px; }
+      .content__my-home__debt__amount {
+        font-size: 3em;
+        line-height: 2.5em;
+        font-weight: bold;
+        vertical-align: top; }
+      .content__my-home__debt a, .content__my-home__debt button {
         width: 100%; }
 
 .footer {
