@@ -58,72 +58,251 @@
         <h1>ЖилФонд</h1>
         <a href="#"><img src="assets/images/user.svg" alt="Кабинет"></a>
       </nav>
-
     </header>
     
     <div class="content">
 
-      <div class="content__my-home">
-        <div class="content__wrapper">
-          <div class="content__my-home__header">
-              <h1>Мой дом</h1>
-              <select name="address_street" id="address_street"></select>
-              <select name="address_house" id="address_house"></select>
-              <p>
-                Тарифы на воду, электричество, информацию 
-                о перерасчёте и прочую информацию по своему дому вы можете узнать выбрав ваш адрес.
-              </p>
-          </div>
+      <div class="content__wrapper">
+        <div class="content__myhome-header">
+            <h1>Мой дом</h1>
+            <select name="address_house" id="address_house">
+              <option value="hide">Дом</option>
+            </select>
+            <select name="address_street" id="address_street">
+              <option value="hide">Выберите адрес</option>
+              <option value="1">Семафорная, 261а/1</option>
+              <option value="2">Академика Вавилова, 1 ст54</option>
+              <option value="3">Кольцевая, 24а</option>
+              <option value="4">Парашютная, 10</option>
+              <option value="5">Академика Вавилова, 1 ст54</option>
+              <option value="6">26 Бакинских Комиссаров</option>
+              <option value="7">Семафорная, 261а/1</option>
+              <option value="8">Академика Вавилова, 1 ст54</option>
+              <option value="9">Кольцевая, 24а</option>
+              <option value="10">Парашютная, 10</option>
+              <option value="11">Академика Вавилова, 1 ст54</option>
+              <option value="12">26 Бакинских Комиссаров</option>
+            </select>
+            <p>
+              Тарифы на воду, электричество, информацию 
+              о перерасчёте и прочую информацию по своему дому вы можете узнать выбрав ваш адрес.
+            </p>
+        </div>
 
-          <div class="content__my-home__accordion">
-            <div class="content__my-home__accordion_1">
-              <div class="content__my-home__accordion__header">
-                <a href="#">Смотреть</a>
-                <h3>Совет вашего дома</h3>
-              </div>
-              <div class="content__my-home__accordion__body">
-                Зинаида Петровна
-              </div>
+        <div class="content__myhome-accordion">
+          <div class="content__myhome-accordion_1">
+            <div class="content__myhome-accordion__header">
+              <a href="#" class="toggler">Смотреть</a>
+              <h3>Совет вашего дома</h3>
             </div>
-            <div class="content__my-home__accordion_2">
-              <div class="content__my-home__accordion__header">
-                <a href="#">Смотреть</a>
-                <h3>Документы и отчёты &laquo;Жилфонда&raquo;</h3>
+            <div class="content__myhome-accordion__body">
+              <div class="content__myhome-member content__myhome-member_blue">
+                <h4>Зинаида Петровна</h4>
+                <p>председатель дома</p>
+                <p><a href="tel:+7 902 910 3487">+7 902 910 3487</a></p>
               </div>
-              <div class="content__my-home__accordion__body">
-                Зинаида Петровна
+              <div class="content__myhome-member">
+                <h4>Антонина Зельберштейн</h4>
+                <p>член совета вашего дома</p>
+                <p><a href="tel:+7 902 910 3487">+7 902 910 3487</a></p>
               </div>
-            </div>
-            <div class="content__my-home__accordion_3">
-              <div class="content__my-home__accordion__header">
-                <a href="#">Смотреть</a>
-                <h3>Тарифы на воду, электричество,<br>платные услуги «Жилфонда»</h3>
+              <div class="content__myhome-member">
+                <h4>Апполинарий Некифорович</h4>
+                <p>член совета вашего дома</p>
+                <p><a href="tel:+7 902 910 3487">+7 902 910 3487</a></p>
               </div>
-              <div class="content__my-home__accordion__body">
-                Зинаида Петровна
+              <div class="content__myhome-member">
+                <h4>Антонина Зельберштейн</h4>
+                <p>член совета вашего дома</p>
+                <p><a href="tel:+7 902 910 3487">+7 902 910 3487</a></p>
               </div>
-            </div>
-            <div class="content__my-home__accordion_4">
-              <div class="content__my-home__accordion__header">
-                <a href="#">Смотреть</a>
-                <h3>Полезные статьи для жильцов<br>(перерасчёт, вход в кабинет и прочее)</h3>
+              <div class="content__myhome-member">
+                <h4>Антонина Зельберштейн</h4>
+                <p>член совета вашего дома</p>
+                <p><a href="tel:+7 902 910 3487">+7 902 910 3487</a></p>
               </div>
-              <div class="content__my-home__accordion__body">
-                Зинаида Петровна
+              <div class="content__myhome-member">
+                <h4>Апполинарий Некифорович</h4>
+                <p>член совета вашего дома</p>
+                <p><a href="tel:+7 902 910 3487">+7 902 910 3487</a></p>
               </div>
             </div>
           </div>
+          <div class="content__myhome-accordion_2">
+            <div class="content__myhome-accordion__header">
+              <a href="#" class="toggler">Смотреть</a>
+              <h3>Документы и отчёты &laquo;Жилфонда&raquo;</h3>
+            </div>
+            <div class="content__myhome-accordion__body">
+              <div class="content__myhome-document">
+                <a href="#">Договор управления МКД</a>
+              </div>
+              <div class="content__myhome-document">
+                <a href="#">Протокол общего собрания</a>
+              </div>
+            </div>
+          </div>
+          <div class="content__myhome-accordion_3">
+            <div class="content__myhome-accordion__header">
+              <a href="#" class="toggler">Смотреть</a>
+              <h3>Тарифы на воду, электричество,<br>платные услуги «Жилфонда»</h3>
+            </div>
+            <div class="content__myhome-accordion__body">
+              <div class="content__myhome-tariffs">
+                <h3>Тарифы на ЖКХ</h3>
+                <table>
+                  <tr>
+                    <th>Вид работ и услуг</th>
+                    <th>% от платы за жилое<br>помещение</th>
+                    <th>Цена (руб. / кв.м.)</th>
+                  </tr>
+                  <tr>
+                    <td>Управление</td>
+                    <td>20,00</td>
+                    <td>4,83</td>
+                  </tr>
+                  <tr>
+                    <td>Содержание</td>
+                    <td>71,97</td>
+                    <td>4,83</td>
+                  </tr>
+                  <tr>
+                    <td>Вода</td>
+                    <td>&ndash;</td>
+                    <td>0,46</td>
+                  </tr>
+                  <tr>
+                    <td>Электричество</td>
+                    <td>&ndash;</td>
+                    <td>2,43</td>
+                  </tr>
+                  <tr>
+                    <td>Техническое обслуживание внутридомового газового оборудования</td>
+                    <td>&ndash;</td>
+                    <td>&ndash;</td>
+                  </tr>
+                  <tr>
+                    <td>Содержание придомовой территории</td>
+                    <td>&ndash;</td>
+                    <td>2,01</td>
+                  </tr>
+                  <tr>
+                    <td>Дератизация, дезинсекция помещений, входящих в состав общего имущества в МКД</td>
+                    <td>&ndash;</td>
+                    <td>0,14</td>
+                  </tr>
+                  <tr>
+                    <td>Техническое обслуживание ИТП, УУТЭГВС, УУХВС, УРТГВС, УУЭЭ, насосов</td>
+                    <td>&ndash;</td>
+                    <td>1,75</td>
+                  </tr>
+                  <tr>
+                    <td>Содержание придомовой территории</td>
+                    <td>&ndash;</td>
+                    <td>&ndash;</td>
+                  </tr>
+                  <tr>
+                    <td>Дератизация, дезинсекция помещений, входящих в состав общего имущества в МКД</td>
+                    <td>&ndash;</td>
+                    <td>&ndash;</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      Проверка состояния и функционирования вентиляционных каналов в жилых помещениях, 
+                      где установлено газовое оборудование.
+                    </td>
+                    <td>&ndash;</td>
+                    <td>&ndash;</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <h3>Текущий ремонт</h3>
+                    </td>
+                    <td>8,03</td>
+                    <td>1,94</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <h3>Всего</h3>
+                    </td>
+                    <td>100,00</td>
+                    <td>24,17</td>
+                  </tr>
+                </table>
+                <hr>
+                <a href="#">Скачать полное описание тарифов</a>
+                <h3>Прайс на платные услуги, оказываемые вне договора на управление</h3>
+                <table>
+                  <tr>
+                    <th>Наименование работ</th>
+                    <th>Единицы измерения</th>
+                    <th>Цена с НДС</th>
+                  </tr>
+                  <tr>
+                    <td>Составление акта разграничения  принадлежности инженерных сетей и эксплуатационной ответственности</td>
+                    <td>1 акт</td>
+                    <td>1.742 руб.</td>
+                  </tr>
+                  <tr>
+                    <td>Подготовка письма в Красноярское отделение филиала ФГУП "Ростехинвентаризация - Федеральное БТИ" по Красноярскому краю о проведении переадресации</td>
+                    <td>1 письмо</td>
+                    <td>4,83 руб.</td>
+                  </tr>
+                  <tr>
+                    <td>Справка об отсутствии реконструкции сетей в жилых и нежилых помещениях</td>
+                    <td>1 справка</td>
+                    <td>194 руб</td>
+                  </tr>
+                  <tr>
+                    <td>Справка о наличии реконструкции сетей в жилых и нежилых помещениях</td>
+                    <td>1 справка</td>
+                    <td>871 руб</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="content__myhome-accordion_4">
+            <div class="content__myhome-accordion__header">
+              <a href="#" class="toggler">Смотреть</a>
+              <h3>Полезные статьи для жильцов<br>(перерасчёт, вход в кабинет и прочее)</h3>
+            </div>
+            <div class="content__myhome-accordion__body">
+              <div class="content__myhome-articles">
+                <article style="background-image: url('assets/images/bg.jpg')">
+                  <h3 class="h3-with-star">
+                    <a href="#">Как жильцам заработать на общедомовом имуществе</a>
+                  </h3>
+                </article>
+                <article style="background-image: url('assets/images/bg0.jpg')" class="no-image">
+                  <h3 class="h3-with-star">
+                    <a href="#">Как жильцам заработать на общедомовом имуществе</a>
+                  </h3>
+                </article>
+                <article style="background-image: url('assets/images/bg2.jpg')">
+                  <h3 class="h3-with-star">
+                    <a href="#">Как жильцам заработать на общедомовом имуществе</a>
+                  </h3>
+                </article>
+                <article style="background-image: url('assets/images/bg3.jpg')">
+                  <h3 class="h3-with-star">
+                    <a href="#">Как жильцам заработать на общедомовом имуществе</a>
+                  </h3>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
 
-          <div class="content__my-home__debt">
-            <div class="content__my-home__debt__text">
-              <span>
-                Общий долг жителей дома<br> на 
-                <span>21 июля</span>
-              </span>
-            </div>
-            <div class="content__my-home__debt__amount">1 203 117,45</div>
-            <button class="btn-green">Оставить обращение</button>
+        <div class="content__myhome-debt">
+          <div class="content__myhome-debt__text">
+            <span>
+              Общий долг жителей дома<br> на 
+              <span id="date-today">сегодня</span>
+            </span>
           </div>
+          <div class="content__myhome-debt__amount">1 203 117,45</div>
+          <button class="btn-green">Оставить обращение</button>
         </div>
       </div>
 

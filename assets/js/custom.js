@@ -1,4 +1,33 @@
 $(document).ready(function(){
+    //address chooser
+    $('#address_street').val('hide');
+    $('#address_house').val('hide');
+    $('#address_house').one('change', function(){
+        $('.content__myhome-accordion').css({'display':'inline-block'});
+        $('.content__myhome-debt').show();
+        rb = $('.content__myhome-debt');
+        if(rb.length > 0) {
+            rb_left = rb.offset()['left'];
+            rb_width = rb.outerWidth();
+        }
+    });
+    $('#address_street').change(function(){
+        $.ajax({
+            type: "POST",
+            url: '/',
+            data: $(this).val(),
+            error: function(data) { //only for demonstration, change to success
+                data = [1,2,3,4,5]; //only for demonstration, just remove it
+                data.forEach(function(item,i,data){
+                $('#address_house')
+                    .append($("<option></option>")
+                    .attr("value",item)
+                    .text(item)); 
+                });
+            }
+        });
+    });
+
     //payment calc
     if ($('#payment-sum').length > 0) {
         paymentCalc();
@@ -51,6 +80,48 @@ $(document).ready(function(){
         });
 
     }
+
+    //togglers
+    var togglers = $('.toggler');
+    if (togglers.length > 0) {
+        $('.content__myhome-accordion__header').slice(1,-1).addClass('shadow-middle');
+        $('.content__myhome-accordion__header').first().addClass('shadow-first');
+        $('.content__myhome-accordion__header').last().addClass('shadow-last');
+        togglers.click(function(){
+            var header = $(this).parent();
+            var item = header.parent();
+            var prev_item = item.prev();
+            var next_item = item.next();
+            var prev_button = prev_item.find('.content__myhome-accordion__header').children('a');
+            var curr_button = item.find('.content__myhome-accordion__header').children('a');
+            var next_button = next_item.find('.content__myhome-accordion__header').children('a');
+
+            if (curr_button.hasClass('toggler-open') && !next_button.hasClass('toggler-open') && prev_button.hasClass('toggler-open')) {
+                item.removeClass('mb15');
+            }
+            if (!curr_button.hasClass('toggler-open') && !next_button.hasClass('toggler-open') && prev_button.hasClass('toggler-open')) {
+                item.addClass('mb15');
+            }
+            if (curr_button.hasClass('toggler-open') && next_button.hasClass('toggler-open') && !prev_button.hasClass('toggler-open')) {
+                prev_item.removeClass('mb15');
+            }
+            if (curr_button.hasClass('toggler-open') && !next_button.hasClass('toggler-open') && !prev_button.hasClass('toggler-open')) {
+                item.removeClass('mb15');
+                prev_item.removeClass('mb15');
+            }
+            if (!curr_button.hasClass('toggler-open') && next_button.hasClass('toggler-open') && !prev_button.hasClass('toggler-open')) {
+                prev_item.addClass('mb15');
+            }
+            if (!curr_button.hasClass('toggler-open') && !next_button.hasClass('toggler-open') && !prev_button.hasClass('toggler-open')) {
+                item.addClass('mb15');
+                prev_item.addClass('mb15');
+            }
+            header.toggleClass('shadow-along').children('a').toggleClass('toggler-open');
+            header.next('div').slideToggle('fast');
+
+            return false;
+        });
+    }
 });
 
 
@@ -58,7 +129,7 @@ $(document).ready(function(){
 
 if (matchMedia) {
   var mq = window.matchMedia("(min-width: 960px)");
-  var mq1 = window.matchMedia("(min-width: 768px)");
+  var mq1 = window.matchMedia("(min-width: 1360px)");
   WidthChange(mq);
   WidthChange1(mq1);
   mq.addListener(WidthChange);
@@ -66,17 +137,20 @@ if (matchMedia) {
 }
 
 function WidthChange1(mql) {
-    // if (mq1.matches) {
-        // console.log('768');
-    // } else {
-        // console.log('767');
-    // }
 }
  
 function WidthChange(mql) {
-    if (mq.matches) {
-
+  if (mq.matches) {
     //nav menu & right block scroll
+    $(window).resize(function() {
+        rb_width = $('.content__myhome-accordion').outerWidth() / 2;
+        rb_left = ($(this).outerWidth() - $('.content__wrapper').outerWidth()) / 2 + $('.content__myhome-accordion').outerWidth() + 43;
+        if (rb.hasClass('content__myhome-accordion_fixed')) {
+            rb.css({'left':rb_left});
+        }
+        rb.css({'width':rb_width});
+    });
+    lb = $('.content__myhome-accordion');
     var h_nav = $('.nav-menu').outerHeight();
     $(window).scroll(function() {
         var top = $(this).scrollTop();
@@ -89,12 +163,32 @@ function WidthChange(mql) {
         } else if(top < h_total && nm.hasClass('fxd') ){
             nm.removeClass('fxd');
         }
+
+        if (typeof rb !== 'undefined' && rb.length > 0) {
+            var footer = $('footer').outerHeight();
+            var doc_total = $('.content').outerHeight() - rb.outerHeight() + 37;
+            var pos = lb.offset()['top'];
+            var bh_total = pos - nm.outerHeight() - 10;
+            if (top >= bh_total && 
+                !rb.hasClass('content__myhome-accordion_fixed') &&
+                 lb.outerHeight() > rb.outerHeight() ) {
+                rb.addClass('content__myhome-accordion_fixed')
+                    .css({'top':nm.outerHeight() + 10,'left':rb_left,'width':rb_width});
+            } else if(top < bh_total && rb.hasClass('content__myhome-accordion_fixed') ){
+                rb.removeClass('content__myhome-accordion_fixed').css({'top': 0, 'left': 0});
+
+            }
+            if(top > doc_total && lb.outerHeight() > rb.outerHeight() ) {
+                rb.removeClass('content__myhome-accordion_fixed')
+                    .css({'top': doc_total - pos + nm.outerHeight() + 10, 'left': 0});
+            }
+        }
     });
 
   } else {
-    // $(window).off('scroll');
+    $(window).off('scroll');
     $(window).scroll(function() {
-        // rb.removeClass('content__right-block_fixed').css({'top':0});
+        rb.removeClass('content__myhome-accordion_fixed').css({'top':0, 'left':0});
     });
 
   }
