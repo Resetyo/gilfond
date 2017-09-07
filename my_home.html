@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Мой Дом | ЖилФонд</title>
-  <link rel="stylesheet" href="assets/css/lightbox.min.css">
   <link rel="stylesheet" href="assets/css/custom.css">
   <link rel="stylesheet" href="assets/css/normalize.css">
 </head>
@@ -64,29 +63,29 @@
 
       <div class="content__wrapper">
         <div class="content__myhome-header">
-            <h1>Мой дом</h1>
-            <select name="address_house" id="address_house">
-              <option value="hide">Дом</option>
-            </select>
-            <select name="address_street" id="address_street">
-              <option value="hide">Выберите адрес</option>
-              <option value="1">Семафорная, 261а/1</option>
-              <option value="2">Академика Вавилова, 1 ст54</option>
-              <option value="3">Кольцевая, 24а</option>
-              <option value="4">Парашютная, 10</option>
-              <option value="5">Академика Вавилова, 1 ст54</option>
-              <option value="6">26 Бакинских Комиссаров</option>
-              <option value="7">Семафорная, 261а/1</option>
-              <option value="8">Академика Вавилова, 1 ст54</option>
-              <option value="9">Кольцевая, 24а</option>
-              <option value="10">Парашютная, 10</option>
-              <option value="11">Академика Вавилова, 1 ст54</option>
-              <option value="12">26 Бакинских Комиссаров</option>
-            </select>
+          <h1>Мой дом</h1>
+          <div>
             <p>
               Тарифы на воду, электричество, информацию 
               о перерасчёте и прочую информацию по своему дому вы можете узнать выбрав ваш адрес.
             </p>
+            <div>
+              <select name="address_street" id="address_street">
+                <option value="hide">Выберите адрес</option>
+                <option value="1">Семафорная</option>
+                <option value="2">Академика Вавилова</option>
+                <option value="3">Кольцевая</option>
+                <option value="4">Парашютная</option>
+                <option value="5">8 Марта</option>
+                <option value="6">26 Бакинских Комиссаров</option>
+                <option value="7">Ангарская</option>
+                <option value="8">Баумана</option>
+              </select>
+              <select name="address_house" id="address_house">
+                <option value="hide">Дом</option>
+              </select>
+            </div>
+          </div>
         </div>
 
         <div class="content__myhome-accordion">
@@ -145,7 +144,7 @@
           <div class="content__myhome-accordion_3">
             <div class="content__myhome-accordion__header">
               <a href="#" class="toggler">Смотреть</a>
-              <h3>Тарифы на воду, электричество,<br>платные услуги «Жилфонда»</h3>
+              <h3>Тарифы ЖКУ / Платные услуги</h3>
             </div>
             <div class="content__myhome-accordion__body">
               <div class="content__myhome-tariffs">
@@ -262,6 +261,26 @@
               </div>
             </div>
           </div>
+          <div class="content__myhome-accordion_2">
+            <div class="content__myhome-accordion__header">
+              <a href="#" class="toggler">Смотреть</a>
+              <h3>Платные услуги подрядных организаций</h3>
+            </div>
+            <div class="content__myhome-accordion__body">
+              <div class="content__myhome-document">
+                <a href="#">ООО &laquo;Соратник&raquo;</a>
+              </div>
+              <div class="content__myhome-document">
+                <a href="#">ООО &laquo;Ремкомстрой&raquo;</a>
+              </div>
+              <div class="content__myhome-document">
+                <a href="#">ООО &laquo;Железнодорожник&raquo;</a>
+              </div>
+              <div class="content__myhome-document">
+                <a href="#">ООО &laquo;Дом Сервис&raquo;</a>
+              </div>
+            </div>
+          </div>
           <div class="content__myhome-accordion_4">
             <div class="content__myhome-accordion__header">
               <a href="#" class="toggler">Смотреть</a>
@@ -347,7 +366,7 @@
       <div class="footer__bottom">
         <div class="content__wrapper">
           <span class="footer__bottom__copy">
-            &copy; 2017. ООО ГУК &laquo;Жилфонд&raquo;
+            &copy; 2012. ООО ГУК &laquo;Жилфонд&raquo;
           </span>
           <span class="footer__bottom__social">
             <a href="#"><img src="assets/images/bvk.svg" alt="vk"></a>
@@ -355,7 +374,9 @@
             <a href="#"><img src="assets/images/bi.svg" alt="Instagram"></a>
           </span>
           <span class="footer__bottom__design">
-            Проектирование и дизайн &laquo;Чипса&raquo;, 2017
+            <a href="http://chipsa.ru">
+              Проектирование и дизайн &laquo;Чипса&raquo;, 2017
+            </a>
           </span>
         </div>
       </div>
@@ -370,7 +391,6 @@
     </div>
   </div>
   <script src="assets/js/jquery-3.2.1.min.js"></script>
-  <script src="assets/js/lightbox.min.js"></script>
   <script src="assets/js/custom.js"></script>
 </body>
 </html>
