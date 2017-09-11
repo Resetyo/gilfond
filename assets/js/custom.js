@@ -341,5 +341,20 @@ function WidthChange(mql) {
         rb.removeClass('content__right-block--fixed').css({'top':0, 'left':0});
     });
 
+    $('.tabs-nav-cabinet').one('click', function() {
+        $this = $(this);
+        var top = $this.outerHeight();
+        $this.find('ul').clone().addClass('cabinet-mobile-menu').appendTo($this).find('li').remove('.active');
+    });
+
+    $('.tabs-nav-cabinet').click(function(e) {
+        e.stopPropagation();
+        $('.cabinet-mobile-menu').find('li').toggle();
+    });
+
+    $(document).click(function() {
+        $('.cabinet-mobile-menu').find('li').hide();
+    });
+
   }
 }

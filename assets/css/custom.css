@@ -1536,7 +1536,8 @@ article {
         content: 'Электроэнергия'; }
       .content__cabinet-counter.electricity > div:after {
         content: url("../images/flash.svg");
-        background-color: #ffc552; }
+        background-color: #ffc552;
+        padding: 8px 15px; }
     .content__cabinet-by-phone {
       margin-top: 20px;
       background-color: white;
@@ -1725,6 +1726,22 @@ article {
     border-radius: 4px; }
   .tabs-nav-cabinet > ul li:not(.active) {
     display: none; }
+  .tabs-nav-cabinet > ul .active {
+    border-left: 1px solid #D8DCDE !important; }
+    .tabs-nav-cabinet > ul .active:after {
+      content: url("../images/g_dropdown.svg");
+      transform: translateY(-50%);
+      top: 50%;
+      position: absolute;
+      right: 15px; }
+  .tabs-nav-cabinet .cabinet-mobile-menu {
+    top: 100%;
+    position: absolute;
+    left: 0;
+    z-index: 2;
+    background-color: white;
+    list-style: none;
+    width: 100%; }
   .content {
     margin-top: 50px; }
     .content__wrapper {
@@ -1865,7 +1882,6 @@ article {
       flex-direction: column;
       align-items: flex-start; }
     .content__myhome-accordion {
-      width: 100%;
       margin-bottom: 30px; }
     .content__myhome-debt {
       width: 100%;
@@ -1874,6 +1890,8 @@ article {
         font-size: 0.8em; }
       .content__myhome-debt__amount {
         font-size: 2em; }
+    .content__left-block {
+      width: 100%; }
   .footer {
     background-position: calc(100% + 280px) 80px;
     background-size: 500px; }
@@ -1918,12 +1936,10 @@ article {
       width: calc(50% - 7px); }
   .content__chronicle__item {
     width: calc(50% - 7px); }
-  .content__myhome-debt {
-    width: calc(50% - 8px); }
-    .content__myhome-debt__text > span {
-      font-size: 2vw; }
-    .content__myhome-debt__amount {
-      font-size: 5vw; }
+  .content__myhome-debt__text > span {
+    font-size: 2vw; }
+  .content__myhome-debt__amount {
+    font-size: 5vw; }
   .content__about-slider {
     height: 400px; }
     .content__about-slider .owl-item {
@@ -1935,6 +1951,8 @@ article {
       padding-top: 15px; }
       .content__about-slider .item p {
         font-size: 2em; }
+  .content__right-block {
+    width: calc(50% - 8px); }
   .footer__bottom {
     padding-left: 15px;
     padding-right: 15px; }
@@ -2129,4 +2147,8 @@ article {
       padding: 15px; }
     .content__info-map {
       margin: 15px -15px;
-      height: 200px; } }
+      height: 200px; }
+  .content__right-block {
+    width: 100%; }
+  .content__cabinet-counter {
+    width: 100%; } }
