@@ -1,0 +1,18 @@
+<svg width="22" height="22" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>faceboock</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(32325 8495)">
+<g id="faceboock">
+<g id="Vector">
+<use xlink:href="#path0_fill" transform="translate(-32325 -8495)" fill="#D8DCDE"/>
+</g>
+<g id="Vector">
+<use xlink:href="#path1_fill" transform="translate(-32318 -8491)" fill="#FFFFFF"/>
+</g>
+</g>
+</g>
+<defs>
+<path id="path0_fill" d="M 11 0C 4.92485 0 0 4.92507 0 11C 0 17.0749 4.92485 22 11 22C 17.0752 22 22 17.0749 22 11C 22 4.92507 17.0752 0 11 0Z"/>
+<path id="path1_fill" fill-rule="evenodd" d="M 4.54255 13L 4.54255 7.07061L 6.60755 7.07061L 6.9166 4.75952L 4.54255 4.75952L 4.54255 3.28404C 4.54255 2.61454 4.73617 2.15883 5.73106 2.15883L 7 2.15738L 7 0.0911229C 6.38582 0.0281789 5.76855 -0.00219928 5.15096 0.000123776C 3.32128 0.000123776 2.07021 1.07767 2.07021 3.05509L 2.07021 4.75952L 0 4.75952L 0 7.07061L 2.07021 7.07061L 2.07021 13L 4.54255 13Z"/>
+</defs>
+</svg>
