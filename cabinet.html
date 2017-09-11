@@ -14,22 +14,26 @@
     <header class="content__wrapper">
       <div class="main-menu">
         <div class="logo">
-          <a href="/"><img src="assets/images/logo.svg" alt="ЖилФонд"></a>
+          <a href="#"><img src="assets/images/logo.svg" alt="ЖилФонд"></a>
         </div>
         <p>Городская<br>управляющая<br>компания</p>
         <div class="main-menu__payment">
           <a href="#" class="btn-red">Оплатить ЖКУ</a>
         </div>
         <div class="main-menu__made-uk">
-          <a href="#" class="btn-red">Сделать &laquo;ЖилФонд&raquo; своей УК</a>
+          <button class="btn-red">написать в &laquo;ЖилФонд&raquo;</button>
         </div>
         <div class="main-menu__social">
           <a href="#"><img src="assets/images/i.svg" alt="Instagram"></a>
           <a href="#"><img src="assets/images/vk.svg" alt="vk"></a>
           <a href="#"><img src="assets/images/ok.svg" alt="ok"></a>
         </div>
-        <div class="main-menu__login">
-          <button class="btn-white">Личный кабинет</button>
+        <div class="main-menu__profile">
+          <a href="#">
+            <span class="profile__name">Дюков Валерий Иванович</span><br>
+            Ваша <span class="profile__status">задолженность</span> &ndash; 
+            <span class="profile__amount">4 746.45</span>&nbsp;Р
+          </a>
         </div>
       </div>
       <div class="nav-menu">
@@ -48,7 +52,7 @@
         <label for="mobile-menu-button"></label>
         <ul>
           <li><a href="#" class="btn-red">Оплатить ЖКУ</a></li>
-          <li><a href="#" class="btn-red">Сделать &laquo;ЖилФонд&raquo; своей УК</a></li>
+          <li><button class="btn-red">написать в &laquo;ЖилФонд&raquo;</button></li>
           <li><a href="#">Мой Дом</a></li>
           <li><a href="#">О&nbsp;&laquo;Жилфонде&raquo;</a></li>
           <li><a href="#">Пресс-центр</a></li>
@@ -72,11 +76,11 @@
               № лицевого счёта — 961913
             </p>
           </div>
-          <h1>Передача показаний счётчиков</h1>
+          <h1>Передача показаний счетчиков</h1>
 
-          <nav class="tabs-nav tabs-nav-cabinet content__right-block">
+          <nav class="tabs-nav-cabinet content__right-block">
             <ul>
-              <li><a href="#counter">Передача показаний счётчиков</a></li>
+              <li class="active"><a href="#counter">Передача показаний счётчиков</a></li>
               <li><a href="#payment">Оплатить ЖКУ</a></li>
               <li><a href="#payment_history">История платежей</a></li>
               <li><a href="#get_bill">Получить счёт-квитанцию</a></li>
@@ -86,38 +90,93 @@
             </ul>
           </nav>
 
-          <section class="tab-content content__left-block" id="counter">
+          <section class="content__left-block" id="counter">
 
             <a href="#" class="text-green-u">Инструкция передачи показаний</a>
+
             <h2>Первый стояк</h2>
-            <div class="content__cabinet-counter">
+            
+            <div class="content__cabinet-counter cold-water">
               <div>
-                
+                <form action="" class="-visor-no-click counter-form">
+                  <p>Значение на 07 июня 2017</p>
+                  <input type="text" name="first_cold" class="money" required>
+                  <button class="btn-green" type="submit">Передать</button>
+                  <p>Последнее значение: 19,23 (12 июля 2016)</p>
+                </form>
+                <a href="#">История показаний</a>
               </div>
               <p>следующая поверка счётчика 25 января 2023</p>
               <p>серия счётчика 5059755</p>
             </div>
-            <div class="content__cabinet-counter">
+
+            <div class="content__cabinet-counter hot-water">
               <div>
-                
+                <form action="" class="-visor-no-click counter-form">
+                  <p>Значение на 07 июня 2017</p>
+                  <input type="text" name="first_hot" class="money" required>
+                  <button class="btn-green" type="submit">Передать</button>
+                  <p>Последнее значение: 19,23 (12 июля 2016)</p>
+                </form>
+                <a href="#">История показаний</a>
               </div>
+              <p>следующая поверка счётчика 25 января 2023</p>
+              <p>серия счётчика 5059755</p>
             </div>
-          </section>
 
-          <section class="tab-content content__left-block" id="payment">
-            2
-          </section>
+            <h2>Второй стояк</h2>
 
-          <section class="tab-content content__left-block" id="payment_history">
-            3
-          </section>
+            <div class="content__cabinet-counter cold-water">
+              <div>
+                <form action="" class="-visor-no-click counter-form">
+                  <p>Значение на 07 июня 2017</p>
+                  <input type="text" name="second_cold" class="money" required>
+                  <button class="btn-green" type="submit">Передать</button>
+                  <p>Последнее значение: 19,23 (12 июля 2016)</p>
+                </form>
+                <a href="#">История показаний</a>
+              </div>
+              <p>следующая поверка счётчика 25 января 2023</p>
+              <p>серия счётчика 5059755</p>
+            </div>
 
-          <section class="tab-content content__left-block" id="get_bill">
-            4
-          </section>
+            <div class="content__cabinet-counter hot-water">
+              <div>
+                <form action="" class="-visor-no-click counter-form">
+                  <p>Значение на 07 июня 2017</p>
+                  <input type="text" name="second_hot" class="money" required>
+                  <button class="btn-green" type="submit">Передать</button>
+                  <p>Последнее значение: 19,23 (12 июля 2016)</p>
+                </form>
+                <a href="#">История показаний</a>
+              </div>
+              <p>следующая поверка счётчика 25 января 2023</p>
+              <p>серия счётчика 5059755</p>
+            </div>
 
-          <section class="tab-content content__left-block" id="my_appeals">
-            5
+            <br>
+
+            <div class="content__cabinet-counter electricity">
+              <div>
+                <form action="" class="-visor-no-click counter-form">
+                  <p>Значение на 07 июня 2017</p>
+                  <input type="text" name="electro" class="money" required>
+                  <button class="btn-green" type="submit">Передать</button>
+                  <p>Последнее значение: 19,23 (12 июля 2016)</p>
+                </form>
+                <a href="#">История показаний</a>
+              </div>
+              <p>следующая поверка счётчика 25 января 2023</p>
+              <p>серия счётчика 5059755</p>
+            </div>
+
+            <div class="content__cabinet-by-phone">
+              <h3>Передать показания по телефону 212-34-46</h3>
+              <p>
+                Узнать ваши тарифы на воду и электричество<br>
+                вы можете на странице <a href="#" class="text-green-u">Мой дом</a>
+              </p>
+            </div>
           </section>
         </div>
       </div>
@@ -192,6 +251,7 @@
   <script src="assets/js/html5lightbox.js"></script>
   <script src="assets/js/yandex-map.js"></script>
   <script src="assets/js/owl.carousel.min.js"></script>
+  <script src="assets/js/numericInput.min.js"></script>
   <script src="assets/js/custom.js"></script>
 </body>
 </html>

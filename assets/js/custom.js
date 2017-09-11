@@ -1,8 +1,31 @@
 $(document).ready(function(){
+    //counter form
+    $('.counter-form').submit(function(e){
+        $this = $(this);
+        $.ajax({
+            type: "POST",
+            url: 'http://www.yandex.ru',
+            data: $(this).serialize().replace('%2C','.'),
+            success: function(data) {
+                $this.css({'visibility':'hidden'})
+                    .before('<p class="counter-success">Показания переданы.<br>Спасибо, Валерий.</p>');
+            },
+            error: function(data) {
+                $this.css({'visibility':'hidden'})
+                    .before('<p class="counter-error">Показания не переданы.<br><span>Попробуйте еще раз<br>или обратитесь к специалисту</span></p>');
+            }
+        });
+        e.preventDefault();
+    });
     //address chooser
     $('#address_street').val('hide');
     $('#address_house').val('hide');
     rb = $('.content__right-block');
+    if($('.content__right-block:visible').length > 0) {
+        rb_left = rb.offset()['left'];
+        rb_width = rb.outerWidth();
+    }
+
     $('#address_house').one('change', function(){
         $('.content__left-block').css({'display':'inline-block'});
         $('.content__right-block').show();
@@ -246,6 +269,9 @@ $(document).ready(function(){
             return false;
         });
     }
+
+    //money mask
+    $(".money").numericInput({ allowFloat: true});
 });
 
 

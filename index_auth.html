@@ -4,8 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>ЖилФонд</title>
-  <link rel="stylesheet" href="assets/css/custom.css">
   <link rel="stylesheet" href="assets/css/normalize.css">
+  <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+  <link rel="stylesheet" href="assets/css/owl.theme.default.css">
+  <link rel="stylesheet" href="assets/css/custom.css">
 </head>
 <body>
   <div class="wrapper">
@@ -61,11 +63,9 @@
         <h2>ЖилФонд</h2>
         <a href="#"><img src="assets/images/user.svg" alt="Кабинет"></a>
       </nav>
-
     </header>
     
     <div class="content">
-
       <div class="content__stat">
         <div class="content__wrapper">
           <div class="content__stat__header">
@@ -82,7 +82,7 @@
             <div class="content__stat__form-body">
               <div>Оплатить ЖКУ</div>
               <div>
-                <input name="payment_sum" id="payment-sum" type="text" placeholder="Введите сумму" value="4846.45">
+                <input name="payment_sum" id="payment-sum" type="text" placeholder="Введите сумму" value="4846.45" class="money">
               </div>
               <div>Комиссия банка (<span id="bank-comission">1</span>%)</div>
               <div><span id="bank-comission-rub">0</span> РУБ</div>
@@ -340,7 +340,11 @@
     </div>
   </div>
   <script src="assets/js/jquery-3.2.1.min.js"></script>
+  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
   <script src="assets/js/html5lightbox.js"></script>
+  <script src="assets/js/yandex-map.js"></script>
+  <script src="assets/js/owl.carousel.min.js"></script>
+  <script src="assets/js/numericInput.min.js"></script>
   <script src="assets/js/custom.js"></script>
 </body>
 </html>

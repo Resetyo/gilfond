@@ -86,6 +86,11 @@ a {
   color: $c_black;
 }
 
+input[type='text'] {
+  font-size: 1.6rem;
+  padding: 0 20px;
+}
+
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -293,6 +298,44 @@ a {
   color: $c_green !important;
   text-decoration: underline;
 }
+a.text-green-u:hover {
+    text-decoration: none;
+}
+
+.counter {
+  &-success, &-error {
+    position: absolute;
+    top: 70px;
+    left: 20px;
+    font-weight: 500;
+    font-size: 1.6em;
+    line-height: 1em;
+    @media (min-width: 961px) and (max-width: 1150px) {
+      font-size: 1.5vw;
+      padding: 1.5vw;
+    }
+    span {
+      margin-top: 7px;
+      font-weight: normal;
+      font-size: 0.7em;
+      line-height: 1.2em;
+      display: inline-block;
+    }
+    &:before {
+      float: left;
+      margin: 5px 15px 20px 0;
+    }
+  }
+  &-success:before {
+    content: url('../images/ss.svg');
+  } 
+  &-error:before {
+    content: url('../images/close.png');
+    padding: 8px 10px;
+    background-color: $c_red;
+    border-radius: 30px;
+  } 
+}
 
 .tabs-nav {
   margin: 40px 0 35px;
@@ -386,14 +429,21 @@ a {
   &-cabinet {
     margin-top: 0;
     & > ul {
+      padding-left: 0;
       margin: 0;
       li {
         display: block;
         border-bottom: 1px solid $l_gray;
         padding-left: 24px;
+        cursor: pointer;
+        line-height: 1.2em;
         a {
+          display: inline-block;
+          outline: none;
+          padding: 13px 25px;
           text-transform: none !important;
           color: #363636 !important;
+          opacity: 0.8 !important;
           font-weight: normal !important;
           font-family: 'Roboto' !important;
           font-size: 1.1em !important;
@@ -470,13 +520,11 @@ a {
         border: 0;
         position: relative;
         &:after {
-          border-color: $c_green transparent transparent transparent;
+          content: url('../images/dropdown.svg');
+          position: relative;
           right: 0;
           margin-left: 10px;
-          position: relative;
-        }
-        &.active:after, &:active:after {
-          top: 16px;
+          top: 0;
         }
         &.active, &:active {
           background-color: white;
@@ -579,13 +627,9 @@ article {
     vertical-align: middle;
     line-height: 1.5em;
     &:after {
-      content:"";
-      width: 0;
-      height: 0;
-      border: 7px solid transparent;
-      border-color: $l_gray transparent transparent transparent;
+      content: url('../images/g_dropdown.svg');
       position: absolute;
-      top: 16px;
+      top: 5px;
       right: 10px;
     }
     &:hover {
@@ -593,10 +637,6 @@ article {
     }
     &:active, &.active {
       background-color: darken($select-background, 5);
-      &:after {
-        top: 9px;
-        border-color: transparent transparent $l_gray transparent;
-      }
     }
   }
   &-options {
@@ -709,10 +749,8 @@ article {
       }
       input {
         margin-top: -23px;
-        padding: 0 20px;
         border: 1px solid $l_gray;
         height: 50px;
-        font-size: 1.6em;
         color: black;
         font-weight: 500;
       }
@@ -1669,14 +1707,16 @@ article {
     padding: 40px 0 80px;
     h1 {
       font-size: 2.7em;
+      line-height: 0.8em;
       color: black;
       margin-bottom: 60px;
     }
     h2 {
       color: $h_black;
       font-weight: 500;
-      font-size: 2em;
+      font-size: 1.7em;
       margin-top: 40px;
+      margin-bottom: 30px;
     }
     &-subheader {
       float: right;
@@ -1692,14 +1732,92 @@ article {
       box-sizing: border-box;
       display: inline-block;
       vertical-align: top;
+      margin-bottom: 15px;
       & > div {
         background-color: white;
-        border: 1px solid $l_gray;
+        border: 1px solid #eee;
         border-radius: 3px;
         padding: 10px 33px 20px;
+        position: relative;
+        & > a {
+          text-decoration: underline;
+          color: black;
+          margin-bottom: 15px;
+          display: inline-block;
+          font-size: 0.9em;
+        }
       }
       & + .content__cabinet-counter {
         margin-left: 12px;
+      }
+      form {
+        margin-top: 25px;
+        input {
+          vertical-align: top;
+          width: calc(100% - 173px);
+          height: 48px;
+          margin-right: 15px;
+          border: 1px solid $l_gray;
+        }
+        & > p {
+          font-size: 0.85em;
+        }
+      }
+      & > p {
+        color: $t_gray;
+      }
+      &.cold-water > div, &.hot-water > div, &.electricity > div {
+        &:before {
+          font-size: 1.2em;
+          margin-top: 15px;
+          display: inline-block;
+        }
+        &:after {
+          content: url('../images/drop.svg');
+          position: absolute;
+          top: 10px;
+          right: 33px;
+          padding: 10px 15px;
+          border-radius: 30px;
+        }
+      }
+      &.cold-water > div {
+        &:before {
+          content: 'Холодная вода';
+        }
+        &:after {
+          background-color: #1869ff;
+        }
+      }
+      &.hot-water > div {
+        &:before {
+          content: 'Горячая вода';
+        }
+        &:after {
+          background-color: #cd0e00;
+        }
+      }
+      &.electricity > div {
+        &:before {
+          content: 'Электроэнергия';
+        }
+        &:after {
+          content: url('../images/flash.svg');
+          background-color: #ffc552;
+        }
+      }
+    }
+    &-by-phone {
+      margin-top: 20px;
+      background-color: white;
+      border: 1px solid $l_gray;
+      border-radius: 3px;
+      padding: 30px;
+      width: 55%;
+      line-height: 1.4em;
+      h3 {
+        margin-top: 0;
+        font-weight: 500;
       }
     }
   }
@@ -2135,7 +2253,6 @@ article {
         }
       }
     }
-
   }
 
   .footer {
@@ -2194,7 +2311,6 @@ article {
     }
 
     &__news__item {
-      // height: 45vw;
       width: calc(50% - 7px);
       &--additional {
         width: calc(50% - 7px);

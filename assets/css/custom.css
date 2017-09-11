@@ -19,6 +19,10 @@ a {
   text-decoration: none;
   color: #363636; }
 
+input[type='text'] {
+  font-size: 1.6rem;
+  padding: 0 20px; }
+
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -262,6 +266,39 @@ a {
   color: #008D21 !important;
   text-decoration: underline; }
 
+a.text-green-u:hover {
+  text-decoration: none; }
+
+.counter-success, .counter-error {
+  position: absolute;
+  top: 70px;
+  left: 20px;
+  font-weight: 500;
+  font-size: 1.6em;
+  line-height: 1em; }
+  @media (min-width: 961px) and (max-width: 1150px) {
+    .counter-success, .counter-error {
+      font-size: 1.5vw;
+      padding: 1.5vw; } }
+  .counter-success span, .counter-error span {
+    margin-top: 7px;
+    font-weight: normal;
+    font-size: 0.7em;
+    line-height: 1.2em;
+    display: inline-block; }
+  .counter-success:before, .counter-error:before {
+    float: left;
+    margin: 5px 15px 20px 0; }
+
+.counter-success:before {
+  content: url("../images/ss.svg"); }
+
+.counter-error:before {
+  content: url("../images/close.png");
+  padding: 8px 10px;
+  background-color: #EF5937;
+  border-radius: 30px; }
+
 .tabs-nav {
   margin: 40px 0 35px; }
   .tabs-nav ul {
@@ -333,14 +370,21 @@ a {
   .tabs-nav-cabinet {
     margin-top: 0; }
     .tabs-nav-cabinet > ul {
+      padding-left: 0;
       margin: 0; }
       .tabs-nav-cabinet > ul li {
         display: block;
         border-bottom: 1px solid #D8DCDE;
-        padding-left: 24px; }
+        padding-left: 24px;
+        cursor: pointer;
+        line-height: 1.2em; }
         .tabs-nav-cabinet > ul li a {
+          display: inline-block;
+          outline: none;
+          padding: 13px 25px;
           text-transform: none !important;
           color: #363636 !important;
+          opacity: 0.8 !important;
           font-weight: normal !important;
           font-family: 'Roboto' !important;
           font-size: 1.1em !important;
@@ -400,12 +444,11 @@ a {
       border: 0;
       position: relative; }
       .tabs-nav ~ section .select-styled:after {
-        border-color: #008D21 transparent transparent transparent;
+        content: url("../images/dropdown.svg");
+        position: relative;
         right: 0;
         margin-left: 10px;
-        position: relative; }
-      .tabs-nav ~ section .select-styled.active:after, .tabs-nav ~ section .select-styled:active:after {
-        top: 16px; }
+        top: 0; }
       .tabs-nav ~ section .select-styled.active, .tabs-nav ~ section .select-styled:active {
         background-color: white; }
     .tabs-nav ~ section .select-options {
@@ -490,21 +533,14 @@ article {
     vertical-align: middle;
     line-height: 1.5em; }
     .select-styled:after {
-      content: "";
-      width: 0;
-      height: 0;
-      border: 7px solid transparent;
-      border-color: #D8DCDE transparent transparent transparent;
+      content: url("../images/g_dropdown.svg");
       position: absolute;
-      top: 16px;
+      top: 5px;
       right: 10px; }
     .select-styled:hover {
       background-color: #fafafa; }
     .select-styled:active, .select-styled.active {
       background-color: #f2f2f2; }
-      .select-styled:active:after, .select-styled.active:after {
-        top: 9px;
-        border-color: transparent transparent #D8DCDE transparent; }
   .select-options {
     display: none;
     position: absolute;
@@ -593,10 +629,8 @@ article {
         float: left; }
     .content__stat__form-body input {
       margin-top: -23px;
-      padding: 0 20px;
       border: 1px solid #D8DCDE;
       height: 50px;
-      font-size: 1.6em;
       color: black;
       font-weight: 500; }
     .content__stat__form-body button {
@@ -1418,13 +1452,15 @@ article {
     padding: 40px 0 80px; }
     .content__cabinet h1 {
       font-size: 2.7em;
+      line-height: 0.8em;
       color: black;
       margin-bottom: 60px; }
     .content__cabinet h2 {
       color: #222629;
       font-weight: 500;
-      font-size: 2em;
-      margin-top: 40px; }
+      font-size: 1.7em;
+      margin-top: 40px;
+      margin-bottom: 30px; }
     .content__cabinet-subheader {
       float: right;
       font-size: 1.7em;
@@ -1436,14 +1472,69 @@ article {
       width: calc(50% - 8px);
       box-sizing: border-box;
       display: inline-block;
-      vertical-align: top; }
+      vertical-align: top;
+      margin-bottom: 15px; }
       .content__cabinet-counter > div {
         background-color: white;
-        border: 1px solid #D8DCDE;
+        border: 1px solid #eee;
         border-radius: 3px;
-        padding: 10px 33px 20px; }
+        padding: 10px 33px 20px;
+        position: relative; }
+        .content__cabinet-counter > div > a {
+          text-decoration: underline;
+          color: black;
+          margin-bottom: 15px;
+          display: inline-block;
+          font-size: 0.9em; }
       .content__cabinet-counter + .content__cabinet-counter {
         margin-left: 12px; }
+      .content__cabinet-counter form {
+        margin-top: 25px; }
+        .content__cabinet-counter form input {
+          vertical-align: top;
+          width: calc(100% - 173px);
+          height: 48px;
+          margin-right: 15px;
+          border: 1px solid #D8DCDE; }
+        .content__cabinet-counter form > p {
+          font-size: 0.85em; }
+      .content__cabinet-counter > p {
+        color: #9fa3b0; }
+      .content__cabinet-counter.cold-water > div:before, .content__cabinet-counter.hot-water > div:before, .content__cabinet-counter.electricity > div:before {
+        font-size: 1.2em;
+        margin-top: 15px;
+        display: inline-block; }
+      .content__cabinet-counter.cold-water > div:after, .content__cabinet-counter.hot-water > div:after, .content__cabinet-counter.electricity > div:after {
+        content: url("../images/drop.svg");
+        position: absolute;
+        top: 10px;
+        right: 33px;
+        padding: 10px 15px;
+        border-radius: 30px; }
+      .content__cabinet-counter.cold-water > div:before {
+        content: 'Холодная вода'; }
+      .content__cabinet-counter.cold-water > div:after {
+        background-color: #1869ff; }
+      .content__cabinet-counter.hot-water > div:before {
+        content: 'Горячая вода'; }
+      .content__cabinet-counter.hot-water > div:after {
+        background-color: #cd0e00; }
+      .content__cabinet-counter.electricity > div:before {
+        content: 'Электроэнергия'; }
+      .content__cabinet-counter.electricity > div:after {
+        content: url("../images/flash.svg");
+        background-color: #ffc552; }
+    .content__cabinet-by-phone {
+      margin-top: 20px;
+      background-color: white;
+      border: 1px solid #D8DCDE;
+      border-radius: 3px;
+      padding: 30px;
+      width: 55%;
+      line-height: 1.4em; }
+      .content__cabinet-by-phone h3 {
+        margin-top: 0;
+        font-weight: 500; }
   .content__left-block {
     width: calc(66.6% - 8px); }
   .content__right-block {
