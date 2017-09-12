@@ -227,6 +227,7 @@ input[type='text'] {
       font-size: 1.1em;
       text-transform: uppercase;
       color: $t_gray;
+      outline: none;
     }
   }
   &.fxd {
@@ -1717,10 +1718,13 @@ article {
     box-shadow: inset 0 8px 8px -6px rgba(0, 0, 0, 0.1);
     padding: 40px 0 80px;
     h1 {
-      font-size: 2.7em;
-      line-height: 0.8em;
+      font-size: 2.3em;
+      line-height: 1em;
       color: black;
       margin-bottom: 60px;
+      display: table-cell;
+      width: 100%;
+      padding-right: 15px;
     }
     h2 {
       color: $h_black;
@@ -1730,9 +1734,12 @@ article {
       margin-bottom: 30px;
     }
     &-subheader {
-      float: right;
       font-size: 1.7em;
       text-align: right;
+      display: table-cell;
+      white-space: nowrap;
+      width: 100%;
+      padding-bottom: 20px;
       p {
         margin-top: 0;
         margin-bottom: 15px;
@@ -2063,6 +2070,10 @@ article {
   .tabs-nav-cabinet {
     & > ul {
       li {
+        a {
+          font-weight: bold !important;
+          font-size: 0.9em !important;
+        }
         &:not(.active) {
           display: none;
         }
@@ -2303,6 +2314,20 @@ article {
       }
     }
 
+    &__cabinet {
+      h1 {
+        display: block;
+        width: 100%;
+        margin: 0 0 30px;
+        font-size: 2.3em;
+      }
+      &-subheader {
+        display: block;
+        width: 100%;
+        margin-bottom: 30px;
+      }
+    }
+
     &__left-block {
       width: 100%;
     }
@@ -2530,6 +2555,12 @@ article {
         margin-right: -15px;
       }
     }
+    &-cabinet {
+      top: 75px !important;
+      position: absolute !important;
+      left: 10px !important;
+      width: calc(100% - 20px) !important;
+    }
     & ~ section {
       overflow-x: scroll;
       .select {
@@ -2692,14 +2723,38 @@ article {
       }
     }
 
-    &__right-block {
-      width: 100%;
-    }
-
     &__cabinet {
+      h1 {
+        font-size: 1.8em;
+        margin-top: 55px;
+      }
+      &-subheader {
+        display: none;
+      }
       &-counter {
         width: 100%;
+        & + .content__cabinet-counter {
+          margin-left: 0;
+        }
+        form {
+          input {
+            width: 100%;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+          }
+          button, a {
+            width: 100%;
+          }
+        }
       }
+      &-by-phone {
+        width: 100%;
+        box-sizing: border-box;
+      }
+    }
+
+    &__right-block {
+      width: 100%;
     }
   }
 }

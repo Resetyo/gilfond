@@ -134,7 +134,8 @@ input[type='text'] {
       font-family: 'Muller';
       font-size: 1.1em;
       text-transform: uppercase;
-      color: #9fa3b0; }
+      color: #9fa3b0;
+      outline: none; }
   .nav-menu.fxd {
     position: fixed;
     top: 0px;
@@ -1461,10 +1462,13 @@ article {
     box-shadow: inset 0 8px 8px -6px rgba(0, 0, 0, 0.1);
     padding: 40px 0 80px; }
     .content__cabinet h1 {
-      font-size: 2.7em;
-      line-height: 0.8em;
+      font-size: 2.3em;
+      line-height: 1em;
       color: black;
-      margin-bottom: 60px; }
+      margin-bottom: 60px;
+      display: table-cell;
+      width: 100%;
+      padding-right: 15px; }
     .content__cabinet h2 {
       color: #222629;
       font-weight: 500;
@@ -1472,9 +1476,12 @@ article {
       margin-top: 40px;
       margin-bottom: 30px; }
     .content__cabinet-subheader {
-      float: right;
       font-size: 1.7em;
-      text-align: right; }
+      text-align: right;
+      display: table-cell;
+      white-space: nowrap;
+      width: 100%;
+      padding-bottom: 20px; }
       .content__cabinet-subheader p {
         margin-top: 0;
         margin-bottom: 15px; }
@@ -1724,6 +1731,9 @@ article {
       margin-top: 10px; }
   .btn-red, .btn-white, .btn-green {
     border-radius: 4px; }
+  .tabs-nav-cabinet > ul li a {
+    font-weight: bold !important;
+    font-size: 0.9em !important; }
   .tabs-nav-cabinet > ul li:not(.active) {
     display: none; }
   .tabs-nav-cabinet > ul .active {
@@ -1890,6 +1900,15 @@ article {
         font-size: 0.8em; }
       .content__myhome-debt__amount {
         font-size: 2em; }
+    .content__cabinet h1 {
+      display: block;
+      width: 100%;
+      margin: 0 0 30px;
+      font-size: 2.3em; }
+    .content__cabinet-subheader {
+      display: block;
+      width: 100%;
+      margin-bottom: 30px; }
     .content__left-block {
       width: 100%; }
   .footer {
@@ -2039,6 +2058,11 @@ article {
       padding: 20px 0;
       margin-left: -15px;
       margin-right: -15px; }
+  .tabs-nav-cabinet {
+    top: 75px !important;
+    position: absolute !important;
+    left: 10px !important;
+    width: calc(100% - 20px) !important; }
   .tabs-nav ~ section {
     overflow-x: scroll; }
     .tabs-nav ~ section .select-styled {
@@ -2148,7 +2172,23 @@ article {
     .content__info-map {
       margin: 15px -15px;
       height: 200px; }
-  .content__right-block {
-    width: 100%; }
+  .content__cabinet h1 {
+    font-size: 1.8em;
+    margin-top: 55px; }
+  .content__cabinet-subheader {
+    display: none; }
   .content__cabinet-counter {
+    width: 100%; }
+    .content__cabinet-counter + .content__cabinet-counter {
+      margin-left: 0; }
+    .content__cabinet-counter form input {
+      width: 100%;
+      box-sizing: border-box;
+      margin-bottom: 20px; }
+    .content__cabinet-counter form button, .content__cabinet-counter form a {
+      width: 100%; }
+  .content__cabinet-by-phone {
+    width: 100%;
+    box-sizing: border-box; }
+  .content__right-block {
     width: 100%; } }
