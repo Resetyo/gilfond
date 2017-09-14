@@ -13,15 +13,37 @@ html, body {
 
 h1 {
   font-weight: 500;
-  color: #222629; }
+  color: #222629;
+  line-height: 1; }
 
 a {
   text-decoration: none;
   color: #363636; }
 
-input[type='text'] {
+input[type='text'], input[type='password'] {
   font-size: 1.6rem;
   padding: 0 20px; }
+
+.header-banner {
+  text-align: center;
+  border-bottom: 1px solid #D8DCDE;
+  background-color: #f1f4f9;
+  transition: top 0.7s;
+  position: relative; }
+  .header-banner-content {
+    padding: 33px 90px 40px;
+    background-color: white;
+    position: relative;
+    top: -100%;
+    transition: top 0.7s 0.7s; }
+  .header-banner-close {
+    border: none;
+    background: transparent;
+    position: absolute;
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer; }
 
 .wrapper {
   display: flex;
@@ -138,7 +160,7 @@ input[type='text'] {
       outline: none; }
   .nav-menu.fxd {
     position: fixed;
-    top: 0px;
+    top: 0px !important;
     z-index: 3;
     border: none;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); }
@@ -262,12 +284,54 @@ input[type='text'] {
 .w100p {
   width: 100%; }
 
+.text-bold {
+  font-weight: bold; }
+
 .text-green-u {
   color: #008D21 !important;
   text-decoration: underline; }
 
 a.text-green-u:hover {
   text-decoration: none; }
+
+.text-block {
+  background-color: white;
+  border: 1px solid #D8DCDE;
+  border-radius: 3px;
+  padding: 30px;
+  color: #363636;
+  line-height: 1.3em; }
+  .text-block h2 {
+    margin-top: 15px;
+    margin-bottom: 30px;
+    font-weight: 500;
+    color: black;
+    line-height: 1.2; }
+  .text-block h3 {
+    color: black;
+    margin: 20px 0;
+    font-weight: 500;
+    font-size: 1.1em;
+    line-height: 1.2; }
+  .text-block hr {
+    border: none;
+    border-top: 1px solid #555;
+    opacity: 0.3;
+    margin: 45px 0; }
+  .text-block ul {
+    padding-left: 30px; }
+    .text-block ul li {
+      margin-bottom: 15px;
+      list-style-type: none; }
+      .text-block ul li:before {
+        content: '\2022';
+        color: #d8d8d8;
+        font-size: 2em;
+        vertical-align: middle;
+        margin-left: -30px;
+        margin-right: 15px; }
+  .text-block .text-bold {
+    opacity: 0.8; }
 
 .counter-success, .counter-error {
   position: absolute;
@@ -1565,12 +1629,20 @@ article {
     float: right;
     background-color: white;
     border: 1px solid #D8DCDE;
-    position: relative; }
+    position: relative;
+    margin-bottom: 20px; }
     .content__right-block--fixed {
       position: fixed !important;
       left: 50%;
       z-index: 3;
       margin-top: 0 !important; }
+  .content__contacts {
+    box-shadow: inset 0 8px 8px -6px rgba(0, 0, 0, 0.1);
+    padding: 40px 0; }
+    .content__contacts h1 {
+      margin-bottom: 30px;
+      margin-left: 30px;
+      font-size: 2.7em; }
 
 .footer {
   background: url(../images/house.jpg) right 50px no-repeat;
@@ -1634,6 +1706,95 @@ article {
 
 .search-block {
   display: none; }
+
+.login-window {
+  display: none;
+  position: absolute;
+  z-index: 5;
+  background-color: white;
+  top: 17%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 50px 60px;
+  width: 510px; }
+  .login-window span {
+    font-weight: 500;
+    margin-top: 3px;
+    margin-bottom: 15px;
+    display: block; }
+  .login-window input {
+    box-sizing: border-box;
+    border: 1px solid #D8DCDE;
+    display: block;
+    border-radius: 0;
+    width: 100%;
+    font-size: 1em;
+    margin-bottom: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #353535;
+    font-weight: bold; }
+    .login-window input::-webkit-input-placeholder {
+      color: #353535;
+      opacity: 1; }
+    .login-window input:-moz-placeholder {
+      color: #353535;
+      opacity: 1; }
+    .login-window input::-moz-placeholder {
+      color: #353535;
+      opacity: 1; }
+    .login-window input:-ms-input-placeholder {
+      color: #353535;
+      opacity: 1; }
+    .login-window input[type=checkbox] {
+      display: none; }
+      .login-window input[type=checkbox]:checked + label:before {
+        content: url("../images/check.svg"); }
+      .login-window input[type=checkbox] + label {
+        display: block;
+        margin-bottom: 30px;
+        color: #333;
+        opacity: 0.8;
+        cursor: pointer; }
+        .login-window input[type=checkbox] + label:before {
+          content: '';
+          text-align: center;
+          line-height: 2.2;
+          display: inline-block;
+          vertical-align: middle;
+          margin-right: 15px;
+          width: 30px;
+          height: 30px;
+          border: 1px solid #D8DCDE; }
+
+.login-header {
+  border: 1px solid #eee;
+  border-radius: 3px;
+  padding: 25px 33px;
+  margin-bottom: 20px;
+  height: 120px;
+  box-sizing: border-box; }
+  .login-header img {
+    padding: 9px 10px 13px;
+    border-radius: 5px;
+    background-color: #f3f6f7;
+    margin-right: 20px;
+    float: left; }
+
+.js-modal-close {
+  border: none;
+  background-color: white;
+  box-shadow: -3px 4px 7px rgba(0, 0, 0, 0.06);
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  outline: none; }
+  .js-modal-close:active, .js-modal-close:hover, .js-modal-close:focus {
+    opacity: 0.8;
+    outline: none; }
 
 .body-fade {
   position: fixed;
@@ -1729,6 +1890,12 @@ article {
     .mobile-menu > a {
       float: right;
       margin-top: 10px; }
+  .header-banner-content {
+    padding-left: 10px;
+    padding-right: 10px; }
+  .header-banner-close {
+    right: 10px;
+    top: 20px; }
   .btn-red, .btn-white, .btn-green {
     border-radius: 4px; }
   .tabs-nav-cabinet > ul li a {
@@ -2041,6 +2208,12 @@ article {
   article {
     width: 100%;
     padding-top: 56.25%; }
+  .text-block {
+    margin-left: -15px;
+    margin-right: -15px;
+    padding: 15px; }
+    .text-block hr {
+      margin: 25px 0; }
   .tabs-nav ul {
     display: flex;
     flex-wrap: wrap;
@@ -2190,5 +2363,9 @@ article {
   .content__cabinet-by-phone {
     width: 100%;
     box-sizing: border-box; }
+  .content__contacts h1 {
+    font-size: 1.8em;
+    margin-top: 55px;
+    margin-left: 0; }
   .content__right-block {
     width: 100%; } }

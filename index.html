@@ -11,6 +11,15 @@
 </head>
 <body>
   <div class="wrapper">
+    <div class="header-banner">
+      <div class="header-banner-content">
+        Близится плановое отключение горячей воды
+        <a href="#" class="text-green-u">Смотреть даты и сроки отключений по домам</a>
+        <button class="header-banner-close">
+          <img src="assets/images/cross.svg" alt="Закрыть" title="Закрыть">
+        </button>
+      </div>
+    </div>
     <header class="content__wrapper">
       <div class="main-menu">
         <div class="logo">
@@ -30,7 +39,7 @@
           <a href="#"><img src="assets/images/facebook.svg" alt="fb"></a>
         </div>
         <div class="main-menu__login">
-          <button class="btn-white">Личный кабинет</button>
+          <button class="btn-white js-modal" data-modal="login-window">Личный кабинет</button>
         </div>
       </div>
       <div class="nav-menu">
@@ -58,7 +67,7 @@
         </ul>
 
         <h2><a href="/">ЖилФонд</a></h2>
-        <a href="#"><img src="assets/images/user.svg" alt="Кабинет"></a>
+        <a href="#" class="js-modal" data-modal="login-window"><img src="assets/images/user.svg" alt="Кабинет"></a>
       </nav>
     </header>
     
@@ -316,6 +325,22 @@
         <button class="btn-red search-block-submit">Найти</button>
         <button class="search-block-close"><img src="assets/images/cross.svg" alt="Закрыть" title="Закрыть"></button>
       </div>
+    </div>
+
+    <div class="login-window">
+      <button class="js-modal-close"><img src="assets/images/cross.svg" alt="Закрыть" title="Закрыть"></button>
+      <div class="login-header">
+        <img src="assets/images/user2.svg">
+        <span>Вход в личный кабинет</span>
+        <a href="#" class="text-green-u">Где найти номер лицевого счёта и пароль</a>
+      </div>
+      <form action="" class="-visor-no-click">
+        <input name="bill_number" type="text" placeholder="Ваш логин">
+        <input name="password" type="password" placeholder="Пароль">
+        <input name="remember_me" id="remember-me" type="checkbox">
+        <label for="remember-me">Запомнить меня</label>
+        <button class="btn-green" type="submit">Войти в кабинет</button>
+      </form>
     </div>
   </div>
   <script src="assets/js/jquery-3.2.1.min.js"></script>

@@ -1,4 +1,26 @@
 $(document).ready(function(){
+    //modals
+    $('.js-modal').click(function(){
+        var $this = $(this);
+        var modal_window = $('.' + $this.data('modal'));
+
+        modal_window.fadeIn(200);
+        $('body').append('<div class="body-fade"></div>');
+        $('.body-fade').fadeTo(200,0.5);
+        $('.body-fade').click(closeSearch);
+
+        var close_btn = modal_window.find('.js-modal-close');
+        close_btn.off('click');
+        close_btn.on('click', closeModal);
+
+        function closeModal() {
+            modal_window.fadeOut(200);
+            $('.body-fade').fadeOut(200, function(){
+                $(this).remove();
+            });
+        }
+    });
+
     //counter form
     $('.counter-form').submit(function(e){
         $this = $(this);
@@ -17,6 +39,21 @@ $(document).ready(function(){
         });
         e.preventDefault();
     });
+
+    //header banner animation
+    if($('.header-banner').length > 0) {
+        $('.header-banner-content').css('top','0%');
+        var top = $('.header-banner').outerHeight() + $('.main-menu').outerHeight();
+        $('.nav-menu').css('top', top);
+        $('.mobile-menu').css('top', $('.header-banner').outerHeight());
+        $('.header-banner-close').click(function(){
+            $('.header-banner').hide();
+            var shame_top = $('.main-menu:visible').length > 0 ? $('.main-menu').outerHeight() : '80px';
+            $('.nav-menu').css('top', shame_top);
+            $('.mobile-menu').css('top', 0);
+        });
+    }
+
     //address chooser
     $('#address_street').val('hide');
     $('#address_house').val('hide');
@@ -106,7 +143,6 @@ $(document).ready(function(){
             if (hash) $(this).find('a[href$="'+hash+'"]').trigger('click');
             $(window).scrollTop(0,0);
         });
-
     }
 
     //carousel
@@ -117,6 +153,10 @@ $(document).ready(function(){
             nav:true,
             items:1,
             dots:false,
+            autoplay:true,
+            autoplayTimeout:5000,
+            autoplayHoverPause:true,
+            smartSpeed: 1000,
             navText:["&lt;","&gt;"]
         });
     }
@@ -233,8 +273,6 @@ $(document).ready(function(){
         $('.content__myhome-accordion__header').first().addClass('shadow-first');
         $('.content__myhome-accordion__header').last().addClass('shadow-last');
         togglers.parent().click(function(){
-        // togglers.click(function(){
-            // var header = $(this).parent();
             var header = $(this);
             var item = header.parent();
             var prev_item = item.prev();
