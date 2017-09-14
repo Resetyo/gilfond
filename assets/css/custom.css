@@ -28,8 +28,9 @@ input[type='text'], input[type='password'] {
   text-align: center;
   border-bottom: 1px solid #D8DCDE;
   background-color: #f1f4f9;
-  transition: top 0.7s;
-  position: relative; }
+  transition: height 0.7s 0.35s;
+  position: relative;
+  height: 100%; }
   .header-banner-content {
     padding: 33px 90px 40px;
     background-color: white;
@@ -114,13 +115,17 @@ input[type='text'], input[type='password'] {
     font-size: 1.35em;
     font-weight: 500;
     white-space: nowrap; }
+  .main-menu + hr {
+    position: relative;
+    margin: 0;
+    border: none;
+    border-top: 1px solid #D8DCDE;
+    z-index: 5; }
 
 .nav-menu {
   position: absolute;
   left: 0;
-  top: 80px;
   width: 100%;
-  border-top: 1px solid #D8DCDE;
   background-color: #FFF; }
   .nav-menu__items {
     padding: 0 20px;
@@ -160,7 +165,6 @@ input[type='text'], input[type='password'] {
       outline: none; }
   .nav-menu.fxd {
     position: fixed;
-    top: 0px !important;
     z-index: 3;
     border: none;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); }
@@ -1809,6 +1813,8 @@ article {
 @media (max-width: 960px) {
   .nav-menu, .main-menu {
     display: none; }
+    .nav-menu + hr, .main-menu + hr {
+      display: none; }
   .mobile-menu {
     display: block;
     position: fixed;
@@ -1892,10 +1898,9 @@ article {
       margin-top: 10px; }
   .header-banner-content {
     padding-left: 10px;
-    padding-right: 10px; }
+    padding-right: 50px; }
   .header-banner-close {
-    right: 10px;
-    top: 20px; }
+    right: 0px; }
   .btn-red, .btn-white, .btn-green {
     border-radius: 4px; }
   .tabs-nav-cabinet > ul li a {
@@ -2109,7 +2114,9 @@ article {
       order: 2;
       text-align: left;
       font-size: 0.85em;
-      white-space: nowrap; } }
+      white-space: nowrap; }
+  .login-window {
+    width: 350px; } }
 
 @media (min-width: 600px) and (max-width: 960px) {
   .content__emergency__districts__item {
@@ -2368,4 +2375,13 @@ article {
     margin-top: 55px;
     margin-left: 0; }
   .content__right-block {
-    width: 100%; } }
+    width: 100%; }
+  .login-window {
+    padding: 55px 15px 30px;
+    top: 7%;
+    width: 100%;
+    box-sizing: border-box; }
+    .login-window [type=submit] {
+      width: 100%; }
+  .login-header {
+    padding: 15px; } }
