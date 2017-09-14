@@ -41,14 +41,13 @@ $(document).ready(function(){
     });
 
     //header banner animation
+    var nav_menu_top = $('.main-menu').offset()['top'] + $('.main-menu').outerHeight();
+    $('.nav-menu').css('top', nav_menu_top);
     if($('.header-banner').length > 0) {
         if(!mq.matches) {
             $('.header-banner').css('top',$('.mobile-menu').outerHeight());
         }
         $('.header-banner-content').css('top','0%');
-        var top = $('.main-menu').offset()['top'] + $('.main-menu').outerHeight();
-        $('.nav-menu').css('top', top);
-        // $('.mobile-menu').css('top', $('.header-banner').outerHeight());
         $('.header-banner-close').click(function(){
             $('.header-banner-content').css('top','-' + $('.header-banner-content').outerHeight() + 'px');
             $('.header-banner').css('height','0%');
@@ -338,7 +337,7 @@ if (matchMedia) {
 
 function WidthChange1(mql) {
 }
- 
+
 function WidthChange(mql) {
   if (mq.matches) {
     //nav menu & right block scroll
@@ -360,9 +359,10 @@ function WidthChange(mql) {
         var mm = $('.main-menu');
         var nm = $('.nav-menu');
         var h_total = mm.outerHeight() + mm.offset()['top'];
+        var hb = ($('.header-banner').length > 0) ? $('.header-banner').outerHeight() : 0;
         if (top >= h_total && !nm.hasClass('fxd')) {
             nm.addClass('fxd')
-              .css('top', mm.offset()['top'] - $('.header-banner').outerHeight());
+              .css('top', mm.offset()['top'] - hb);
         } else if(top < h_total && nm.hasClass('fxd')){
             nm.removeClass('fxd')
               .css('top', $('.main-menu').offset()['top'] + $('.main-menu').outerHeight());
