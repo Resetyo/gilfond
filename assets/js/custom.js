@@ -41,12 +41,7 @@ $(document).ready(function(){
     });
 
     //header banner animation
-    var nav_menu_top = $('.main-menu').offset()['top'] + $('.main-menu').outerHeight();
-    $('.nav-menu').css('top', nav_menu_top);
     if($('.header-banner').length > 0) {
-        if(!mq.matches) {
-            $('.header-banner').css('top',$('.mobile-menu').outerHeight());
-        }
         $('.header-banner-content').css('top','0%');
         $('.header-banner-close').click(function(){
             $('.header-banner-content').css('top','-' + $('.header-banner-content').outerHeight() + 'px');
@@ -156,22 +151,6 @@ $(document).ready(function(){
         });
     }
 
-    //carousel
-    var carousel = $('.owl-carousel');
-    if (carousel.length > 0) {
-        $('.owl-carousel').owlCarousel({
-            loop:true,
-            nav:true,
-            items:1,
-            dots:false,
-            autoplay:true,
-            autoplayTimeout:5000,
-            autoplayHoverPause:true,
-            smartSpeed: 1000,
-            navText:["&lt;","&gt;"]
-        });
-    }
-
     //search block
     var search_block = $('.search-block');
     if (search_block.length > 0) {
@@ -193,10 +172,26 @@ $(document).ready(function(){
         }
     }
 
+    //carousel
+    var carousel = $('.owl-carousel');
+    if (carousel.length > 0) {
+        $('.owl-carousel').owlCarousel({
+            loop:true,
+            nav:true,
+            items:1,
+            dots:false,
+            autoplay:true,
+            autoplayTimeout:5000,
+            autoplayHoverPause:true,
+            smartSpeed: 1000,
+            navText:["&lt;","&gt;"]
+        });
+    }
+
     //slider controls position
     var controls = $('.owl-nav');
     if (controls.length > 0) {
-        controls.wrap('<div class="content__wrapper" style="position:relative;"></div>');
+        controls.wrap('<div class="owl-wrapper"></div>');
     }
 
     //Kenneth Burns animation
@@ -256,10 +251,21 @@ $(document).ready(function(){
         $styledSelect.off('click');
         $styledSelect.click(function(e) {
             e.stopPropagation();
+            var menu_items = $(this).next('ul.select-options');
             $('div.select-styled.active').not(this).each(function(){
-                $(this).removeClass('active').next('ul.select-options').hide();
+                $(this).removeClass('active');
+                menu_items.hide();
             });
-            $(this).toggleClass('active').next('ul.select-options').toggle();
+            $(this).toggleClass('active');
+            menu_items.toggle();
+            if ($styledSelect.offset()['top'] + 
+                $styledSelect.outerHeight() +
+                menu_items.outerHeight() > $('.footer').offset()['top']) {
+
+                var extended_height = menu_items.offset()['top'] + 
+                    menu_items.outerHeight() - $('.footer').offset()['top'] + 20;
+                $('.content__wrapper').css('margin-bottom', extended_height);
+            }
         });
 
         $listItems.off('click');
@@ -268,11 +274,13 @@ $(document).ready(function(){
             $styledSelect.text($(this).text()).removeClass('active');
             $this.val($(this).attr('rel')).change();
             $list.hide();
+            $('.content__wrapper').css('margin-bottom',0);
         });
       
         $(document).click(function() {
             $styledSelect.removeClass('active');
             $list.hide();
+            $('.content__wrapper').css('margin-bottom',0);
         });
 
     }
@@ -341,6 +349,8 @@ function WidthChange1(mql) {
 function WidthChange(mql) {
   if (mq.matches) {
     //nav menu & right block scroll
+    var nav_menu_top = $('.main-menu').offset()['top'] + $('.main-menu').outerHeight();
+    $('.nav-menu').css('top', nav_menu_top);
     $(window).resize(function() {
         rb_width = $('.content__left-block').outerWidth() / 2;
         rb_left = ($(this).innerWidth() - $('.content__wrapper').first().outerWidth()) / 2 + $('.content__left-block').outerWidth() + 43;
@@ -389,6 +399,12 @@ function WidthChange(mql) {
         }
     });
 
+    if($('.header-banner').length > 0) {
+        setTimeout(function(){
+            $('.header-banner').css('top',0);
+        },50);
+    }
+
   } else {
     $(window).off('scroll');
     $(window).scroll(function() {
@@ -411,6 +427,12 @@ function WidthChange(mql) {
     $(document).click(function() {
         $('.cabinet-mobile-menu').find('li').hide();
     });
+
+    if($('.header-banner').length > 0) {
+        setTimeout(function(){
+            $('.header-banner').css('top',$('.mobile-menu').outerHeight());
+        },50);
+    }
 
   }
 }

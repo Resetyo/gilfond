@@ -11,7 +11,7 @@
 </head>
 <body>
   <div class="wrapper">
-    <header class="content__wrapper">
+    <header>
       <div class="main-menu">
         <div class="logo">
           <a href="#"><img src="assets/images/logo.svg" alt="ЖилФонд"></a>
@@ -70,125 +70,123 @@
     </header>
     
     <div class="content">
-      <div class="content__cabinet">
-        <div class="content__wrapper">
-          <h1>Передача показаний счетчиков</h1>
-          <div class="content__cabinet-subheader">
-            <p>
-              Ваша задолженность — 4 746,45 РУБ
-            </p>
-            <p>
-              № лицевого счёта — 961913
-            </p>
+      
+      <div class="content__wrapper">
+        <h1 class="content__cabinet__h1">Передача показаний счетчиков</h1>
+        <div class="content__cabinet-subheader">
+          <p>
+            Ваша задолженность — 4 746,45 РУБ
+          </p>
+          <p>
+            № лицевого счёта — 961913
+          </p>
+        </div>
+
+        <nav class="tabs-nav-cabinet content__right-block">
+          <ul>
+            <li class="active"><a href="#">Передача показаний счётчиков</a></li>
+            <li><a href="#">Оплатить ЖКУ</a></li>
+            <li><a href="#">История платежей</a></li>
+            <li><a href="#">Получить счёт-квитанцию</a></li>
+            <li><a href="#">Мои обращения</a></li>
+            <li><a href="#">Сменить пароль или почту</a></li>
+            <li><a href="#"><img src="assets/images/logout.svg">Выйти из кабинета</a></li>
+          </ul>
+        </nav>
+
+        <section class="content__left-block">
+
+          <a href="#" class="text-green-u">Инструкция передачи показаний</a>
+
+          <h2 class="content__cabinet__h2">Первый стояк</h2>
+          
+          <div class="content__cabinet-counter cold-water">
+            <div>
+              <form action="" class="-visor-no-click counter-form">
+                <p>Значение на 07 июня 2017</p>
+                <input type="text" name="first_cold" class="money" required>
+                <button class="btn-green" type="submit">Передать</button>
+                <p>Последнее значение: 19,23 (12 июля 2016)</p>
+              </form>
+              <a href="#">История показаний</a>
+            </div>
+            <p>следующая поверка счётчика 25 января 2023</p>
+            <p>серия счётчика 5059755</p>
           </div>
 
-          <nav class="tabs-nav-cabinet content__right-block">
-            <ul>
-              <li class="active"><a href="#">Передача показаний счётчиков</a></li>
-              <li><a href="#">Оплатить ЖКУ</a></li>
-              <li><a href="#">История платежей</a></li>
-              <li><a href="#">Получить счёт-квитанцию</a></li>
-              <li><a href="#">Мои обращения</a></li>
-              <li><a href="#">Сменить пароль или почту</a></li>
-              <li><a href="#"><img src="assets/images/logout.svg">Выйти из кабинета</a></li>
-            </ul>
-          </nav>
-
-          <section class="content__left-block">
-
-            <a href="#" class="text-green-u">Инструкция передачи показаний</a>
-
-            <h2>Первый стояк</h2>
-            
-            <div class="content__cabinet-counter cold-water">
-              <div>
-                <form action="" class="-visor-no-click counter-form">
-                  <p>Значение на 07 июня 2017</p>
-                  <input type="text" name="first_cold" class="money" required>
-                  <button class="btn-green" type="submit">Передать</button>
-                  <p>Последнее значение: 19,23 (12 июля 2016)</p>
-                </form>
-                <a href="#">История показаний</a>
-              </div>
-              <p>следующая поверка счётчика 25 января 2023</p>
-              <p>серия счётчика 5059755</p>
+          <div class="content__cabinet-counter hot-water">
+            <div>
+              <form action="" class="-visor-no-click counter-form">
+                <p>Значение на 07 июня 2017</p>
+                <input type="text" name="first_hot" class="money" required>
+                <button class="btn-green" type="submit">Передать</button>
+                <p>Последнее значение: 19,23 (12 июля 2016)</p>
+              </form>
+              <a href="#">История показаний</a>
             </div>
+            <p>следующая поверка счётчика 25 января 2023</p>
+            <p>серия счётчика 5059755</p>
+          </div>
 
-            <div class="content__cabinet-counter hot-water">
-              <div>
-                <form action="" class="-visor-no-click counter-form">
-                  <p>Значение на 07 июня 2017</p>
-                  <input type="text" name="first_hot" class="money" required>
-                  <button class="btn-green" type="submit">Передать</button>
-                  <p>Последнее значение: 19,23 (12 июля 2016)</p>
-                </form>
-                <a href="#">История показаний</a>
-              </div>
-              <p>следующая поверка счётчика 25 января 2023</p>
-              <p>серия счётчика 5059755</p>
+          <h2 class="content__cabinet__h2">Второй стояк</h2>
+
+          <div class="content__cabinet-counter cold-water">
+            <div>
+              <form action="" class="-visor-no-click counter-form">
+                <p>Значение на 07 июня 2017</p>
+                <input type="text" name="second_cold" class="money" required>
+                <button class="btn-green" type="submit">Передать</button>
+                <p>Последнее значение: 19,23 (12 июля 2016)</p>
+              </form>
+              <a href="#">История показаний</a>
             </div>
+            <p>следующая поверка счётчика 25 января 2023</p>
+            <p>серия счётчика 5059755</p>
+          </div>
 
-            <h2>Второй стояк</h2>
-
-            <div class="content__cabinet-counter cold-water">
-              <div>
-                <form action="" class="-visor-no-click counter-form">
-                  <p>Значение на 07 июня 2017</p>
-                  <input type="text" name="second_cold" class="money" required>
-                  <button class="btn-green" type="submit">Передать</button>
-                  <p>Последнее значение: 19,23 (12 июля 2016)</p>
-                </form>
-                <a href="#">История показаний</a>
-              </div>
-              <p>следующая поверка счётчика 25 января 2023</p>
-              <p>серия счётчика 5059755</p>
+          <div class="content__cabinet-counter hot-water">
+            <div>
+              <form action="" class="-visor-no-click counter-form">
+                <p>Значение на 07 июня 2017</p>
+                <input type="text" name="second_hot" class="money" required>
+                <button class="btn-green" type="submit">Передать</button>
+                <p>Последнее значение: 19,23 (12 июля 2016)</p>
+              </form>
+              <a href="#">История показаний</a>
             </div>
+            <p>следующая поверка счётчика 25 января 2023</p>
+            <p>серия счётчика 5059755</p>
+          </div>
 
-            <div class="content__cabinet-counter hot-water">
-              <div>
-                <form action="" class="-visor-no-click counter-form">
-                  <p>Значение на 07 июня 2017</p>
-                  <input type="text" name="second_hot" class="money" required>
-                  <button class="btn-green" type="submit">Передать</button>
-                  <p>Последнее значение: 19,23 (12 июля 2016)</p>
-                </form>
-                <a href="#">История показаний</a>
-              </div>
-              <p>следующая поверка счётчика 25 января 2023</p>
-              <p>серия счётчика 5059755</p>
+          <br>
+
+          <div class="content__cabinet-counter electricity">
+            <div>
+              <form action="" class="-visor-no-click counter-form">
+                <p>Значение на 07 июня 2017</p>
+                <input type="text" name="electro" class="money" required>
+                <button class="btn-green" type="submit">Передать</button>
+                <p>Последнее значение: 19,23 (12 июля 2016)</p>
+              </form>
+              <a href="#">История показаний</a>
             </div>
+            <p>следующая поверка счётчика 25 января 2023</p>
+            <p>серия счётчика 5059755</p>
+          </div>
 
-            <br>
-
-            <div class="content__cabinet-counter electricity">
-              <div>
-                <form action="" class="-visor-no-click counter-form">
-                  <p>Значение на 07 июня 2017</p>
-                  <input type="text" name="electro" class="money" required>
-                  <button class="btn-green" type="submit">Передать</button>
-                  <p>Последнее значение: 19,23 (12 июля 2016)</p>
-                </form>
-                <a href="#">История показаний</a>
-              </div>
-              <p>следующая поверка счётчика 25 января 2023</p>
-              <p>серия счётчика 5059755</p>
-            </div>
-
-            <div class="content__cabinet-by-phone">
-              <h3>Передать показания по телефону 212-34-46</h3>
-              <p>
-                Узнать ваши тарифы на воду и электричество<br>
-                вы можете на странице <a href="#" class="text-green-u">Мой дом</a>
-              </p>
-            </div>
-          </section>
-        </div>
+          <div class="content__cabinet-by-phone">
+            <h3>Передать показания по телефону 212-34-46</h3>
+            <p>
+              Узнать ваши тарифы на воду и электричество<br>
+              вы можете на странице <a href="#" class="text-green-u">Мой дом</a>
+            </p>
+          </div>
+        </section>
       </div>
-
     </div>
 
     <footer class="footer">
-      <div class="footer__menu content__wrapper">
+      <div class="footer__menu">
         <div class="col_1">
           <h4>Принимаем к оплате</h4>
           <p>
@@ -224,27 +222,25 @@
         </div>
       </div>
       <div class="footer__bottom">
-        <div class="content__wrapper">
-          <span class="footer__bottom__copy">
-            &copy; 2012. ООО ГУК &laquo;Жилфонд&raquo;
-          </span>
-          <span class="footer__bottom__social">
-            <a href="#"><img src="assets/images/bvk.svg" alt="vk"></a>
-            <a href="#"><img src="assets/images/bok.svg" alt="ok"></a>
-            <a href="#"><img src="assets/images/bi.svg" alt="Instagram"></a>
-            <a href="#"><img src="assets/images/bfacebook.svg" alt="fb"></a>
-          </span>
-          <span class="footer__bottom__design">
-            <a href="http://chipsa.ru">
-              Проектирование и дизайн &laquo;Чипса&raquo;, 2017
-            </a>
-          </span>
-        </div>
+        <span class="footer__bottom__copy">
+          &copy; 2012. ООО ГУК &laquo;Жилфонд&raquo;
+        </span>
+        <span class="footer__bottom__social">
+          <a href="#"><img src="assets/images/bvk.svg" alt="vk"></a>
+          <a href="#"><img src="assets/images/bok.svg" alt="ok"></a>
+          <a href="#"><img src="assets/images/bi.svg" alt="Instagram"></a>
+          <a href="#"><img src="assets/images/bfacebook.svg" alt="fb"></a>
+        </span>
+        <span class="footer__bottom__design">
+          <a href="http://chipsa.ru">
+            Проектирование и дизайн &laquo;Чипса&raquo;, 2017
+          </a>
+        </span>
       </div>
     </footer>
 
     <div class="search-block">
-      <div class="content__wrapper">
+      <div>
         <input class="search-block-input" type="text" placeholder="Введите запрос">
         <button class="btn-red search-block-submit">Найти</button>
         <button class="search-block-close"><img src="assets/images/cross.svg" alt="Закрыть" title="Закрыть"></button>
