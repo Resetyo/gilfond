@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Раскрытие информации | ЖилФонд</title>
+  <title>ЖилФонд</title>
   <link rel="stylesheet" href="assets/css/normalize.css">
   <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
   <link rel="stylesheet" href="assets/css/owl.theme.default.css">
@@ -14,7 +14,7 @@
     <header>
       <div class="main-menu">
         <div class="logo">
-          <a href="/"><img src="assets/images/logo.svg" alt="ЖилФонд"></a>
+          <img src="assets/images/logo.svg" alt="ЖилФонд">
         </div>
         <p>Городская<br>управляющая<br>компания</p>
         <div class="main-menu__payment">
@@ -30,10 +30,10 @@
           <a href="#"><img src="assets/images/facebook.svg" alt="fb"></a>
         </div>
         <div class="main-menu__login">
-          <button class="btn-white">Личный кабинет</button>
+          <button class="btn-white js-modal" data-modal="login-window">Личный кабинет</button>
         </div>
       </div>
-      
+
       <hr>
       
       <div class="nav-menu">
@@ -61,126 +61,26 @@
         </ul>
 
         <h2><a href="/">ЖилФонд</a></h2>
-        <a href="#"><img src="assets/images/user.svg" alt="Кабинет"></a>
+        <a href="#" class="js-modal" data-modal="login-window"><img src="assets/images/user.svg" alt="Кабинет"></a>
       </nav>
     </header>
     
     <div class="content">
-      
+
       <div class="content__wrapper">
-        <div class="content__info">
-          <h1>ООО ГУК &laquo;ЖИЛФОНД&raquo;</h1>
+        <img class="not-found__img" src="assets/images/4042.jpg" alt="ЖилФонд">
 
-          <div class="content__info-card">
-            <ul>
-              <li>
-                <h4>Руководитель:</h4>
-                <p>Жавнова Наталья Владимировна</p>
-              </li>
-              <li>
-                <h4>Фактический адрес:</h4>
-                <p>Красноярск, ул. Алексеева, д. 49</p>
-              </li>
-              <li>
-                <h4>Телефон и e-mail:</h4>
-                <p>(391) 273-02-74,<br>priemnaja@krasguk.ru</p>
-              </li>
-              <li>
-                <h4>Ответственный за заполнение:</h4>
-                <p>Лукша Д.В.</p>
-              </li>
-            </ul>
-          </div>
+        <div class="not-found__text">
+          <h1 class="not-found__h1">Ошибка 404</h1>
+          
+          <p class="not-found__p">
+            Страница не найдена. Неправильно набран адрес<br>
+            или такой страницы больше не существует.
+          </p>
 
-          <div class="content__info-map" id="map"></div>
-
-          <nav class="tabs-nav tabs-nav-info">
-            <ul>
-              <li><a href="#worksheet">Текущая анкета</a></li>
-              <li><a href="#rates">Рейтинги</a></li>
-              <li><a href="#archive">Архив анкет</a></li>
-              <li><a href="#mkd_list">Список МКД</a></li>
-            </ul>
-          </nav>
-
-          <section class="tab-content" id="worksheet">
-            1
-          </section>
-
-          <section class="tab-content" id="rates">
-            2
-          </section>
-
-          <section class="tab-content" id="archive">
-            3
-          </section>
-
-          <section class="tab-content" id="mkd_list">
-            <nav class="tabs-nav tabs-nav-info-inner">
-              <ul>
-                <li><a href="#houses">Дома под управлением</a></li>
-                <li><a href="#accomplished">Рейтинги</a></li>
-              </ul>
-            </nav>
-
-            <section class="tab-content" id="houses">
-              <select name="region" id="region">
-                <option value="1">Красноярский край (2140)</option>
-              </select>
-              <a href="#" class="text-green-u">Показать все (2140)</a>
-              <table class="section-table">
-                <tr>
-                  <th>Адрес</th>
-                  <th>Дата начала<br>управления</th>
-                  <th>Дата прекращения<br>обслуживания</th>
-                  <th>Основание прекращения обслуживания</th>
-                  <tr>
-                    <td class="text-green-u">г. Красноярск, ул. Кутузова, д. 18</td>
-                    <td>26.05.2016</td>
-                    <td>01.08.2017</td>
-                    <td>Решение собственников о смене управляющей организации.</td>
-                  </tr>
-                  <tr>
-                    <td class="text-green-u">г. Красноярск, ул. Щорса, д. 75</td>
-                    <td>26.05.2016</td>
-                    <td>01.08.2017</td>
-                    <td>Решение собственников о смене управляющей организации.</td>
-                  </tr>
-                  <tr>
-                    <td class="text-green-u">г. Красноярск, ул. Королева, д. 3</td>
-                    <td>26.05.2016</td>
-                    <td>01.08.2017</td>
-                    <td>Решение собственников о смене управляющей организации.</td>
-                  </tr>
-                  <tr>
-                    <td class="text-green-u">г. Красноярск, ул. Шелковая, д. 4</td>
-                    <td>26.05.2016</td>
-                    <td>01.08.2017</td>
-                    <td>Решение собственников о смене управляющей организации.</td>
-                  </tr>
-                  <tr>
-                    <td class="text-green-u">г. Красноярск, ул. Ястынская, д. 4</td>
-                    <td>26.05.2016</td>
-                    <td>01.08.2017</td>
-                    <td>Решение собственников о смене управляющей организации.</td>
-                  </tr>
-                  <tr>
-                    <td class="text-green-u">г. Красноярск, ул. Воронова, д. 35</td>
-                    <td>26.05.2016</td>
-                    <td>01.08.2017</td>
-                    <td>Решение собственников о смене управляющей организации.</td>
-                  </tr>
-                </tr>
-              </table>
-            </section>
-
-            <section class="tab-content" id="accomplished">
-              2
-            </section>
-          </section>
+          <a href="/" class="btn-red">На глваную</a>
         </div>
       </div>
-
     </div>
 
     <footer class="footer">
@@ -243,6 +143,22 @@
         <button class="btn-red search-block-submit">Найти</button>
         <button class="search-block-close"><img src="assets/images/cross.svg" alt="Закрыть" title="Закрыть"></button>
       </div>
+    </div>
+
+    <div class="login-window">
+      <button class="js-modal-close"><img src="assets/images/cross.svg" alt="Закрыть" title="Закрыть"></button>
+      <div class="login-header">
+        <img src="assets/images/user2.svg">
+        <span>Вход в личный кабинет</span>
+        <a href="#" class="text-green-u">Где найти номер лицевого счёта и пароль</a>
+      </div>
+      <form action="" class="-visor-no-click">
+        <input name="bill_number" type="text" placeholder="Ваш логин">
+        <input name="password" type="password" placeholder="Пароль">
+        <input name="remember_me" id="remember-me" type="checkbox">
+        <label for="remember-me">Запомнить меня</label>
+        <button class="btn-green" type="submit">Войти в кабинет</button>
+      </form>
     </div>
   </div>
   <script src="assets/js/jquery-3.2.1.min.js"></script>
