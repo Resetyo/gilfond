@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>История платежей | ЖилФонд</title>
+  <title>Результаты поиска | ЖилФонд</title>
   <link rel="stylesheet" href="assets/css/normalize.css">
   <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
   <link rel="stylesheet" href="assets/css/owl.theme.default.css">
@@ -14,14 +14,14 @@
     <header>
       <div class="main-menu">
         <div class="logo">
-          <a href="#"><img src="assets/images/logo.svg" alt="ЖилФонд"></a>
+          <a href="/"><img src="assets/images/logo.svg" alt="ЖилФонд"></a>
         </div>
         <p>Городская<br>управляющая<br>компания</p>
         <div class="main-menu__payment">
           <a href="#" class="btn-red">Оплатить ЖКУ</a>
         </div>
         <div class="main-menu__made-uk">
-          <button class="btn-red">написать в &laquo;ЖилФонд&raquo;</button>
+          <a href="#" class="btn-red">Сделать &laquo;ЖилФонд&raquo; своей УК</a>
         </div>
         <div class="main-menu__social">
           <a href="#"><img src="assets/images/i.svg" alt="Instagram"></a>
@@ -29,15 +29,11 @@
           <a href="#"><img src="assets/images/ok.svg" alt="ok"></a>
           <a href="#"><img src="assets/images/facebook.svg" alt="fb"></a>
         </div>
-        <div class="main-menu__profile">
-          <a href="#">
-            <span class="profile__name">Дюков Валерий Иванович</span><br>
-            Ваша <span class="profile__status">задолженность</span> &ndash; 
-            <span class="profile__amount">4 746.45</span>&nbsp;Р
-          </a>
+        <div class="main-menu__login">
+          <button class="btn-white">Личный кабинет</button>
         </div>
       </div>
-      
+
       <hr>
       
       <div class="nav-menu">
@@ -56,7 +52,7 @@
         <label for="mobile-menu-button"></label>
         <ul>
           <li><a href="#" class="btn-red">Оплатить ЖКУ</a></li>
-          <li><button class="btn-red">написать в &laquo;ЖилФонд&raquo;</button></li>
+          <li><a href="#" class="btn-red">Сделать &laquo;ЖилФонд&raquo; своей УК</a></li>
           <li><a href="#">Мой Дом</a></li>
           <li><a href="#">О&nbsp;&laquo;Жилфонде&raquo;</a></li>
           <li><a href="#">Пресс-центр</a></li>
@@ -70,76 +66,49 @@
     </header>
     
     <div class="content">
-      
+
       <div class="content__wrapper">
-        <h1 class="content__cabinet__h1">История платежей</h1>
-        <div class="content__cabinet-subheader">
-          <p>
-            Ваша задолженность — 4 746,45 РУБ
-          </p>
-          <p>
-            № лицевого счёта — 961913
+        <h1>Результаты поиска</h1>
+        <form action="" class="-visor-no-click search-result__form">
+          <input name="search-query" type="text" placeholder="Введите запрос" value="Аварийная служба">
+          <button class="btn-green" type="submit">Найти</button>
+        </form>
+        <p class="search-result__count">
+          Найдено 185 результатов
+        </p>
+
+        <div class="search-result__item">
+          <span class="search-result__number">1.</span>
+          <h3><a href="#" class="text-green-u">Аварийная служба</a></h3>
+          <p class="search-result__text">
+            297-93-60 ЖД район 264-15-55, 264-25-55 Ленинский район 224-13-65, 224-55-35 Советский район 297-93-50 Октябрьский район 264-45-45, 264-28-28 Кировский район 297-93-50 Центральный район 233-38-22, 233-39-96 Свердловский район Будни - 17.00 - 8.00. В выходные и праздничные дни – круглосуточно
           </p>
         </div>
 
-        <nav class="tabs-nav-cabinet content__right-block">
-          <ul>
-            <li><a href="#">Передача показаний счётчиков</a></li>
-            <li><a href="#">Оплатить ЖКУ</a></li>
-            <li class="active"><a href="#">История платежей</a></li>
-            <li><a href="#">Получить счёт-квитанцию</a></li>
-            <li><a href="#">Мои обращения</a></li>
-            <li><a href="#">Сменить пароль или почту</a></li>
-            <li><a href="#"><img src="assets/images/logout.svg">Выйти из кабинета</a></li>
-          </ul>
-        </nav>
+        <div class="search-result__item">
+          <span class="search-result__number">2.</span>
+          <h3><a href="#" class="text-green-u">Новости / Горячие линии в Управляющих компаниях</a></h3>
+          <p class="search-result__text">
+            В управляющих компаниях, входящих в состав ООО ГУК «Жилфонд», заработали горячие линии. Обращаться со своими проблемами к специалистам жители могут по будням в рабочее время
+          </p>
+        </div>
 
-        <section class="content__left-block">
-          <table class="section-table">
-            <tr>
-              <th>Дата</th>
-              <th>Получатель</th>
-              <th>Тип платежа</th>
-              <th>Сумма</th>
-            </tr>
-            <tr>
-              <td>26.05.2016</td>
-              <td>ООО ГУК Жилфонд (Советский район)</td>
-              <td>БЕЗНАЛИЧНЫЙ</td>
-              <td>41 500.67 РУБ</td>
-            </tr>
-            <tr>
-              <td>26.05.2016</td>
-              <td>ООО ГУК Жилфонд (Советский район)</td>
-              <td>БЕЗНАЛИЧНЫЙ</td>
-              <td>41 500.67 РУБ</td>
-            </tr>
-            <tr>
-              <td>26.05.2016</td>
-              <td>ООО ГУК Жилфонд (Советский район)</td>
-              <td>БЕЗНАЛИЧНЫЙ</td>
-              <td>41 500.67 РУБ</td>
-            </tr>
-            <tr>
-              <td>26.05.2016</td>
-              <td>ООО ГУК Жилфонд (Советский район)</td>
-              <td>БЕЗНАЛИЧНЫЙ</td>
-              <td>41 500.67 РУБ</td>
-            </tr>
-            <tr>
-              <td>26.05.2016</td>
-              <td>ООО ГУК Жилфонд (Советский район)</td>
-              <td>БЕЗНАЛИЧНЫЙ</td>
-              <td>41 500.67 РУБ</td>
-            </tr>
-            <tr>
-              <td>26.05.2016</td>
-              <td>ООО ГУК Жилфонд (Советский район)</td>
-              <td>БЕЗНАЛИЧНЫЙ</td>
-              <td>41 500.67 РУБ</td>
-            </tr>
-          </table>
-        </section>
+        <div class="search-result__item">
+          <span class="search-result__number">3.</span>
+          <h3><a href="#" class="text-green-u">Статьи / Смотрю в квитанцию - черпаю информацию!</a></h3>
+          <p class="search-result__text">
+            Ежемесячно в своих квитанциях жители находят информацию о том, какие суммы им предстоит оплатить за коммунальные и жилищные услуги. В «Жилфонде» постарались максимально ясно...
+          </p>
+        </div>
+
+        <div class="search-result__pages">
+          <span class="search-result__page"><a href="#">1</a></span>
+          <span class="search-result__page current"><a href="#">2</a></span>
+          <span class="search-result__page"><a href="#">3</a></span>
+          <span class="search-result__page"><a href="#">4</a></span>
+          <span class="search-result__page"><a href="#">5</a></span>
+          <span class="search-result__page more"><a href="#">...</a></span>
+        </div>
       </div>
     </div>
 

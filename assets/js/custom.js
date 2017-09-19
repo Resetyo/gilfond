@@ -2,7 +2,9 @@ $(document).ready(function(){
     //modals
     $('.js-modal').click(function(){
         var $this = $(this);
-        var modal_window = $('.' + $this.data('modal'));
+        var modal_window = $('#' + $this.data('modal'));
+
+        $(window).scrollTop(0,0);
 
         modal_window.fadeIn(200);
         $('body').append('<div class="body-fade"></div>');
@@ -39,6 +41,34 @@ $(document).ready(function(){
         });
         e.preventDefault();
     });
+
+    //recourse form
+    $('#recourse-form').submit(function(e){
+        $(this).hide().siblings().not('.js-modal-close').hide();
+        $.ajax({
+            type: "POST",
+            url: 'http://www.yandex.ru',
+            data: $(this).serialize()
+        });
+        $(this).next('.recourse-success').show();
+        $(window).scrollTop(0,0);
+        e.preventDefault();
+    });
+
+    //search cutter
+    var text = $('.search-result__text');
+    if(text.length > 0) {
+        text.each(function(){
+            $(this).html(cutText($(this).html(),180));
+        });
+    }
+
+    function cutText(string,length) {
+        if (string.length > length) {
+            return string.slice(0,length) + '...';
+        }
+        return string;
+    }
 
     //header banner animation
     if($('.header-banner').length > 0) {
@@ -169,6 +199,7 @@ $(document).ready(function(){
             $('.body-fade').fadeOut(200, function(){
                 $(this).remove();
             });
+            return false;
         }
     }
 
@@ -179,7 +210,7 @@ $(document).ready(function(){
             loop:true,
             nav:true,
             items:1,
-            dots:false,
+            dots:true,
             autoplay:true,
             autoplayTimeout:5000,
             autoplayHoverPause:true,
@@ -336,6 +367,17 @@ $(document).ready(function(){
 
     //money mask
     $(".money").numericInput({ allowFloat: true});
+
+    //file input label
+    $("#recourse-window input[type='file']").change(function(){
+        var fileName = $(this).val().split('/').pop().split('\\').pop();
+        $(this).next('label').text('Выбран файл ' + fileName);
+    });
+
+    //phone mask
+    if ($("#phone").length > 0) {
+        $("#phone").mask('0 (000) 000-0000');
+    }
 });
 
 

@@ -317,14 +317,16 @@
     </footer>
 
     <div class="search-block">
-      <div>
-        <input class="search-block-input" type="text" placeholder="Введите запрос">
-        <button class="btn-red search-block-submit">Найти</button>
-        <button class="search-block-close"><img src="assets/images/cross.svg" alt="Закрыть" title="Закрыть"></button>
-      </div>
+      <form action="" class="-visor-no-click">
+        <input name="search-query" class="search-block-input" type="text" placeholder="Введите запрос">
+        <button class="btn-red" type="submit">Найти</button>
+        <button class="search-block-close">
+          <img src="assets/images/cross.svg" alt="Закрыть" title="Закрыть">
+        </button>
+      </form>
     </div>
 
-    <div class="login-window">
+    <div class="modal-window" id="login-window">
       <button class="js-modal-close"><img src="assets/images/cross.svg" alt="Закрыть" title="Закрыть"></button>
       <div class="login-header">
         <img src="assets/images/user2.svg">
@@ -332,8 +334,8 @@
         <a href="#" class="text-green-u">Где найти номер лицевого счёта и пароль</a>
       </div>
       <form action="" class="-visor-no-click">
-        <input name="bill_number" type="text" placeholder="Ваш логин">
-        <input name="password" type="password" placeholder="Пароль">
+        <input name="bill_number" type="text" placeholder="Ваш логин" required>
+        <input name="password" type="password" placeholder="Пароль" required>
         <input name="remember_me" id="remember-me" type="checkbox">
         <label for="remember-me">Запомнить меня</label>
         <button class="btn-green" type="submit">Войти в кабинет</button>
