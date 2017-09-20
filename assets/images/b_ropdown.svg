@@ -1,0 +1,12 @@
+<svg width="10" height="6" viewBox="0 0 10 6" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>Dropdown</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(13277 2671)">
+<g id="Dropdown">
+<use xlink:href="#path0_fill" transform="matrix(0.138275 -0.990394 0.138275 0.990394 -13276.9 -2670)" fill="#363636"/>
+</g>
+</g>
+<defs>
+<path id="path0_fill" fill-rule="evenodd" d="M 0.201939 0.104137C -0.0228334 -0.0665886 -0.0665886 -0.0228334 0.104137 0.201939L 12.5486 16.6854L 15.0516 20.0019C 15.2223 20.2266 15.5331 20.5374 15.7578 20.7081L 19.0746 23.2108L 35.5575 35.6558C 35.7822 35.8265 35.826 35.7828 35.6553 35.558L 33.1525 32.2413C 32.9818 32.0165 32.6711 31.7057 32.4463 31.535L 16.365 19.3947L 4.22494 3.31311C 4.05418 3.08836 3.74344 2.77761 3.51869 2.60686L 0.201939 0.104137Z"/>
+</defs>
+</svg>

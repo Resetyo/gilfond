@@ -61,6 +61,9 @@ $(document).ready(function(){
         text.each(function(){
             $(this).html(cutText($(this).html(),180));
         });
+        $('.search-result__header').each(function(){
+            $(this).html(cutText($(this).html(),75));
+        });
     }
 
     function cutText(string,length) {
@@ -320,6 +323,12 @@ $(document).ready(function(){
     $('.js-contest').click(function(){
         $('.content__contest--extend').show();
         $(this).hide();
+        return false;
+    });
+
+    //pay methods toggler
+    $('.js-pay-methods').click(function(){
+        $(this).toggleClass('active').next().toggle();
         return false;
     });
 

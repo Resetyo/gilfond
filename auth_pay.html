@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Сменить пароль или почту | ЖилФонд</title>
+  <link rel="stylesheet" href="assets/css/normalize.css">
+  <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+  <link rel="stylesheet" href="assets/css/owl.theme.default.css">
+  <link rel="stylesheet" href="assets/css/custom.css">
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+      <div class="main-menu">
+        <div class="logo">
+          <a href="#"><img src="assets/images/logo.svg" alt="ЖилФонд"></a>
+        </div>
+        <p>Городская<br>управляющая<br>компания</p>
+        <div class="main-menu__payment">
+          <a href="#" class="btn-red">Оплатить ЖКУ</a>
+        </div>
+        <div class="main-menu__made-uk">
+          <button class="btn-red">написать в &laquo;ЖилФонд&raquo;</button>
+        </div>
+        <div class="main-menu__social">
+          <a href="#"><img src="assets/images/i.svg" alt="Instagram"></a>
+          <a href="#"><img src="assets/images/vk.svg" alt="vk"></a>
+          <a href="#"><img src="assets/images/ok.svg" alt="ok"></a>
+          <a href="#"><img src="assets/images/facebook.svg" alt="fb"></a>
+        </div>
+        <div class="main-menu__profile">
+          <a href="#">
+            <span class="profile__name">Дюков Валерий Иванович</span><br>
+            Ваша <span class="profile__status">задолженность</span> &ndash; 
+            <span class="profile__amount">4 746.45</span>&nbsp;Р
+          </a>
+        </div>
+      </div>
+      
+      <hr>
+      
+      <div class="nav-menu">
+        <div class="nav-menu__items">
+          <a href="#" class="active">Мой Дом</a>
+          <a href="#">О&nbsp;&laquo;Жилфонде&raquo;</a>
+          <a href="#">Пресс-центр</a>
+          <a href="#">Раскрытие&nbsp;информации</a>
+          <a href="#">Контакты</a>
+          <button class="nav-menu__items__search" >Поиск</button>
+        </div>
+      </div>
+
+      <nav class="mobile-menu">
+        <input type="checkbox" id="mobile-menu-button">
+        <label for="mobile-menu-button"></label>
+        <ul>
+          <li><a href="#" class="btn-red">Оплатить ЖКУ</a></li>
+          <li><button class="btn-red">написать в &laquo;ЖилФонд&raquo;</button></li>
+          <li><a href="#">Мой Дом</a></li>
+          <li><a href="#">О&nbsp;&laquo;Жилфонде&raquo;</a></li>
+          <li><a href="#">Пресс-центр</a></li>
+          <li><a href="#">Раскрытие&nbsp;информации</a></li>
+          <li><a href="#">Контакты</a></li>
+        </ul>
+
+        <h2><a href="/">ЖилФонд</a></h2>
+        <a href="#"><img src="assets/images/user.svg" alt="Кабинет"></a>
+      </nav>
+    </header>
+    
+    <div class="content">
+      
+      <div class="content__wrapper">
+        <h1 class="content__cabinet__h1">Сменить пароль или почту</h1>
+        <div class="content__cabinet-subheader">
+          <p>
+            Ваша задолженность — 4 746,45 РУБ
+          </p>
+          <p>
+            № лицевого счёта — 961913
+          </p>
+        </div>
+
+        <nav class="tabs-nav-cabinet content__right-block">
+          <ul>
+            <li><a href="#">Передача показаний счётчиков</a></li>
+            <li class="active"><a href="#">Оплатить ЖКУ</a></li>
+            <li><a href="#">История платежей</a></li>
+            <li><a href="#">Получить счёт-квитанцию</a></li>
+            <li><a href="#">Мои обращения</a></li>
+            <li><a href="#">Сменить пароль или почту</a></li>
+            <li><a href="#"><img src="assets/images/logout.svg">Выйти из кабинета</a></li>
+          </ul>
+        </nav>
+
+        <section class="content__left-block">
+          <div class="content__change-data">
+            <div class="content__change-data__header">
+              <h2>Адрес: г. Красноярск, ул. Воронова, д. 19, кв. 55</h2>
+            </div>
+
+            <form action="" class="-visor-no-click content__stat__form-body">
+              <div>Оплатить ЖКУ</div>
+              <div>
+                <input name="payment_sum" id="payment-sum" type="text" placeholder="Введите сумму" value="4846.45" class="money">
+              </div>
+              <div>Комиссия банка (<span id="bank-comission">1</span>%)</div>
+              <div><span id="bank-comission-rub">0</span> РУБ</div>
+              <div>Итого к оплате</div>
+              <div><span id="sum-with-comission">0</span> РУБ</div>
+              <div><a href="#">Адреса оплаты без комиссий</a></div>
+              <button type="submit" class="btn-green">Оплатить</button>
+            </form>
+
+            <div class="content__change-data__footer">
+              <h2>Безопасная оплата</h2>
+              <p>
+                Обработка данных карты происходит в защищённом<br>
+                соединении с банком и исключает возможность<br>
+                получения этой информации третьими лицами.
+              </p>
+            </div>
+          </div>
+
+          <hr class="section-hr">
+          <a href="#" class="js-pay-methods">Узнать правила оплаты картой</a>
+          <div class="js-pay-methods-container">
+            <ol class="big-ol">
+              <li>
+                <p class="p">
+                  После ввода суммы и нажатия кнопки &laquo;Оплатить&raquo; вы перейдёте 
+                  на страницу ГазПромБанк, где введёте данные с вашей банковской карты
+                </p>
+                <div>
+                  <h3>Мы принимаем карты:</h3>
+                  <img src="assets/images/mastercard1.png" alt="Mastercard">
+                  <img src="assets/images/mir1.png" alt="Mir">
+                  <img src="assets/images/visa1.png" alt="Visa">
+                </div>
+              </li>
+              <li>
+                <p class="p">
+                  После совершения платежа вы автоматически перейдёте обратно в личный кабинет, где увидите информацию, что платёж принят. В целях безопасности данные вашей карты после платежа нигде не сохраняются.
+                </p>
+              </li>
+            </ol>
+            
+            <h3>
+              При отмене платежа
+            </h3>
+            <p class="p">
+              В случае отмены платежа, денежные средства могут быть возвращены только на карту, с которой осуществлен платеж. Для возврата ошибочно перечисленных денежных средств необходимо обратиться в «Жилфонд» с паспортом. <a href="#" class="text-green-u">Адреса офисов.</a>
+            </p>
+          </div>
+
+          <hr class="section-hr">
+          <a href="#" class="js-pay-methods">Смотреть другие способы оплаты</a>
+          <div class="js-pay-methods-container fz0">
+            <div class="js-pay-methods-other">
+              <img src="assets/images/citypay.png" alt="Citypay">
+            </div>
+            <div class="js-pay-methods-other">
+              <img src="assets/images/qiwi.png" alt="QIWI">
+            </div>
+            <div class="js-pay-methods-other">
+              <img src="assets/images/sber.png" alt="Сбербанк Онлайн">
+              <a href="#" class="text-green-u">Скачать инструкцию</a>
+            </div>
+            <div class="js-pay-methods-other">
+              <img src="assets/images/platezka.png" alt="Платежка">
+              <a href="#" class="text-green-u">Скачать инструкцию</a>
+            </div>
+            <div class="js-pay-methods-other">
+              <img src="assets/images/vseplatezki.png" alt="Все платежи">
+              <a href="#" class="text-green-u">Скачать инструкцию</a>
+            </div>
+          </div>
+
+          <hr class="section-hr">
+          <p class="p">
+            Для оплаты можно воспользоваться банковской картой любого банка 
+            (Visa, MasterCard, Maestro) или электронными деньгами (Яндекс.Деньги и Webmoney).
+          </p>
+          <p class="p">
+            Узнать ваши тарифы на воду и электричество вы можете на странице
+            <a href="#" class="text-green-u">Мой дом</a>
+          </p>
+
+        </section>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="footer__menu">
+        <div class="col_1">
+          <h4>Принимаем к оплате</h4>
+          <p>
+            <img src="assets/images/mastercard.png" alt="mastercard">
+            <img src="assets/images/mir.png" alt="mir">
+            <img src="assets/images/visa.png" alt="visa"><br>
+            <span>Яндекс Деньги</span>
+            <span>WebMoney</span>
+          </p>
+
+        </div>
+        <div class="col_2">
+          <h4>Жильцам</h4>
+          <a href="#">Мой дом</a>
+          <a href="#">Оплата ЖКУ</a>
+        </div>
+        <div class="col_3">
+          <h4>Общая информация</h4>
+          <div class="col_1-1">
+            <a href="#">Пресс-центр</a>
+            <a href="#">Документы</a>
+            <a href="#">Подрядчикам</a>
+            <a href="#">Вакансии</a>
+          </div>
+          <div class="col_1-2">
+            <a href="#">Раскрытие информации</a>
+            <a href="#">О&nbsp;&laquo;Жилфонде&raquo;</a>
+            <a href="#">Контакты</a>
+          </div>
+        </div>
+        <div class="col_4">
+          <a href="#" class="btn-red">Сделать &laquo;Жилфонд&raquo; своей УК</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span class="footer__bottom__copy">
+          &copy; 2012. ООО ГУК &laquo;Жилфонд&raquo;
+        </span>
+        <span class="footer__bottom__social">
+          <a href="#"><img src="assets/images/bvk.svg" alt="vk"></a>
+          <a href="#"><img src="assets/images/bok.svg" alt="ok"></a>
+          <a href="#"><img src="assets/images/bi.svg" alt="Instagram"></a>
+          <a href="#"><img src="assets/images/bfacebook.svg" alt="fb"></a>
+        </span>
+        <span class="footer__bottom__design">
+          <a href="http://chipsa.ru">
+            Проектирование и дизайн &laquo;Чипса&raquo;, 2017
+          </a>
+        </span>
+      </div>
+    </footer>
+
+    <div class="search-block">
+      <form action="" class="-visor-no-click">
+        <input name="search-query" class="search-block-input" type="text" placeholder="Введите запрос">
+        <button class="btn-red" type="submit">Найти</button>
+        <button class="search-block-close">
+          <img src="assets/images/cross.svg" alt="Закрыть" title="Закрыть">
+        </button>
+      </form>
+    </div>
+  </div>
+  <script src="assets/js/jquery-3.2.1.min.js"></script>
+  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+  <script src="assets/js/html5lightbox.js"></script>
+  <script src="assets/js/yandex-map.js"></script>
+  <script src="assets/js/owl.carousel.min.js"></script>
+  <script src="assets/js/numericInput.min.js"></script>
+  <script src="assets/js/custom.js"></script>
+</body>
+</html>
