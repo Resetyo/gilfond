@@ -28,7 +28,7 @@ $(document).ready(function(){
         $this = $(this);
         $.ajax({
             type: "POST",
-            url: 'http://www.yandex.ru',
+            url: 'http://tr25.ostorodonodor.lclients.ru/counter',
             data: $(this).serialize().replace('%2C','.'),
             success: function(data) {
                 $this.css({'visibility':'hidden'})
