@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Счет-квитанция | ЖилФонд</title>
+  <title>Перерасчёт | ЖилФонд</title>
   <link rel="stylesheet" href="assets/css/normalize.css">
   <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
   <link rel="stylesheet" href="assets/css/owl.theme.default.css">
@@ -72,63 +72,99 @@
     <div class="content">
       
       <div class="content__wrapper">
-        <h1 class="content__cabinet__h1">Счет-квитанция</h1>
-        <div class="content__cabinet-subheader">
+        <div class="content__recourse__header">
+          <h1 class="">Перерасчёт</h1>
           <p>
-            Ваша задолженность — 4 746,45 РУБ
+            Обращение №2677928<span>03 июля 2017</span>
           </p>
-          <p>
-            № лицевого счёта — 961913
+        </div>
+        <div class="content__recourse__closed">
+          <p class="content__recourse__closed__header">Закрыто</p>
+          <p class="content__recourse__closed__subheader">
+            Дата результата 03 февраля 2017
           </p>
         </div>
 
-        <nav class="tabs-nav-cabinet content__right-block">
-          <ul>
-            <li><a href="#">Передача показаний счётчиков</a></li>
-            <li class="active"><a href="#">Счет-квитанция</a></li>
-            <li><a href="#">Оплатить ЖКУ</a></li>
-            <li><a href="#">История платежей</a></li>
-            <li><a href="#">Получить счёт-квитанцию</a></li>
-            <li><a href="#">Мои обращения</a></li>
-            <li><a href="#">Сменить пароль или почту</a></li>
-            <li><a href="#"><img src="assets/images/logout.svg">Выйти из кабинета</a></li>
-          </ul>
-        </nav>
+        <hr class="section-hr">
 
-        <section class="content__left-block">
-          <div class="content__cabinet-bill">
-            <div class="content__cabinet-bill__header">
-              <p>
-                Скачать квитанцию за текущий месяц возможно только после 30-го числа этого же месяца, 
-                за предыдущие месяцы в любой день месяца.
-              </p>
-            </div>
-            <h2>Счет-квитанция</h2>
-            <form action="" class="-visor-no-click">
-              <label for="bill_period">Период</label>
-              <select name="bill_period" id="bill_period">
-                <option value="1">Август 2017</option>
-                <option value="2">Июль 2017</option>
-                <option value="3">Июнь 2017</option>
-              </select>
-              <button class="btn-green" type="submit">Получить счет-квитанцию</button>
-            </form>
+        <div class="content__recourse__message">
+          <div class="content__recourse__user">
+            <img src="assets/images/user.svg" alt="Фото">
+            <p class="content__recourse__user-name">
+              Ваш вопрос
+            </p>
+            <p class="content__recourse__user-date"></p>
           </div>
-          <p>
-            <b>Внимание!</b> Для просмотра квитанций в формате PDF Вам необходима 
-            программа для чтения PDF-файлов. Например, Adobe Reader X 
-            (сайт: 
-            <a class="text-green-u" href="http://www.adobe.com/products/reader.html">
-              http://www.adobe.com/products/reader.html
-            </a>
-            ) или Foxit Reader 
-            (сайт: 
-            <a class="text-green-u" href="http://www.foxitsoftware.com/Secure_PDF_Reader/">
-              http://www.foxitsoftware.com/Secure_PDF_Reader/
-            </a>
-            ).
-          </p>
-        </section>
+          
+          <div class="content__recourse__body">
+            <h2>
+              Здравствуйте, когда включат холодную воду? В подъезде нет никаких уведомлений на этот счёт.
+            </h2>
+
+            <hr class="section-hr">
+
+            <ul class="sm-ul">
+              <li>
+                Тип обращения: Заявка (устная)
+              </li>
+              <li>
+                Состояние: Новое. Необходимо обследование ПО
+              </li>
+              <li>
+                Управляющая компания: ООО ГУК "Жилфонд" (Советский район)
+              </li>
+              <li>
+                Подрядная организация: ООО "БВК-Жилсервис"
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="content__recourse__message">
+          <div class="content__recourse__user">
+            <img src="assets/images/j.jpg" alt="Фото">
+            <p class="content__recourse__user-name">
+              Жилфонд
+            </p>
+            <p class="content__recourse__user-date">
+              22 июня
+            </p>
+          </div>
+          
+          <div class="content__recourse__body">
+            <h2>
+              Здравствуйте, когда включат холодную воду? В подъезде нет никаких уведомлений на этот счёт.
+            </h2>
+
+            <hr class="section-hr">
+
+            <ul class="sm-ul">
+              <li>
+                Тип обращения: Заявка (устная)
+              </li>
+              <li>
+                Состояние: Новое. Необходимо обследование ПО
+              </li>
+              <li>
+                Управляющая компания: ООО ГУК "Жилфонд" (Советский район)
+              </li>
+              <li>
+                Подрядная организация: ООО "БВК-Жилсервис"
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <hr class="section-hr">
+
+        <form action="" class="-visor-no-click content__recourse__form" id="recourse-form">
+          <img src="assets/images/user.svg" alt="Фото">
+          <textarea name="recourse" id="recourse" rows="1" placeholder="Ваш комментарий" required></textarea>
+          <button class="btn-red" type="submit">Отправить</button>
+        </form>
+
+        <button class="scroll-top"></button>
+
       </div>
     </div>
 

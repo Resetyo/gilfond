@@ -30,7 +30,7 @@
           <a href="#"><img src="assets/images/facebook.svg" alt="fb"></a>
         </div>
         <div class="main-menu__login">
-          <button class="btn-white">Личный кабинет</button>
+          <button class="btn-white js-modal" data-modal="login-window">Личный кабинет</button>
         </div>
       </div>
 
@@ -99,10 +99,10 @@
           <div class="content__about-director__card">
             <p>генеральный диретор</p>
             <h4>Жавнова Наталья Владимировна</h4>
-            <p>+7 902 910 3487</p>
+            <p><a href="tel:+7 902 910 3487">+7 902 910 3487</a></p>
             <p>priemnaja@krasguk.ru</p>
             <a href="assets/images/attestat.jpg" class="html5lightbox">Квалификационный аттестат Жавновой Н.В.</a>
-            <a href="#" class="btn-white">Читать подробнее</a>
+            <button class="btn-white js-modal" data-modal="read-more-1">Читать подробнее</button>
           </div>
         </div>
 
@@ -113,9 +113,9 @@
               <div class="content__news__item__image">
                 <img src="assets/images/face1.jpg">
               </div>
-              <h3>Бородин Константин Леонидович</h3>
+              <h3><a href="#" class="js-modal" data-modal="read-more-2">Бородин Константин Леонидович</a></h3>
               <span>Технический директор</span>
-              <h4>+7 902 910 3487</h4>
+              <a href="tel:+7 902 910 3487">+7 902 910 3487</a>
             </div>
             <div class="content__news__item">
               <div class="content__news__item__image">
@@ -123,7 +123,7 @@
               </div>
               <h3>Бородин Константин Леонидович</h3>
               <span>Технический директор</span>
-              <h4>+7 902 910 3487</h4>
+              <a href="tel:+7 902 910 3487">+7 902 910 3487</a>
             </div>
             <div class="content__news__item">
               <div class="content__news__item__image">
@@ -131,7 +131,7 @@
               </div>
               <h3>Белоруссова Елена Александровна</h3>
               <span>Технический директор</span>
-              <h4>+7 902 910 3487</h4>
+              <a href="tel:+7 902 910 3487">+7 902 910 3487</a>
             </div>
             <div class="content__news__item">
               <div class="content__news__item__image">
@@ -139,7 +139,7 @@
               </div>
               <h3>Белоруссова Елена Александровна</h3>
               <span>Технический директор</span>
-              <h4>+7 902 910 3487</h4>
+              <a href="tel:+7 902 910 3487">+7 902 910 3487</a>
             </div>
             <div class="content__news__item">
               <div class="content__news__item__image">
@@ -147,7 +147,7 @@
               </div>
               <h3>Бородин Константин Леонидович</h3>
               <span>Технический директор</span>
-              <h4>+7 902 910 3487</h4>
+              <a href="tel:+7 902 910 3487">+7 902 910 3487</a>
             </div>
             <div class="content__news__item">
               <div class="content__news__item__image">
@@ -155,7 +155,7 @@
               </div>
               <h3>Бородин Константин Леонидович</h3>
               <span>Технический директор</span>
-              <h4>+7 902 910 3487</h4>
+              <a href="tel:+7 902 910 3487">+7 902 910 3487</a>
             </div>
           </div>
         </div>
@@ -234,6 +234,134 @@
           <img src="assets/images/cross.svg" alt="Закрыть" title="Закрыть">
         </button>
       </form>
+    </div>
+
+    <div class="modal-window" id="login-window">
+      <button class="js-modal-close"><img src="assets/images/cross.svg" alt="Закрыть" title="Закрыть"></button>
+      <div class="login-header">
+        <img src="assets/images/user2.svg">
+        <span>Вход в личный кабинет</span>
+        <a href="#" class="text-green-u">Где найти номер лицевого счёта и пароль</a>
+      </div>
+      <form action="" class="-visor-no-click">
+        <input name="bill_number" type="text" placeholder="Ваш логин" required>
+        <input name="password" type="password" placeholder="Пароль" required>
+        <input name="remember_me" id="remember-me" type="checkbox">
+        <label for="remember-me">Запомнить меня</label>
+        <button class="btn-green" type="submit">Войти в кабинет</button>
+      </form>
+    </div>
+
+    <div class="modal-window" id="read-more-1">
+      <button class="js-modal-close"><img src="assets/images/cross.svg" alt="Закрыть" title="Закрыть"></button>
+      <div class="read-more__right-block">
+        <h3>Жавнова Наталья Владимировна</h3>
+        <p>Генеральный директор ООО ГУК &laquo;Жилфонд&raquo;</p>
+        <p>Тел.: <a href="tel:(391)273-02-74">(391) 273-02-74</a></p>
+        <p>E-mail: <a href="mailto:priemnaja@krasguk.ru">priemnaja@krasguk.ru</a></p>
+      </div>
+      <img src="assets/images/dir2.jpg" class="read-more__img" alt="Жавнова Наталья Владимировна">
+      <div class="read-more__bottom-block">
+        <h3>Образование:</h3>
+        <p>
+          Высшее
+        </p>
+        <ul class="sm-ul">
+          <li>
+            1999г. Красноярский государственный технический университет, инженер тепловых электрических станций
+          </li>
+          <li>
+            2009г. Профессиональная переподготовка по программе &laquo;Государственное и муниципальное управление&raquo;
+          </li>
+          <li>
+            2012г. Повышение квалификации по программам: &laquo;Управление человеческими ресурсами. Личность руководителя в системе государственного и муниципального управления&raquo;
+          </li>
+          <li>
+            2015г. &laquo;Программно-целевые методы управления&raquo;
+          </li>
+        </ul>
+        <h3>Карьера:</h3>
+        <ul class="sm-ul">
+          <li>
+            05.2000г.-08.2001г.  - инженер-теплотехник МП ПЖРЭТ № 7
+          </li>
+          <li>
+            09.2001г.-10.2015г. работа в Департаменте городского хозяйства:
+          </li>
+          <li>
+            - заместитель заведующего отделом управления объектами инженерной инфраструктуры
+          </li>
+          <li>
+            - начальник отдела управления объектами инженерной инфраструктуры
+          </li>
+          <li>
+            - заместитель руководителя Департамента по координации управления объектами инженерной инфраструктуры
+          </li>
+          <li>
+            с 16.10.2015г.  по настоящее время – генеральный директор ООО ГУК &laquo;Жилфонд&raquo;
+          </li>
+        </ul>
+        <h3>Семейное положение</h3>
+        <p>
+          Замужем, двое детей.
+        </p>
+      </div>
+    </div>
+
+    <div class="modal-window" id="read-more-2">
+      <button class="js-modal-close"><img src="assets/images/cross.svg" alt="Закрыть" title="Закрыть"></button>
+      <div class="read-more__right-block">
+        <h3>Бородин Константин Леонидович</h3>
+        <p>Технический директор ООО ГУК &laquo;Жилфонд&raquo;</p>
+        <p>Тел.: <a href="tel:(391)273-02-74">(391) 273-02-74</a></p>
+        <p>E-mail: <a href="mailto:priemnaja@krasguk.ru">priemnaja@krasguk.ru</a></p>
+      </div>
+      <img src="assets/images/dir2.jpg" class="read-more__img" alt="Жавнова Наталья Владимировна">
+      <div class="read-more__bottom-block">
+        <h3>Образование:</h3>
+        <p>
+          Высшее
+        </p>
+        <ul class="sm-ul">
+          <li>
+            1999г. Красноярский государственный технический университет, инженер тепловых электрических станций
+          </li>
+          <li>
+            2009г. Профессиональная переподготовка по программе &laquo;Государственное и муниципальное управление&raquo;
+          </li>
+          <li>
+            2012г. Повышение квалификации по программам: &laquo;Управление человеческими ресурсами. Личность руководителя в системе государственного и муниципального управления&raquo;
+          </li>
+          <li>
+            2015г. &laquo;Программно-целевые методы управления&raquo;
+          </li>
+        </ul>
+        <h3>Карьера:</h3>
+        <ul class="sm-ul">
+          <li>
+            05.2000г.-08.2001г.  - инженер-теплотехник МП ПЖРЭТ № 7
+          </li>
+          <li>
+            09.2001г.-10.2015г. работа в Департаменте городского хозяйства:
+          </li>
+          <li>
+            - заместитель заведующего отделом управления объектами инженерной инфраструктуры
+          </li>
+          <li>
+            - начальник отдела управления объектами инженерной инфраструктуры
+          </li>
+          <li>
+            - заместитель руководителя Департамента по координации управления объектами инженерной инфраструктуры
+          </li>
+          <li>
+            с 16.10.2015г.  по настоящее время – генеральный директор ООО ГУК &laquo;Жилфонд&raquo;
+          </li>
+        </ul>
+        <h3>Семейное положение</h3>
+        <p>
+          Замужем, двое детей.
+        </p>
+      </div>
     </div>
   </div>
   <script src="assets/js/jquery-3.2.1.min.js"></script>

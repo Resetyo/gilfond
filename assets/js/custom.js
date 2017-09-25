@@ -8,7 +8,7 @@ $(document).ready(function(){
 
         modal_window.fadeIn(200);
         $('body').append('<div class="body-fade"></div>');
-        $('.body-fade').fadeTo(200,0.5);
+        $('.body-fade').fadeTo(200,0.75);
         $('.body-fade').click(closeModal);
 
         var close_btn = modal_window.find('.js-modal-close');
@@ -43,7 +43,7 @@ $(document).ready(function(){
     });
 
     //recourse form
-    $('#recourse-form').submit(function(e){
+    $('#modal-recourse-form').submit(function(e){
         $(this).hide().siblings().not('.js-modal-close').hide();
         $.ajax({
             type: "POST",
@@ -55,22 +55,25 @@ $(document).ready(function(){
         e.preventDefault();
     });
 
-    //search cutter
-    var text = $('.search-result__text');
-    if(text.length > 0) {
-        text.each(function(){
-            $(this).html(cutText($(this).html(),180));
-        });
-        $('.search-result__header').each(function(){
-            $(this).html(cutText($(this).html(),75));
-        });
-    }
+    //news cutter
+    var news = $('.content__news__item h3 a');
+    var extend_news = $('.content__news__item--additional h3 a');
+    cutText(news,90);
+    cutText(extend_news,230);
 
-    function cutText(string,length) {
-        if (string.length > length) {
-            return string.slice(0,length) + '...';
-        }
-        return string;
+    //search cutter
+    var search_text = $('.search-result__text');
+    var search_header = $('.search-result__header');
+    cutText(search_text,180);
+    cutText(search_header,75);
+
+    function cutText(strings,length) {
+        strings.each(function(){
+            var string = $(this).html();
+            if (string.length > length) {
+                $(this).html(string.slice(0,length) + '...');
+            }
+        });
     }
 
     //header banner animation
@@ -321,7 +324,7 @@ $(document).ready(function(){
 
     //contest extend
     $('.js-contest').click(function(){
-        $('.content__contest--extend').show();
+        $(this).closest('.content__contest').find('.content__contest--extend').show();
         $(this).hide();
         return false;
     });
@@ -387,6 +390,74 @@ $(document).ready(function(){
     if ($("#phone").length > 0) {
         $("#phone").mask('0 (000) 000-0000');
     }
+
+    //recourse textarea reorder
+    document.body.onkeydown = function(event) {
+        var e = event || window.event;
+        var code = e.keyCode || e.which;
+        var activeEl = document.activeElement.id;
+        if(code == 13 && e.ctrlKey) {
+            if(activeEl == "recourse") {
+                document.getElementById('recourse').value += "\n";
+            } else {
+                return false;
+            }
+        } else if(code == 13 && activeEl == "recourse") {
+            var recourse = document.getElementById('recourse').value;
+            recourse = recourse.replace(/^\s+/, "");
+            if(recourse != "") {
+                $('#recourse-form').submit();
+            } else {
+                return false;
+            }
+       }
+    }
+
+    $('#recourse-form').submit(function(e){
+        $.ajax({
+            type: "POST",
+            url: 'http://tr25.ostorodonodor.lclients.ru/recourse',
+            data: $('#recourse-form').serialize(),
+            success: function(data) {
+                var message = $('.content__recourse__message').first().clone().hide();
+                message.find('.content__recourse__user-name')
+                    .text($('.profile__name').text().split(' ')[1]);
+                message.find('.content__recourse__body h2')
+                    .text($('#recourse-form').find('textarea').val());
+                message.insertAfter($('.content__recourse__message').last()).fadeIn(500);
+            },
+            error: function(data) {
+                $('#recourse-form [type=submit]').showError('Сообщение не отправлено, попробуйте еще раз');
+            }
+        });
+        e.preventDefault();
+    });
+
+    $.fn.extend({
+        showError: function (text) {
+            $('p.error').remove();
+            var error_message = $('<p />', {
+                'class': 'error',
+                'text': text
+            })
+            .css({
+                'top': $(this).offset()['top'] - 230,
+                'left': $(this).offset()['left']
+            })
+            .insertAfter(this).fadeIn(300);
+        }
+    });
+
+    //scroll to top button
+    $('.scroll-top').click(function(){
+        $(window).scrollTop(0,0);
+    });
+
+    //become client toggler
+    $('.block-toggler').click(function(){
+        $(this).siblings('.hidden-block').toggle();
+        return false;
+    });
 });
 
 
@@ -407,8 +478,10 @@ function WidthChange1(mql) {
 function WidthChange(mql) {
   if (mq.matches) {
     //nav menu & right block scroll
-    var nav_menu_top = $('.main-menu').offset()['top'] + $('.main-menu').outerHeight();
-    $('.nav-menu').css('top', nav_menu_top);
+    setTimeout(function(){
+        var nav_menu_top = $('.main-menu').offset()['top'] + $('.main-menu').outerHeight();
+        $('.nav-menu').css('top', nav_menu_top);
+    },500);
     $(window).resize(function() {
         rb_width = $('.content__left-block').outerWidth() / 2;
         rb_left = ($(this).innerWidth() - $('.content__wrapper').first().outerWidth()) / 2 + $('.content__left-block').outerWidth() + 43;
@@ -464,7 +537,14 @@ function WidthChange(mql) {
     }
 
     //contest extend position
-    $('.js-contest').appendTo($('.content__contest__main'));
+    $('.js-contest').each(function(){
+       $(this).appendTo($(this).parent().next('.content__contest__main')); 
+    });
+
+    //description replace image
+    $('.read-more__img').each(function(){
+       $(this).insertAfter($(this).siblings('.read-more__right-block')); 
+    });
 
   } else {
 
@@ -498,7 +578,13 @@ function WidthChange(mql) {
     }
 
     //contest extend position
-    $('.js-contest').appendTo($('.content__contest__time'));
+    $('.js-contest').each(function(){
+       $(this).appendTo($(this).parent().next('.content__contest__time')); 
+    });
 
+    //description replace image
+    $('.read-more__img').each(function(){
+       $(this).insertBefore($(this).siblings('.read-more__right-block'));
+    });
   }
 }

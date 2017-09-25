@@ -30,7 +30,7 @@
           <a href="#"><img src="assets/images/facebook.svg" alt="fb"></a>
         </div>
         <div class="main-menu__login">
-          <button class="btn-white">Личный кабинет</button>
+          <button class="btn-white js-modal" data-modal="login-window">Личный кабинет</button>
         </div>
       </div>
       
@@ -401,7 +401,7 @@
       <button class="js-modal-close"><img src="assets/images/cross.svg" alt="Закрыть" title="Закрыть"></button>
       <h3>Оставить обращение</h3>
       <p>Отвечаем в течение 2-х рабочих дней.</p>
-      <form id="recourse-form" action="" class="-visor-no-click">
+      <form id="modal-recourse-form" action="" class="-visor-no-click">
         <select name="recourse_theme" id="recourse_theme">
           <option value="hide">Выберите тему обращения</option>
           <option value="1">Перерасчёт</option>
@@ -425,6 +425,22 @@
           по общему телефону <a href="tel:+7 902 910 3486">+7 902 910 3486</a>
         </p>
       </div>
+    </div>
+
+    <div class="modal-window" id="login-window">
+      <button class="js-modal-close"><img src="assets/images/cross.svg" alt="Закрыть" title="Закрыть"></button>
+      <div class="login-header">
+        <img src="assets/images/user2.svg">
+        <span>Вход в личный кабинет</span>
+        <a href="#" class="text-green-u">Где найти номер лицевого счёта и пароль</a>
+      </div>
+      <form action="" class="-visor-no-click">
+        <input name="bill_number" type="text" placeholder="Ваш логин" required>
+        <input name="password" type="password" placeholder="Пароль" required>
+        <input name="remember_me" id="remember-me" type="checkbox">
+        <label for="remember-me">Запомнить меня</label>
+        <button class="btn-green" type="submit">Войти в кабинет</button>
+      </form>
     </div>
   </div>
   <script src="assets/js/jquery-3.2.1.min.js"></script>
