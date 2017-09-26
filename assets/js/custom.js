@@ -29,31 +29,52 @@ $(document).ready(function(){
         $.ajax({
             type: "POST",
             url: 'http://tr25.ostorodonodor.lclients.ru/counter',
-            data: $(this).serialize().replace('%2C','.'),
-            success: function(data) {
+            data: $(this).serialize().replace('%2C','.'
+        )})
+            .done(function(data) {
                 $this.css({'visibility':'hidden'})
                     .before('<p class="counter-success">Показания переданы.<br>Спасибо, Валерий.</p>');
-            },
-            error: function(data) {
+            })
+            .fail(function(data) {
                 $this.css({'visibility':'hidden'})
                     .before('<p class="counter-error">Показания не переданы.<br><span>Попробуйте еще раз<br>или обратитесь к специалисту</span></p>');
-            }
-        });
+            });
         e.preventDefault();
     });
 
-    //recourse form
-    $('#modal-recourse-form').submit(function(e){
-        $(this).hide().siblings().not('.js-modal-close').hide();
-        $.ajax({
-            type: "POST",
-            url: 'http://www.yandex.ru',
-            data: $(this).serialize()
+    //recourse, call request form
+    submitUsualForm(
+        $('#modal-recourse-form'),
+        'http://tr25.ostorodonodor.lclients.ru/recourse'
+    );
+    submitUsualForm(
+        $('#call-request-form'),
+        'http://tr25.ostorodonodor.lclients.ru/recourse'
+    );
+    function submitUsualForm(form,url){
+        form.submit(function(e){
+            $this = $(this);
+            $.ajax({
+                type: "POST",
+                url: url,
+                data: $(this).serialize()
+            })
+                .done(function() {
+                    $this.siblings('.form-success').show();
+                })
+                .fail(function() {
+                    $this.siblings('.form-error').show();
+                })
+                .always(function(){
+                    $this.hide().siblings()
+                        .not('.js-modal-close')
+                        .not('.form-success')
+                        .not('.form-error').hide();
+                    $(window).scrollTop(0,0);
+                });
+            e.preventDefault();
         });
-        $(this).next('.recourse-success').show();
-        $(window).scrollTop(0,0);
-        e.preventDefault();
-    });
+    }
 
     //news cutter
     var news = $('.content__news__item h3 a');
@@ -77,22 +98,14 @@ $(document).ready(function(){
     }
 
     //header banner animation
-    if($('.header-banner').length > 0) {
-        $('.header-banner-content').css('top','0%');
+    var banner_outer = $('.header-banner');
+    if(banner_outer.length > 0) {
+        var banner_inner = $('.header-banner-content');
+        banner_outer.css('height','100%');
+        banner_inner.css('transform','translateY(0%)');
         $('.header-banner-close').click(function(){
-            $('.header-banner-content').css('top','-' + $('.header-banner-content').outerHeight() + 'px');
-            $('.header-banner').css('height','0%');
-            $('.nav-menu').css({
-                transition: 'top 0.7s 0.7s',
-                top: $('.header-banner').offset()['top'] + $('.main-menu').outerHeight()}
-            );
-            setTimeout(function(){
-                $('.nav-menu, .mobile-menu').css('transition', 'top 0s 0s');
-            },700);
-            $('.mobile-menu').css({
-                transition: 'top 0.7s 0.7s',
-                top: 0
-            });
+            banner_outer.css('height','0%');
+            banner_inner.css('transform','translateY(-100%)');
         });
     }
 
@@ -116,30 +129,20 @@ $(document).ready(function(){
     $('#address_street').change(function(){
         $.ajax({
             type: "POST",
-            url: '/',
-            data: $(this).val(),
-            error: function(data) { //only for demonstration, change to success
-                data = [
-                    Math.round(Math.random()*100),
-                    Math.round(Math.random()*100),
-                    Math.round(Math.random()*100),
-                    Math.round(Math.random()*100),
-                    Math.round(Math.random()*100),
-                    Math.round(Math.random()*100),
-                    Math.round(Math.random()*100),
-                    Math.round(Math.random()*100)
-                ];                   //only for demonstration, just remove it
+            url: 'http://tr25.ostorodonodor.lclients.ru/houses',
+            data: $(this).val()
+        })
+            .done(function(data) {
                 var house_select = $('#address_house');
                 house_select.children('option').slice(1).remove();
-                data.forEach(function(item,i,data){
+                data['houses'].forEach(function(item,i,data){ // CHANGE TO REAL DATA
                 house_select
                     .append($("<option></option>")
                     .attr("value",item)
                     .text(item)); 
                 });
                 initSelect(null, $('#address_house'));
-            }
-        });
+            });
     });
 
     //payment calc
@@ -323,8 +326,19 @@ $(document).ready(function(){
     }
 
     //contest extend
+    var contest_desc = $('.content__contest__description');
+    if (contest_desc.length > 0) {
+        var full_desc = contest_desc.clone()
+            .removeClass('content__contest__description')
+            .addClass('content__contest--extend')
+            .hide().insertAfter(contest_desc);
+        cutText(contest_desc,120);
+
+    }
     $('.js-contest').click(function(){
-        $(this).closest('.content__contest').find('.content__contest--extend').show();
+        var parent = $(this).closest('.content__contest');
+        parent.find('.content__contest--extend').show();
+        parent.find('.content__contest__description').hide();
         $(this).hide();
         return false;
     });
@@ -417,19 +431,20 @@ $(document).ready(function(){
         $.ajax({
             type: "POST",
             url: 'http://tr25.ostorodonodor.lclients.ru/recourse',
-            data: $('#recourse-form').serialize(),
-            success: function(data) {
+            data: $('#recourse-form').serialize()
+        })
+            .done(function(data) {
                 var message = $('.content__recourse__message').first().clone().hide();
                 message.find('.content__recourse__user-name')
                     .text($('.profile__name').text().split(' ')[1]);
                 message.find('.content__recourse__body h2')
                     .text($('#recourse-form').find('textarea').val());
                 message.insertAfter($('.content__recourse__message').last()).fadeIn(500);
-            },
-            error: function(data) {
+            })
+            .fail(function(data) {
                 $('#recourse-form [type=submit]').showError('Сообщение не отправлено, попробуйте еще раз');
-            }
-        });
+            });
+
         e.preventDefault();
     });
 
@@ -451,6 +466,25 @@ $(document).ready(function(){
     //scroll to top button
     $('.scroll-top').click(function(){
         $(window).scrollTop(0,0);
+    });
+
+    //become client smooth scroll
+    $(".tabs-nav-cabinet a").on('click', function(event) {
+      if (this.hash !== "") {
+        event.preventDefault();
+        var hash = this.hash;
+        var height = $('.nav-menu').outerHeight() + 20;
+        $(hash).css({
+            'padding-top': height,
+            'margin-top': '-' + height + 'px',
+            'background-clip': 'content-box'
+        });
+        $('html, body').animate({
+          scrollTop: $(hash).offset().top
+        }, 600, function(){
+          window.location.hash = hash;
+        });
+      }
     });
 
     //become client toggler
@@ -478,10 +512,6 @@ function WidthChange1(mql) {
 function WidthChange(mql) {
   if (mq.matches) {
     //nav menu & right block scroll
-    setTimeout(function(){
-        var nav_menu_top = $('.main-menu').offset()['top'] + $('.main-menu').outerHeight();
-        $('.nav-menu').css('top', nav_menu_top);
-    },500);
     $(window).resize(function() {
         rb_width = $('.content__left-block').outerWidth() / 2;
         rb_left = ($(this).innerWidth() - $('.content__wrapper').first().outerWidth()) / 2 + $('.content__left-block').outerWidth() + 43;
@@ -491,22 +521,17 @@ function WidthChange(mql) {
         rb.css({'width':rb_width});
     });
     lb = $('.content__left-block');
-    var h_nav = $('.nav-menu').outerHeight();
-    $('header hr').css({'width': $('.wrapper').outerWidth(),
-                        'left': '-' + $('header hr').offset()['left'] + 'px',
-                        'top': '-70px'});
     $(window).scroll(function() {
         var top = $(this).scrollTop();
         var mm = $('.main-menu');
         var nm = $('.nav-menu');
         var h_total = mm.outerHeight() + mm.offset()['top'];
-        var hb = ($('.header-banner').length > 0) ? $('.header-banner').outerHeight() : 0;
         if (top >= h_total && !nm.hasClass('fxd')) {
-            nm.addClass('fxd')
-              .css('top', mm.offset()['top'] - hb);
+            nm.addClass('fxd');
+            mm.css('margin-bottom',nm.outerHeight());
         } else if(top < h_total && nm.hasClass('fxd')){
-            nm.removeClass('fxd')
-              .css('top', $('.main-menu').offset()['top'] + $('.main-menu').outerHeight());
+            nm.removeClass('fxd');
+            mm.css('margin-bottom',0);
         }
 
         if (typeof rb !== 'undefined' && typeof rb_left !== 'undefined' && rb.length > 0) {
@@ -529,12 +554,6 @@ function WidthChange(mql) {
             }
         }
     });
-
-    if($('.header-banner').length > 0) {
-        setTimeout(function(){
-            $('.header-banner').css('top',0);
-        },50);
-    }
 
     //contest extend position
     $('.js-contest').each(function(){
@@ -569,13 +588,6 @@ function WidthChange(mql) {
     $(document).click(function() {
         $('.cabinet-mobile-menu').find('li').hide();
     });
-
-    //header banner position
-    if($('.header-banner').length > 0) {
-        setTimeout(function(){
-            $('.header-banner').css('top',$('.mobile-menu').outerHeight());
-        },50);
-    }
 
     //contest extend position
     $('.js-contest').each(function(){

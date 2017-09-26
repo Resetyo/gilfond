@@ -183,8 +183,7 @@
       </form>
     </div>
 
-
-    <div class="modal-window" id="recourse-window">
+    <div class="modal-window usual-form" id="recourse-window">
       <button class="js-modal-close"><img src="assets/images/cross.svg" alt="Закрыть" title="Закрыть"></button>
       <h3>Оставить обращение</h3>
       <p>Отвечаем в течение 2-х рабочих дней.</p>
@@ -204,9 +203,17 @@
         <label for="file"><span class="text-green-u">Приложить файл</span> не более 5мб</label>
         <button class="btn-green" type="submit">Оставить обращение</button>
       </form>
-      <div class="recourse-success">
+      <div class="form-success">
         <h3>Сообщение отправлено</h3>
         <p>Мы ответим на него в течение 2 рабочих дней.</p>
+        <p>
+          Если сообщение критично, то рекомендуем позвонить<br>
+          по общему телефону <a href="tel:+7 902 910 3486">+7 902 910 3486</a>
+        </p>
+      </div>
+      <div class="form-error">
+        <h3>Возникла ошибка</h3>
+        <p>Сообщение не отправлено.</p>
         <p>
           Если сообщение критично, то рекомендуем позвонить<br>
           по общему телефону <a href="tel:+7 902 910 3486">+7 902 910 3486</a>
@@ -220,6 +227,7 @@
   <script src="assets/js/yandex-map.js"></script>
   <script src="assets/js/owl.carousel.min.js"></script>
   <script src="assets/js/numericInput.min.js"></script>
+  <script src="assets/js/jquery.mask.min.js"></script>
   <script src="assets/js/custom.js"></script>
 </body>
 </html>

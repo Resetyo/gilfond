@@ -72,13 +72,13 @@
     <div class="content">
       
       <div class="content__wrapper">
-        <nav class="tabs-nav-cabinet content__right-block">
+        <nav class="tabs-nav-cabinet content__right-block mt40">
           <ul>
-            <li><a href="#">Как подать заявку в УК</a></li>
-            <li><a href="#">Документы и контакты</a></li>
-            <li><a href="#">Отзывы клиентов</a></li>
+            <li><a href="#apply">Как подать заявку в УК</a></li>
+            <li><a href="#docs">Документы и контакты</a></li>
+            <li><a href="#reviews">Отзывы клиентов</a></li>
             <li class="active call-request">
-              <button class="btn-green w100p">
+              <button class="btn-green w100p js-modal" data-modal='call-request-window'>
                 Запросить звонок из &laquo;Жилфонда&raquo;
               </button>
             </li>
@@ -87,9 +87,11 @@
 
         <section class="content__left-block">
 
-          <h1 class="content__become-client__h1 mb40">Стать клиентом УК &laquo;Жилфонд&raquo;</h1>
+          <h1 class="content__become-client__h1 mb40">
+            Сделать &laquo;Жилфонд&raquo; своей управляющей компанией
+          </h1>
 
-          <ul class="big-ol">
+          <ul id="apply" class="big-ol">
             <li>
               <h3>
                 Инициировать собрание и уведомить жильцов<br>за 10 дней до собрания
@@ -100,7 +102,7 @@
                   Организовать инициативную группу (входить в нее могут только собственники квартир).
                 </li>
                 <li>
-                  Инициатор собрания извещает собственников о дате собрания через информационные стенды, либо разнося уведомления по квартирам каждому собственнику, с указанием повестки собрания. Собрание может принять решение только по вопросам в повестку собрания.
+                  Инициатор собрания извещает собственников о дате собрания через информационные стенды, либо разнося уведомления по квартирам каждому собственнику, с указанием повестки собрания. Собрание может принять решение только по вопросам, внесенным в повестку собрания.
                 </li>
               </ul>
 
@@ -148,13 +150,12 @@
             </li>
             <li>
               <h3>
-                Составить протокол по итогу голосования и передать копию протокола в УК
+                Составить протокол по итогам голосования и передать его в УК
               </h3>
 
               <ul class="sm-ul">
                 <li>
-                  Решение, принятое на собрании должно быть донесено до собственников 
-                  не присутствовавших на голосовании. Протокол должен быть изготовлен <b>не позднее 10 дней</b> с момента собрания.
+                  Протокол должен быть изготовлен <b>не позднее 10 дней</b> с момента собрания.
                   Протокол должен быть составлен в письменной форме, подписан председателем и секретарем, а также членами совета. В протоколе указываются дата и место проведения, повестка дня, кворум.
                   Решение собрания можно разместить на информационных стендах, либо разнести по квартирам каждому собственнику.
                 </li>
@@ -167,7 +168,7 @@
 
           <hr>
 
-          <h2 class="content__become-client__h2">Документы и контакты</h2>
+          <h2 id="docs" class="content__become-client__h2">Документы и контакты</h2>
 
           <div class="content__myhome-document">
             <a href="#">Проект протокола</a>
@@ -208,7 +209,7 @@
 
           <hr>
 
-          <h2 class="content__become-client__h2">Отзывы клиентов</h2>
+          <h2 id="reviews" class="content__become-client__h2">Отзывы клиентов</h2>
 
           <div class="content__become-client__reviews">
             <div class="content__become-client__review">
@@ -307,6 +308,27 @@
           <img src="assets/images/cross.svg" alt="Закрыть" title="Закрыть">
         </button>
       </form>
+    </div>
+
+    <div class="modal-window usual-form" id="call-request-window">
+      <button class="js-modal-close"><img src="assets/images/cross.svg" alt="Закрыть" title="Закрыть"></button>
+      <h3>Запрос звонка</h3>
+      <p>Оставьте ваш номер телефона и мы перезвоним вам в течение рабочего дня.</p>
+      <form id="call-request-form" action="" class="-visor-no-click">
+        <input id="fio" name="fio" type="text" placeholder="Ф. И. О." required>
+        <input id="phone" name="phone" type="text" placeholder="_ (___)___-__-__" required>
+        <textarea name="message" id="message" rows="3" placeholder="Комментарий"></textarea>
+        <input id="file" type="file" name="file">
+        <label for="file"><span class="text-green-u">Приложить файл</span> не более 5мб</label>
+        <button class="btn-green" type="submit">Заказать звонок</button>
+      </form>
+      <div class="form-success">
+        <h3>Спасибо. Мы вам перезвоним</h3>
+      </div>
+      <div class="form-error">
+        <h3>Возникла ошибка</h3>
+        <p>Попробуйте еще раз или перезвоните нам <a href="tel:+7 902 910 3486">+7 902 910 3486</a></p>
+      </div>
     </div>
   </div>
   <script src="assets/js/jquery-3.2.1.min.js"></script>
