@@ -168,13 +168,15 @@
 
             <div class="content__news__item--additional">
               <h3>
-                <a href="#">
+                <a class="html5lightbox" href="https://www.youtube.com/watch?v=yDK0NNfALc4">
                   Дома «Жилфонда» поборются за звание лучших на городском 
                   этапе конкурса «Самый благоустроенный район города Красноярска»
                 </a>
               </h3>
               <p>25 июля 2017</p>
-              <a href="#" class="btn-small">Видео</a>
+              <a href="https://www.youtube.com/watch?v=yDK0NNfALc4" class="html5lightbox btn-" data-lightbox="image-1" >
+                Видео
+              </a>
               <hr>
             </div>
 
@@ -218,7 +220,6 @@
                 </a>
               </h3>
               <p>25 июля 2017</p>
-              <a href="#" class="btn-small">Видео</a>
               <hr>
             </div>
 
@@ -262,11 +263,13 @@
                 </a>
               </h3>
               <p>25 июля 2017</p>
-              <a href="#" class="btn-small">Видео</a>
               <hr>
             </div>
           </div>
-          <button class="btn-white w100p">Еще 10 новостей</button>
+
+          <button id="additional-news" class="btn-white w100p">
+            Еще <span class="news-left">9</span> <span class="news-plural">новостей</span>
+          </button>
         </section>
 
         <section class="tab-content" id="articles">
@@ -298,20 +301,26 @@
           <div class="content__news__feed">
 
             <div class="content__news__item">
-              <div class="content__news__item__image">
-                <img src="assets/images/n2.jpg">
-              </div>
+              <a href="#">
+                <div class="content__news__item__image">
+                  <img src="assets/images/n2.jpg">
+                </div>
+              </a>
               <h3><a href="#">График отключения воды</a></h3>
               <p>25 июля 2017</p>
             </div>
 
             <div class="content__news__item">
-              <a class="html5lightbox" data-lightbox="image-1" href="https://www.youtube.com/watch?v=yDK0NNfALc4">
+              <a class="html5lightbox" href="https://www.youtube.com/watch?v=yDK0NNfALc4">
                 <div class="content__news__item__video">
                   <img src="assets/images/148.jpg">
                 </div>
               </a>
-              <h3><a href="#">Как жильцам заработать на общедомовом имуществе</a></h3>
+              <h3>
+                <a class="html5lightbox" href="https://www.youtube.com/watch?v=yDK0NNfALc4">
+                  Как жильцам заработать на общедомовом имуществе
+                </a>
+              </h3>
               <p>25 июля 2017</p>
             </div>
 
@@ -323,7 +332,10 @@
               <p>25 июля 2017</p>
             </div>
           </div>
-          <button class="btn-white w100p">Еще 10 статей</button>
+          
+          <button id="more-articles" class="btn-white w100p">
+            Еще <span class="articles-left">9</span> <span class="articles-plural">статей</span>
+          </button>
         </section>
 
         <section class="tab-content" id="projects">

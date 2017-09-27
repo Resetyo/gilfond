@@ -1,4 +1,193 @@
 $(document).ready(function(){
+    //aticles pagination
+    var articles_page = 1, articles_per_page = 9;
+    $('#more-articles').click(function(e){
+        $button = $(this).prop('disabled', true);
+        $item = $button.siblings('.content__news__feed')
+            .find('.content__news__item').first();
+        $.ajax({
+            type: "POST",
+            url: 'http://tr25.ostorodonodor.lclients.ru/more_articles',
+            data: { page: articles_page, per_page: articles_per_page }
+        })
+            .done(function(data) {
+                //var data = { news: array, news_left: integer }
+                data['news'].forEach(function(item, i, arr) {
+                    //var item = { id: integer, title: string, date: string, image: string video: string }
+                    var $new_item = $item.clone();
+                    var $title = $new_item.find('h3 a');
+                    $new_item.children('p').text(item['date']);
+                    $title.text(item['title']);
+                    $new_item.find('img').attr('src', item['image']);
+
+                    cutText($title, 90);
+
+                    if (item['video'] && item['video'].length > 0) {
+                        $title.addClass('html5lightbox').attr('href', item['video']);
+                        $new_item.children('a')
+                            .addClass('html5lightbox')
+                            .attr('href', item['video'])
+                            .children('div').removeClass()
+                            .addClass('content__news__item__video');
+                    } else {
+                        $title.attr('href','url/' + item['id']);
+                        $new_item.children('a')
+                            .removeClass('html5lightbox')
+                            .attr('href','url/' + item['id'])
+                            .children('div').removeClass()
+                            .addClass('content__news__item__image');
+                    }
+
+                    $new_item.appendTo($button.siblings('.content__news__feed'));
+                });
+                
+                $(".html5lightbox").html5lightbox();
+                var left = data['news_left'];
+
+                if (left < 1) {
+                    $button.remove();
+                } else if (left < articles_per_page) {
+                    var plural;
+                    $button.find('.articles-left').text(left);
+                    switch (left) {
+                      case 1:
+                        plural = 'статья';
+                        break;
+                      case 2:
+                      case 3:
+                      case 4:
+                        plural = 'статьи';
+                        break;
+                      default:
+                        plural = 'статей';
+                    }
+                    $button.find('.articles-plural').text(plural);
+                }
+
+                articles_page += 1;
+            })
+            .always(function(){
+                $button.prop('disabled', false);
+            });
+        e.preventDefault();
+    });
+
+    //additional news pagination
+    var additional_page = 1, additional_per_page = 9;
+    $('#additional-news').click(function(e){
+        $button = $(this).prop('disabled', true);
+        $item = $('.content__news__item--additional').first();
+        $.ajax({
+            type: "POST",
+            url: 'http://tr25.ostorodonodor.lclients.ru/additional_news',
+            data: { page: additional_page, per_page: additional_per_page }
+        })
+            .done(function(data) {
+                //var data = { news: array, news_left: integer }
+                data['news'].forEach(function(item, i, arr) {
+                    //var item = { id: integer, title: string, date: string, video: string }
+                    var $new_item = $item.clone();
+                    var $title = $new_item.find('h3 a');
+                    $new_item.children('.btn-small').remove();
+                    $new_item.children('p').text(item['date']);
+                    $title.text(item['title']);
+
+                    cutText($title, 230);
+
+                    if (item['video'] && item['video'].length > 0) {
+                        $new_item.children('hr')
+                            .before('<a href="' + item['video'] + '" class="html5lightbox btn-small">Видео</a>');
+                        $title.addClass('html5lightbox').attr('href', item['video']);
+                    } else {
+                        $title.attr('href','url/' + item['id']);
+                    }
+
+                    $new_item.appendTo('.content__news__feed--additional');
+                });
+                
+                $(".html5lightbox").html5lightbox();
+                var left = data['news_left'];
+
+                if (left < 1) {
+                    $button.remove();
+                } else if (left < additional_per_page) {
+                    var plural;
+                    $button.find('.news-left').text(left);
+                    switch (left) {
+                      case 1:
+                        plural = 'новость';
+                        break;
+                      case 2:
+                      case 3:
+                      case 4:
+                        plural = 'новости';
+                        break;
+                      default:
+                        plural = 'новостей';
+                    }
+                    $button.find('.news-plural').text(plural);
+                }
+
+                additional_page += 1;
+            })
+            .always(function(){
+                $button.prop('disabled', false);
+            });
+        e.preventDefault();
+    });
+
+    //aticles pagination
+    var reviews_page = 1, reviews_per_page = 6;
+    $('#more-reviews').click(function(e){
+        $button = $(this).prop('disabled', true);
+        $item = $button.siblings('.content__become-client__reviews')
+            .find('.content__become-client__review').first();
+        $.ajax({
+            type: "POST",
+            url: 'http://tr25.ostorodonodor.lclients.ru/more_articles',
+            data: { page: reviews_page, per_page: reviews_per_page }
+        })
+            .done(function(data) {
+                //var data = { news: array, news_left: integer }
+                data['news'].forEach(function(item, i, arr) {
+                    //var item = { id: integer, title: string, date: string, image: string video: string }
+                    var $new_item = $item.clone();
+                    $new_item.find('a').attr('href', item['image']);
+                    $new_item.find('img').attr('src', item['image']);
+                    $new_item.appendTo($button.siblings('.content__become-client__reviews'));
+                });
+                
+                $(".html5lightbox").html5lightbox();
+                var left = data['news_left'];
+
+                if (left < 1) {
+                    $button.remove();
+                } else if (left < reviews_per_page) {
+                    var plural;
+                    $button.find('.reviews-left').text(left);
+                    switch (left) {
+                      case 1:
+                        plural = 'отзыв';
+                        break;
+                      case 2:
+                      case 3:
+                      case 4:
+                        plural = 'отзыва';
+                        break;
+                      default:
+                        plural = 'отзывов';
+                    }
+                    $button.find('.reviews-plural').text(plural);
+                }
+
+                reviews_page += 1;
+            })
+            .always(function(){
+                $button.prop('disabled', false);
+            });
+        e.preventDefault();
+    });
+
     //modals
     $('.js-modal').click(function(){
         var $this = $(this);
@@ -29,8 +218,8 @@ $(document).ready(function(){
         $.ajax({
             type: "POST",
             url: 'http://tr25.ostorodonodor.lclients.ru/counter',
-            data: $(this).serialize().replace('%2C','.'
-        )})
+            data: $(this).serialize().replace('%2C','.')
+        })
             .done(function(data) {
                 $this.css({'visibility':'hidden'})
                     .before('<p class="counter-success">Показания переданы.<br>Спасибо, Валерий.</p>');
