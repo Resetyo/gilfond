@@ -2001,23 +2001,21 @@ article {
       display: inline-block;
       box-sizing: border-box;
       padding-bottom: 30px; }
-    .content__contest--extend {
-      display: none; }
-      .content__contest--extend > hr {
-        position: absolute;
-        top: auto;
-        left: 0;
-        width: 100%;
-        margin: 0; }
-      .content__contest--extend > a.text-green-u {
-        display: inline-block;
-        width: 33%;
-        box-sizing: border-box;
-        padding: 20px 20px 20px 0; }
-      .content__contest--extend .tabs-nav > ul {
-        width: 100%;
-        display: flex;
-        justify-content: space-between; }
+    .content__contest--extend > hr {
+      position: absolute;
+      top: auto;
+      left: 0;
+      width: 100%;
+      margin: 0; }
+    .content__contest--extend > a.text-green-u {
+      display: inline-block;
+      width: 33%;
+      box-sizing: border-box;
+      padding: 20px 20px 20px 0;
+      vertical-align: top; }
+    .content__contest--extend .tabs-nav > ul {
+      width: 100%;
+      display: flex; }
     .content__contest__items {
       display: flex;
       flex-wrap: wrap;
@@ -2035,9 +2033,10 @@ article {
         text-decoration: underline; }
   .content__non-auth-pay {
     background-color: white;
-    max-width: 1000px;
+    max-width: 1060px;
     border: 1px solid #D8DCDE;
-    padding: 40px 30px; }
+    padding: 40px 30px;
+    box-sizing: border-box; }
     .content__non-auth-pay form {
       max-width: 660px; }
       .content__non-auth-pay form > a.text-green-u {
@@ -2068,6 +2067,9 @@ article {
     .content__non-auth-pay .content__change-data__footer {
       margin: 30px -30px 0;
       padding-bottom: 0; }
+    .content__non-auth-pay + div {
+      margin-top: 45px;
+      max-width: 1060px; }
   .content__become-client__h1, .content__become-client__h2 {
     font-size: 2.7em;
     margin-bottom: 40px;
@@ -2593,15 +2595,19 @@ article {
     font-size: 0.95em;
     box-sizing: border-box; }
     .usual-form form textarea::-webkit-input-placeholder {
+      font-family: 'Roboto';
       color: #353535;
       opacity: 1; }
     .usual-form form textarea:-moz-placeholder {
+      font-family: 'Roboto';
       color: #353535;
       opacity: 1; }
     .usual-form form textarea::-moz-placeholder {
+      font-family: 'Roboto';
       color: #353535;
       opacity: 1; }
     .usual-form form textarea:-ms-input-placeholder {
+      font-family: 'Roboto';
       color: #353535;
       opacity: 1; }
   .usual-form form input[type=file] {

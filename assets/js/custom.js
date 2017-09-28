@@ -514,24 +514,6 @@ $(document).ready(function(){
 
     }
 
-    //contest extend
-    var contest_desc = $('.content__contest__description');
-    if (contest_desc.length > 0) {
-        var full_desc = contest_desc.clone()
-            .removeClass('content__contest__description')
-            .addClass('content__contest--extend')
-            .hide().insertAfter(contest_desc);
-        cutText(contest_desc,120);
-
-    }
-    $('.js-contest').click(function(){
-        var parent = $(this).closest('.content__contest');
-        parent.find('.content__contest--extend').show();
-        parent.find('.content__contest__description').hide();
-        $(this).hide();
-        return false;
-    });
-
     //pay methods toggler
     $('.js-pay-methods').click(function(){
         $(this).toggleClass('active').next().toggle();
@@ -584,9 +566,92 @@ $(document).ready(function(){
     $(".money").numericInput({ allowFloat: true});
 
     //file input label
-    $("#recourse-window input[type='file']").change(function(){
+    $(".usual-form input[type='file']").change(function(){
         var fileName = $(this).val().split('/').pop().split('\\').pop();
         $(this).next('label').text('Выбран файл ' + fileName);
+    });
+
+    //district phone & worktime
+    $('#district_contacts').change(function(){
+        var phones = $(this).closest('.text-block').find('.district_phones').html('');
+        var worktime = $(this).closest('.text-block').find('.district_worktime').html('');
+
+        $.ajax({
+            type: "POST",
+            url: 'http://tr25.ostorodonodor.lclients.ru/district_data',
+            data: $(this).val()
+        })
+            .done(function(data) {
+                //var data = { phones: array, worktime: array }
+                data['phones'].forEach(function(item,i,data){
+                    //var item = { title: string, phone: string }
+                    var a = $('<a />')
+                        .attr('href','tel:' + item['phone'])
+                        .text(item['phone']);
+                    var li = $('<li />').html(item['title']).after(a);
+                    phones.append(li);
+                });
+
+                data['worktime'].forEach(function(item,i,data){
+                    //var item = []
+                    var li = $('<li />').html(item);
+                    worktime.append(li);
+                });
+            });
+    });
+
+    //district contest
+    $('#contest_contacts').change(function(){
+        var parent = $(this).closest('.content__contest--extend');
+        var text = parent.find('.contest-text').html('');
+        var links = parent.children('.text-green-u');
+        var link = links.first().clone();
+        links.remove();
+        var thumbs = parent.find('.content__contest__item');
+        thumbs.first().before('Конкурсов нет');
+        var thumb = thumbs.first().clone();
+        thumb.find('.sm-ul li').remove();
+        thumbs.remove();
+
+        $.ajax({
+            type: "POST",
+            url: 'http://tr25.ostorodonodor.lclients.ru/contest_data',
+            data: $(this).val()
+        })
+            .done(function(data) {
+                // var data = { text: string, links: array, thumbs: array }
+                text.html(data['text']);
+
+                data['links'].forEach(function(item,i,data){
+                    //var item = { title: string, path: string }
+                    var new_link = link.clone().attr('href',item['path']).html(item['title']);
+                    $('.js-press-nav').before(new_link);
+                });
+
+                data['thumbs'].forEach(function(item,i,data){
+                    //var item = { "hash" => array }
+                    var key = Object.keys(item)[0];
+                    $('#' + key).children('div').html('');
+
+                    item[key].forEach(function(thumbs_item,i,data){
+                        //var thumbs_item = { title: string, links: array, download_all: string }
+                        var new_thumb = thumb.clone();
+                        new_thumb.find('h3').html(thumbs_item['title']);
+                        new_thumb.children('a.text-green-u').attr('href', thumbs_item['download_all']);
+
+                        thumbs_item['links'].forEach(function(links_item,i,data){
+                            //var links_item = { title: string, path: string }
+                            var thumb_link = $('<a />')
+                                .attr('href', links_item['path'])
+                                .html(links_item['title']);
+                            new_thumb.find('.sm-ul')
+                                .append(thumb_link);
+                            thumb_link.wrap('<li></li>');
+                            new_thumb.appendTo($('#' + key).children('div'));
+                        });
+                    });
+                });
+            });
     });
 
     //phone mask
@@ -658,23 +723,48 @@ $(document).ready(function(){
     });
 
     //become client smooth scroll
-    $(".tabs-nav-cabinet a").on('click', function(event) {
-      if (this.hash !== "") {
-        event.preventDefault();
-        var hash = this.hash;
-        var height = $('.nav-menu').outerHeight() + 20;
-        $(hash).css({
-            'padding-top': height,
-            'margin-top': '-' + height + 'px',
-            'background-clip': 'content-box'
-        });
-        $('html, body').animate({
-          scrollTop: $(hash).offset().top
-        }, 600, function(){
-          window.location.hash = hash;
-        });
-      }
+    var links = $(".tabs-nav-cabinet a");
+    links = links.filter(function(){
+        return this.hash !== "";
     });
+
+    if (links.length > 0) {
+        links.on('click', function(event) {
+          if (this.hash !== "") {
+            event.preventDefault();
+            var hash = this.hash;
+            var height = $('.nav-menu').outerHeight() + 20;
+            $(hash).css({
+                'padding-top': height,
+                'margin-top': '-' + height + 'px',
+                'background-clip': 'content-box'
+            });
+            $('html, body').animate({
+              scrollTop: $(hash).offset().top
+            }, 600, function(){
+              window.location.hash = hash;
+            });
+          }
+        });
+
+        $(window).scroll(function(e) {
+            var top = $(this).scrollTop();
+            if (top + 150 < $(links.first().attr('href')).offset().top) {
+                links.first().parent().addClass('active')
+                        .siblings().removeClass('active');
+            } else if (top + 150 > $(links.last().attr('href')).offset().top) {
+                links.last().parent().addClass('active')
+                        .siblings().removeClass('active');
+            } else {
+                links.each(function(index,link){
+                    if (top + 150 >= $($(link).attr('href')).offset().top && top < $(links.get(index + 1)).offset().top) {
+                        $(this).parent().addClass('active')
+                            .siblings().removeClass('active');
+                    }
+                });
+            }
+        });
+    }
 
     //become client toggler
     $('.block-toggler').click(function(){
