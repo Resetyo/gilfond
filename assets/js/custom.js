@@ -426,10 +426,11 @@ $(document).ready(function(){
     //Kenneth Burns animation
     var news = $('.content__news__feed');
     var projects = $('.content__press__project').not('.no-image');
+    var articles = $('article');
     if (news.length > 0 || projects.length > 0) {
         var main = news.find('.content__news__main');
-        var imgs = news.find('.content__news__item__image img');
-        main = main.add(projects);
+        var imgs = news.find('.content__news__item__image');
+        main = main.add(imgs).add(projects).add(articles);
         main.mouseenter(function(){
             $(this).find('img')
                 .css({'transform': 'scale(1.1)'});
@@ -437,12 +438,6 @@ $(document).ready(function(){
         main.mouseleave(function(){
             $(this).find('img')
                 .css({'transform': 'scale(1.0)'});
-        });
-        imgs.mouseover(function(){
-            $(this).css({'transform': 'scale(1.1)'});
-        });
-        imgs.mouseleave(function(){
-            $(this).css({'transform': 'scale(1.0)'});
         });
     }
 
