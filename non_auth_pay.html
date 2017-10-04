@@ -81,8 +81,9 @@
             <br>
             <label for="non_auth_fio">Ф. И. О. собственника или ответственного квартиросъёмщика</label>
             <input name="non_auth_fio" id="non_auth_fio" type="text" placeholder="Введите имя">
-
-            <a href="#" class="text-green-u non_auth_addreses">Адреса оплаты без комиссий</a>
+            <a href="#" class="text-green-u non_auth_addreses js-modal" data-modal="addresses-window">
+              Адреса оплаты без комиссий
+            </a>
             <button type="submit" class="btn-green">Перейти к оплате</button>
           </form>
 
@@ -227,6 +228,11 @@
           <img src="assets/images/cross.svg" alt="Закрыть" title="Закрыть">
         </button>
       </form>
+    </div>
+
+    <div class="modal-window" id="addresses-window">
+      <button class="js-modal-close"><img src="assets/images/cross.svg" alt="Закрыть" title="Закрыть"></button>
+      <div id="addresses-map" data-places="56.047882,92.907764;56.040682,92.907764;56.140682,92.907764"></div>
     </div>
   </div>
   <script src="assets/js/jquery-3.2.1.min.js"></script>

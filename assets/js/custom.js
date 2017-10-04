@@ -192,11 +192,9 @@ $(document).ready(function(){
     $('.js-modal').click(function(){
         var $this = $(this);
         var modal_window = $('#' + $this.data('modal'));
-
-        $(window).scrollTop(0,0);
-
         modal_window.fadeIn(200);
-        $('body').append('<div class="body-fade"></div>');
+        modal_window.wrap('<div class="modal-wrapper"></div>')
+            .after('<div class="body-fade"></div>');
         $('.body-fade').fadeTo(200,0.75);
         $('.body-fade').click(closeModal);
 
@@ -208,6 +206,7 @@ $(document).ready(function(){
             modal_window.fadeOut(200);
             $('.body-fade').fadeOut(200, function(){
                 $(this).remove();
+                modal_window.unwrap();
             });
         }
     });
@@ -842,6 +841,7 @@ function WidthChange(mql) {
     });
 
     //select to menu
+    $('.call-request').siblings().show();
     $('.tabs-mobile-menu').hide().siblings().show().each(function(){
         var ul = $(this).siblings().first();
         var active_tab = ul.children('li').index(ul.children('li.active'));
@@ -871,6 +871,8 @@ function WidthChange(mql) {
             e.stopPropagation();
             $(this).children('.tabs-mobile-menu').find('li').not('.active').toggle();
         });
+    } else {
+        menu_with_redirect.find('.call-request').siblings().hide();
     }
 
     addMobileSelect(menu_anchor,true);
@@ -886,7 +888,9 @@ function WidthChange(mql) {
                 mobile_menu = original_ul.clone(true,true)
                     .addClass('tabs-mobile-menu')
                     .appendTo($this);
-                mobile_menu.children('li').first().addClass('active');
+                if (mobile_menu.children('li.active').length == 0) {
+                    mobile_menu.children('li').first().addClass('active');
+                }
                 mobile_menu.css({
                     'position': 'static',
                     'flex-direction': 'column'
