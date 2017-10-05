@@ -2609,7 +2609,8 @@ article {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 4; }
+  z-index: 4;
+  overflow-y: auto; }
 
 .modal-window {
   display: none;
@@ -2676,6 +2677,20 @@ article {
     float: left;
     margin-right: 20px;
     margin-bottom: 10px; }
+
+.modal-counter-img {
+  width: 57%; }
+
+.modal-counter-p {
+  width: 40%;
+  clear: both;
+  float: right;
+  margin-top: 0;
+  box-sizing: border-box; }
+  .modal-counter-p.bordered {
+    padding: 20px 15px;
+    border: 1px solid #f2ab99;
+    background-color: #ffefe9; }
 
 .login-header {
   border: 1px solid #eee;
@@ -2879,7 +2894,7 @@ article {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 200%;
   opacity: 0;
   background-color: black; }
 
@@ -3317,7 +3332,14 @@ article {
         font-size: 0.85em;
         white-space: nowrap; }
   .modal-window {
-    width: 350px; }
+    width: 350px;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-bottom: 40px; }
+  .modal-counter-img {
+    width: 100%; }
+  .modal-counter-p {
+    width: 100%; }
   #recourse-window form input[type=text] {
     width: 100%;
     margin-bottom: 10px; }

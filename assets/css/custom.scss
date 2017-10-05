@@ -21,7 +21,7 @@ $select-background: white;
 $select-width: 280px;
 $select-height: 40px; 
 
-@mixin btn($b-color,$t-color) {
+@mixin btn($b-color,$t-color,$a-color) {
   text-transform: uppercase;
   border-radius: 2px;
   padding: 19px 20px;
@@ -36,17 +36,23 @@ $select-height: 40px;
   line-height: 13px;
   position: relative;
   background-color: $b-color;
-  transition: background-color 0.2s;
+  transition: background-color 0.1s, color 0.1s;
   &:hover {
-    background-color: lighten( $b-color, 10% );
+    background-color: $t-color;
+    color: $b-color;
+    box-shadow: none;
+    border: 1px solid $b-color;
+    padding: 18px 19px;
   }
   &:focus, &:active {
     outline: none;
-    background-color: darken( $b-color, 10% );
+    background-color: $a-color;
+    box-shadow: none;
+    color: $t-color;
   }
 }
 
-@mixin sm-btn($color) {
+@mixin sm-btn($color,$b-color) {
   border: 1px solid $color;
   color: $color;
   border-radius: 2px;
@@ -60,8 +66,8 @@ $select-height: 40px;
   text-align: center;
   transition: color 0.2s;
   &:hover {
-    border: 1px solid lighten( $color, 10%);
-    color: lighten( $color, 10%);
+    color: $b-color;
+    background-color: $color;
   }
   &:focus, &:active {
     outline: none;
@@ -96,9 +102,19 @@ a {
   color: $c_black;
 }
 
-input[type='text'], input[type='password'] {
+input[type='text'], input[type='password'], input[type='email'] {
   font-size: 1.6rem;
   padding: 0 20px;
+}
+
+.with-show-pass + .eye {
+  position: absolute;
+  margin-left: -50px;
+  margin-top: 15px;
+  border: none;
+  background: white;
+  outline: none;
+  cursor: pointer;
 }
 
 .header-banner {
@@ -177,6 +193,10 @@ input[type='text'], input[type='password'] {
       vertical-align: middle;
       img {
         height: 23px;
+        transition: filter 0.2s;
+        &:hover {
+          filter: brightness(0.8);
+        }
       }
     }
   }
@@ -201,9 +221,16 @@ input[type='text'], input[type='password'] {
       text-align: right;
       line-height: 2em;
       overflow: hidden;
+      transition: color 0.2s;
       @media (min-width: 961px) and (max-width: 1150px) {
         width: 21vw;
         font-size: 1.1vw;
+      }
+      &:hover {
+        color: black;
+        .profile__name:hover {
+          color: black;
+        }
       }
     }
     .profile__name {
@@ -212,6 +239,7 @@ input[type='text'], input[type='password'] {
       font-size: 1.35em;
       font-weight: 500;
       white-space: nowrap;
+      transition: color 0.2s;
     }
   }
   & + hr {
@@ -246,6 +274,10 @@ input[type='text'], input[type='password'] {
       font-size: 1.1em;
       padding: 28px 10px 25px;
       transition: color 0.2s;
+      &.active {
+        color: $c_green;
+        box-shadow: inset 0 -5px 0 $c_green;
+      }
       &:hover {
         color: $c_green;
       }
@@ -270,6 +302,11 @@ input[type='text'], input[type='password'] {
       text-transform: uppercase;
       color: $t_gray;
       outline: none;
+      opacity: 1;
+      transition: opacity 0.2s;
+      &:hover {
+        opacity: 0.5;
+      }
     }
   }
   &.fxd {
@@ -286,46 +323,38 @@ input[type='text'], input[type='password'] {
 
 .btn {
   &-white {
-    @include btn(transparent,$c_green);
+    @include btn(transparent,$c_green,#00711a);
     border: 1px solid $c_green;
-    &:hover {
-      border: 1px solid lighten( $c_green, 10%);
-      color: lighten( $c_green, 10%);
-    }
-    &:focus, &:active {
-      border: 1px solid darken( $c_green, 10%);
-      color: darken( $c_green, 10%);
+    &:hover, &:focus, &:active {
+      color: white;
+      padding: 19px 20px;
     }
   }
   &-gray {
-    @include btn(transparent,$t_gray);
+    @include btn(transparent,#9fa3b0,#696b71);
     border: 1px solid $t_gray;
-    &:hover {
-      border: 1px solid lighten( $t_gray, 10%);
-      color: lighten( $t_gray, 10%);
-    }
-    &:focus, &:active {
-      border: 1px solid darken( $t_gray, 10%);
-      color: darken( $t_gray, 10%);
-    }
     float: right;
     margin-top: 10px;
     margin-left: 20px;
     padding-left: 30px;
     padding-right: 30px;
+    &:hover, &:focus, &:active {
+      color: white;
+      padding: 19px 30px;
+    }
   }
   &-red {
-    @include btn($c_red,white);
+    @include btn($c_red,white,#d85032);
     box-shadow: 0 9px 16px rgba(0, 0, 0, 0.11);
   }
   &-green {
-    @include btn($c_green,white);
+    @include btn($c_green,white,#00711a);
   }
   &-blue {
-    @include btn($c_blue,white);
+    @include btn($c_blue,white,$c_blue);
   }
   &-sm-blue {
-    @include sm-btn($c_blue);
+    @include sm-btn($c_blue,white);
     width: auto;
     padding: 5px 20px 3px;
     margin-right: 30px;
@@ -408,7 +437,7 @@ input[type='text'], input[type='password'] {
   text-decoration: underline;
 }
 a.text-green-u:hover {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .covered-block {
@@ -632,7 +661,7 @@ a.text-green-u:hover {
     padding: 45px;
     display: inline-block;
     label {
-      color: #9fa3b0;
+      color: $t_gray;
       text-transform: uppercase;
       font-weight: 500;
       width: 150px;
@@ -741,6 +770,13 @@ a.text-green-u:hover {
         display: inline-block;
         padding: 13px 25px;
         outline: none;
+        &.btn-blue:hover {
+          padding: 13px 25px;
+          border: none;
+          background-color: $c_blue;
+          color: white;
+          cursor: default;
+        }
         &:not(.btn-blue) {
           font-size: 0.85rem;
           padding: 13px 15px;
@@ -748,6 +784,10 @@ a.text-green-u:hover {
           font-family: 'Muller';
           font-weight: bold;
           color: $t_gray;
+          transition: color 0.2s;
+          &:hover {
+            color: $c_blue;
+          }
         }
       }
       &:first-child {
@@ -857,6 +897,10 @@ a.text-green-u:hover {
           padding-left: 0;
           width: 100%;
           box-sizing: border-box;
+          transition: background-color 0.2s;
+          &:hover {
+            background-color: #f9fbfd;
+          }
           img {
             margin-right: 10px;
             top: 3px;
@@ -937,8 +981,14 @@ article {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.7));
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.9));
     z-index: 1;
+    opacity: 0.7;
+    transition: transform 0.3s, opacity 0.3s;
+  }
+  &:hover:before {
+    transform: scaleY(2) translateY(-25%);
+    opacity: 1;
   }
   & > img {
     position: absolute;
@@ -977,8 +1027,22 @@ article {
       margin: 10px 10px 0 0;
     }
   }
-  &.no-image:before {
-    background: $c_green !important;
+  &.no-image {
+    border: 1px solid $l_gray;
+    .h3-with-star.green-header {
+      a {
+        color: $c_green;
+      }
+      &:before {
+        filter: grayscale(100%) brightness(40%) sepia(100%) hue-rotate(50deg) saturate(500%) contrast(0.7);
+      }
+    }
+    &:before {
+      opacity: 0;
+    }
+    &:hover:before {
+      opacity: 1;
+    }
   }
 }
 
@@ -1375,13 +1439,12 @@ article {
           height: 68px;
           overflow: hidden;
           color: white;
-          transition: opacity 0.2s;
           &:hover, &:focus, &:active {
-            opacity: 0.7;
+            text-decoration: underline;
           }
         }
         & > a {
-          @include sm-btn(white);
+          @include sm-btn(white,#333);
         }
         p {
           font-family: 'Muller';
@@ -1400,6 +1463,12 @@ article {
           width: 100%;
           height: 100%;
           background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.7));
+          opacity: 0.7;
+          transition: transform 0.3s, opacity 0.3s;
+        }
+        &.shaded:before {
+          transform: scaleY(2) translateY(-25%);
+          opacity: 1;
         }
       }
     }
@@ -1453,15 +1522,12 @@ article {
         line-height: 1.2em;
         height: 70px;
         overflow: hidden;
-        & > a {
-          transition: opacity 0.2s;
-        }
         & > a:hover, &:focus, &:active  {
-          opacity: 0.7;
+          text-decoration: underline;
         }
       }
       & > a.btn- {
-        @include sm-btn($c_blue);
+        @include sm-btn($c_blue,white);
         margin: 19px 18px 0;
       }
       & > p {
@@ -1512,7 +1578,7 @@ article {
           font-size: 0.9em;
         }
         & > a {
-          @include sm-btn($c_blue);
+          @include sm-btn($c_blue,white);
           position: absolute;
           left: 130px;
           bottom: 30px;
@@ -1737,6 +1803,7 @@ article {
       &:hover, &:active, &:focus {
         color: $c_green;
         transition: color 0.2s;
+        text-decoration: none;
       }
       &._pdf:after {
         content: "скачать pdf";
@@ -1747,6 +1814,9 @@ article {
         display: block;
         font-size: 0.8em;
         margin-top: 7px;
+      }
+      &._pdf:hover:after {
+        color: black;
       }
     }
     &-tariffs {
@@ -2080,9 +2150,16 @@ article {
         width: 150px;
         padding: 8px 0 6px;
         font-size: 0.8em;
+        &:hover {
+          padding: 7px 0 5px;
+        }
       }
       .btn-white {
-        background-color: white;
+        background-color: #e6e8ec;
+        &:hover {
+          padding: 8px 0 6px;
+          background-color: $c_green;
+        }
       }
       & > img {
         position: absolute;
@@ -2099,8 +2176,13 @@ article {
           }
         }
       }
-      &.no-image:before {
-        background: white !important;
+      &.no-image {
+        .white-header {
+          color: white;
+        }
+        &:before {
+          background: white !important;
+        }
       }
       &:before {
         content: '';
@@ -2111,6 +2193,10 @@ article {
         width: 100%;
         height: 100%;
         z-index: 1;
+        transition: background 0.3s;
+      }
+      &:hover:before {
+        background: rgba(0,0,0,0.8) !important;
       }
     }
   }
@@ -2847,10 +2933,15 @@ article {
     &__social {
       display: inline-block;
       margin: 25px 20px 55px;
-
       a {
         display: inline-block;
         vertical-align: middle;
+        img {
+          transition: filter 0.2s;
+          &:hover {
+            filter: brightness(0.8);
+          }
+        }
       }
     }
     &__design {
@@ -2858,6 +2949,10 @@ article {
       margin: 30px 20px 0;
       a {
         color: #757575;
+        transition: color 0.2s;
+        &:hover {
+          color: black;
+        }
       }
     }
   }
@@ -2932,7 +3027,6 @@ article {
   }
   &__page {
     font-size: 1.2em;
-    padding: 14px 0;
     text-align: center;
     background-color: white;
     border: 1px solid $l_gray;
@@ -2941,11 +3035,21 @@ article {
     display: inline-block;
     width: 45px;
     box-sizing: border-box;
+    a {
+      display: inline-block;
+      padding: 14px;
+      &:hover {
+        color: #828282;
+      }
+    }
     &:last-child {
       border-right: 1px solid $l_gray;
     }
-    &.current a {
-      color: #828282;
+    &.current {
+      background-color: #f9fbfd;
+      a {
+        color: #828282;
+      }
     }
   }
 }
@@ -2958,6 +3062,7 @@ article {
     width: 100%;
     height: 100%;
     z-index: 4;
+    overflow-y: auto;
   }
   &-window {
     display: none;
@@ -3036,6 +3141,23 @@ article {
       float: left;
       margin-right: 20px;
       margin-bottom: 10px;
+    }
+  }
+  &-counter {
+    &-img {
+      width: 57%;
+    }
+    &-p {
+      width: 40%;
+      clear: both;  
+      float: right;
+      margin-top: 0;
+      box-sizing: border-box;
+      &.bordered {
+        padding: 20px 15px;
+        border: 1px solid #f2ab99;
+        background-color: #ffefe9;
+      }
     }
   }
 }
@@ -3283,7 +3405,7 @@ article {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 200%;
   opacity: 0;
   background-color: black;
 }
@@ -3915,6 +4037,17 @@ article {
   .modal {
     &-window {
       width: 350px;
+      padding-left: 25px;
+      padding-right: 25px;
+      padding-bottom: 40px;
+    }
+    &-counter {
+      &-img {
+        width: 100%;
+      }
+      &-p {
+        width: 100%;
+      }
     }
   }
 
@@ -4199,6 +4332,7 @@ article {
       position: absolute !important;
       left: 10px !important;
       width: calc(100% - 20px) !important;
+      z-index: 2;
     }
     & ~ section {
       overflow-x: auto;
@@ -4469,6 +4603,13 @@ article {
           height: 36px;
         }
       }
+    }
+
+    &__history {
+      overflow-x: auto;
+      margin-left: -15px;
+      margin-right: -15px;
+      width: calc(100% + 30px);
     }
 
     &__right-block {

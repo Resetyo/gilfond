@@ -189,7 +189,7 @@ $(document).ready(function(){
     });
 
     //modals
-    $('.js-modal').click(function(){
+    $('.js-modal').click(function(e){
         var $this = $(this);
         var modal_window = $('#' + $this.data('modal'));
         modal_window.fadeIn(200);
@@ -209,6 +209,7 @@ $(document).ready(function(){
                 modal_window.unwrap();
             });
         }
+        e.preventDefault();
     });
 
     //counter form
