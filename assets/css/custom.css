@@ -375,8 +375,8 @@ input[type='text'], input[type='password'], input[type='email'] {
   margin-right: 30px;
   margin-bottom: 20px; }
   .btn-sm-blue:hover {
-    border: 1px solid #008beb;
-    color: #008beb; }
+    color: white;
+    background-color: #006DB8; }
   .btn-sm-blue:focus, .btn-sm-blue:active {
     outline: none;
     border: 1px solid #004f85;
@@ -625,7 +625,7 @@ a.text-green-u:hover {
   padding: 45px;
   display: inline-block; }
   .section-form label {
-    color: #9fa3b0;
+    color: #363636;
     text-transform: uppercase;
     font-weight: 500;
     width: 150px;
@@ -880,8 +880,13 @@ article {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.7));
-    z-index: 1; }
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.9));
+    z-index: 1;
+    opacity: 0.7;
+    transition: transform 0.3s, opacity 0.3s; }
+  article:hover:before {
+    transform: scaleY(2) translateY(-25%);
+    opacity: 1; }
   article > img {
     position: absolute;
     left: 0;
@@ -914,8 +919,16 @@ article {
       vertical-align: top;
       line-height: 0;
       margin: 10px 10px 0 0; }
-  article.no-image:before {
-    background: #008D21 !important; }
+  article.no-image {
+    border: 1px solid #D8DCDE; }
+    article.no-image .h3-with-star.green-header a {
+      color: #008D21; }
+    article.no-image .h3-with-star.green-header:before {
+      filter: grayscale(100%) brightness(40%) sepia(100%) hue-rotate(50deg) saturate(500%) contrast(0.7); }
+    article.no-image:before {
+      opacity: 0; }
+    article.no-image:hover:before {
+      opacity: 1; }
 
 .select {
   cursor: pointer;
@@ -1245,10 +1258,9 @@ article {
           margin: 15px 0 25px;
           height: 68px;
           overflow: hidden;
-          color: white;
-          transition: opacity 0.2s; }
+          color: white; }
           .content__news__main__inner h3 > a:hover, .content__news__main__inner h3 > a:focus, .content__news__main__inner h3 > a:active {
-            opacity: 0.7; }
+            text-decoration: underline; }
         .content__news__main__inner > a {
           border: 1px solid white;
           color: white;
@@ -1263,8 +1275,8 @@ article {
           text-align: center;
           transition: color 0.2s; }
           .content__news__main__inner > a:hover {
-            border: 1px solid white;
-            color: white; }
+            color: #333;
+            background-color: white; }
           .content__news__main__inner > a:focus, .content__news__main__inner > a:active {
             outline: none;
             border: 1px solid #e6e6e6;
@@ -1283,7 +1295,12 @@ article {
           z-index: 1;
           width: 100%;
           height: 100%;
-          background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.7)); }
+          background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.7));
+          opacity: 0.7;
+          transition: transform 0.3s, opacity 0.3s; }
+        .content__news__main__image.shaded:before {
+          transform: scaleY(2) translateY(-25%);
+          opacity: 1; }
     .content__news__item {
       width: calc(33.3% - 21px);
       background-color: white;
@@ -1329,10 +1346,8 @@ article {
         line-height: 1.2em;
         height: 70px;
         overflow: hidden; }
-        .content__news__item > h3 > a {
-          transition: opacity 0.2s; }
         .content__news__item > h3 > a:hover, .content__news__item > h3:focus, .content__news__item > h3:active {
-          opacity: 0.7; }
+          text-decoration: underline; }
       .content__news__item > a.btn- {
         border: 1px solid #006DB8;
         color: #006DB8;
@@ -1348,8 +1363,8 @@ article {
         transition: color 0.2s;
         margin: 19px 18px 0; }
         .content__news__item > a.btn-:hover {
-          border: 1px solid #008beb;
-          color: #008beb; }
+          color: white;
+          background-color: #006DB8; }
         .content__news__item > a.btn-:focus, .content__news__item > a.btn-:active {
           outline: none;
           border: 1px solid #004f85;
@@ -1410,8 +1425,8 @@ article {
           left: 130px;
           bottom: 30px; }
           .content__news__item--additional > a:hover {
-            border: 1px solid #008beb;
-            color: #008beb; }
+            color: white;
+            background-color: #006DB8; }
           .content__news__item--additional > a:focus, .content__news__item--additional > a:active {
             outline: none;
             border: 1px solid #004f85;
@@ -1876,8 +1891,13 @@ article {
       width: 150px;
       padding: 8px 0 6px;
       font-size: 0.8em; }
+      .content__press__project [class^='btn-']:hover {
+        padding: 7px 0 5px; }
     .content__press__project .btn-white {
-      background-color: white; }
+      background-color: #e6e8ec; }
+      .content__press__project .btn-white:hover {
+        padding: 8px 0 6px;
+        background-color: #008D21; }
     .content__press__project > img {
       position: absolute;
       left: 0;
@@ -1890,6 +1910,8 @@ article {
         .content__press__project > img ~ h3 a:hover, .content__press__project > img ~ h3 a:focus, .content__press__project > img ~ h3 a:active {
           text-decoration: underline;
           color: #e6e6e6; }
+    .content__press__project.no-image .white-header {
+      color: white; }
     .content__press__project.no-image:before {
       background: white !important; }
     .content__press__project:before {
@@ -1900,7 +1922,10 @@ article {
       left: 0;
       width: 100%;
       height: 100%;
-      z-index: 1; }
+      z-index: 1;
+      transition: background 0.3s; }
+    .content__press__project:hover:before {
+      background: rgba(0, 0, 0, 0.8) !important; }
   .content__info {
     position: relative; }
     .content__info-map {
@@ -3466,7 +3491,8 @@ article {
     top: 25px !important;
     position: absolute !important;
     left: 10px !important;
-    width: calc(100% - 20px) !important; }
+    width: calc(100% - 20px) !important;
+    z-index: 2; }
   .tabs-nav ~ section {
     overflow-x: auto; }
     .tabs-nav ~ section .select-styled {
@@ -3627,6 +3653,11 @@ article {
     .content__recourse__form textarea {
       margin: 20px 0;
       height: 36px; }
+  .content__history {
+    overflow-x: auto;
+    margin-left: -15px;
+    margin-right: -15px;
+    width: calc(100% + 30px); }
   .content__right-block {
     width: 100%; }
   .modal-window {
