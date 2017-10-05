@@ -767,6 +767,27 @@ $(document).ready(function(){
         $(this).siblings('.hidden-block').toggle();
         return false;
     });
+
+    //show password
+    var with_eye = $('.with-show-pass');
+
+    if (with_eye.length > 0) {
+        var eye = $('<button />', {class: 'eye', html: '<img src="assets/images/eye.svg">'});
+        eye.insertAfter(with_eye);
+
+        eye.click(function(e){
+            var input = $(this).prev('input');
+
+            if (input.attr('type') === 'password') {
+                input.attr('type','text');
+            } else {
+                input.attr('type','password');
+            }
+            
+            e.preventDefault();
+        });  
+    }
+
 });
 
 
