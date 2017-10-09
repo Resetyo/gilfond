@@ -493,6 +493,10 @@ a.text-green-u:hover {
     &-carousel {
       width: calc(100% + 100px);
       margin-left: -50px;
+      .item img {
+        max-height: 500px;
+        object-fit: cover;
+      }
     }
     &-wrapper {
       position: absolute;
@@ -4303,7 +4307,6 @@ article {
     ul {
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-between;
       li {
         padding: 0; 
         a {
@@ -4614,6 +4617,9 @@ article {
         display: inline-block;
         margin-bottom: 10px;
         margin-left: 15px;
+      }
+      &_sum {
+        width: 170px;
       }
     }
 
