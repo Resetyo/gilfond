@@ -382,6 +382,37 @@ input[type='text'], input[type='password'], input[type='email'] {
     border: 1px solid #004f85;
     color: #004f85; }
 
+.btn-sm-green {
+  text-transform: uppercase;
+  border-radius: 2px;
+  padding: 19px 20px;
+  border: none;
+  color: white;
+  font-family: 'Muller';
+  display: inline-block;
+  cursor: pointer;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 0.85rem;
+  line-height: 13px;
+  position: relative;
+  background-color: #008D21;
+  transition: background-color 0.1s, color 0.1s;
+  padding: 15px; }
+  .btn-sm-green:hover {
+    background-color: white;
+    color: #008D21;
+    box-shadow: none;
+    border: 1px solid #008D21;
+    padding: 18px 19px; }
+  .btn-sm-green:focus, .btn-sm-green:active {
+    outline: none;
+    background-color: #00711a;
+    box-shadow: none;
+    color: white; }
+  .btn-sm-green:hover {
+    padding: 14px; }
+
 .shadow-first {
   box-shadow: 0 -4px 4px rgba(0, 0, 0, 0.03), -4px 0px 4px rgba(0, 0, 0, 0.03), 4px 0px 4px rgba(0, 0, 0, 0.03);
   border-radius: 3px 3px 0 0; }
@@ -999,6 +1030,15 @@ article {
 
 .toggler-open:after {
   transform: rotate(180deg); }
+
+.change-readings-form {
+  display: none;
+  white-space: nowrap; }
+  .change-readings-form [type=text] {
+    vertical-align: top;
+    width: 80px;
+    height: 40px;
+    border: 1px solid #D8DCDE; }
 
 .content {
   flex: 1 0 auto;

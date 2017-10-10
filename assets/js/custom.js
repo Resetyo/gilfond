@@ -1,4 +1,11 @@
 $(document).ready(function(){
+    //change readings
+    $('.change-readings-button').click(function(e){
+        $(this).hide();
+        $(this).next('.change-readings-form').show();
+        e.preventDefault();
+    });
+    
     //aticles pagination
     var articles_page = 1, articles_per_page = 9;
     $('#more-articles').click(function(e){

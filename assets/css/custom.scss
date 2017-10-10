@@ -360,6 +360,13 @@ input[type='text'], input[type='password'], input[type='email'] {
     margin-right: 30px;
     margin-bottom: 20px;
   }
+  &-sm-green {
+    @include btn($c_green,white,#00711a);
+    padding: 15px;
+    &:hover {
+      padding: 14px;
+    }
+  }
 }
 
 .shadow {
@@ -1127,6 +1134,17 @@ article {
 .toggler {
   &-open:after {
     transform: rotate(180deg);
+  }
+}
+
+.change-readings-form {
+  display: none;
+  white-space: nowrap;
+  [type=text] {
+    vertical-align: top;
+    width: 80px;
+    height: 40px;
+    border: 1px solid $l_gray;
   }
 }
 

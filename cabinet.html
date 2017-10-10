@@ -96,7 +96,9 @@
 
         <section class="content__left-block">
 
-          <a href="#" class="text-green-u">Инструкция передачи показаний</a>
+          <a href="#" class="text-green-u js-modal" data-modal="counters-window">
+            Инструкция передачи показаний
+          </a>
 
           <h2 class="content__cabinet__h2">Первый стояк</h2>
           
@@ -247,6 +249,26 @@
           <img src="assets/images/cross.svg" alt="Закрыть" title="Закрыть">
         </button>
       </form>
+    </div>
+
+    <div class="modal-window" id="counters-window">
+      <button class="js-modal-close"><img src="assets/images/cross.svg" alt="Закрыть" title="Закрыть"></button>
+      <h3>Счетчики воды</h3>
+      <p class="modal-counter-p">
+        <strong>Показание данного прибора: 00022,221</strong><br>
+        Ввести в окно на сайте цифру: 22
+      </p>
+      <p class="modal-counter-p bordered">
+        Вводить нужно <strong>только цифры до запятой.</strong><br>
+        Нули перед цифрой 22 также вводить не нужно
+      </p>
+      <img src="assets/images/counter1.jpg" class="modal-counter-img" alt="Счетчики воды">
+      <h3>Счетчик электроэнергии</h3>
+      <p class="modal-counter-p">
+        Показание данного прибора: 00001,4<br>
+        Ввести в окно на сайте цифру: 1
+      </p>
+      <img src="assets/images/counter2.jpg" class="modal-counter-img" alt="Счетчик электроэнергии">
     </div>
   </div>
   <script src="assets/js/jquery-3.2.1.min.js"></script>
