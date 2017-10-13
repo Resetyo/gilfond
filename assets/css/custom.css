@@ -2735,6 +2735,9 @@ article {
     border: 1px solid #f2ab99;
     background-color: #ffefe9; }
 
+.modal-counter-red {
+  color: #cd0e00; }
+
 .login-header {
   border: 1px solid #eee;
   border-radius: 3px;
